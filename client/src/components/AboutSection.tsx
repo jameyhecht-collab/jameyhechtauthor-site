@@ -55,7 +55,7 @@ export default function AboutSection() {
             Academic & Literary Background
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            A distinguished career spanning literature, psychoanalysis, and creative writing, 
+            A career spanning literature, psychoanalysis, and creative writing, 
             with expertise in both scholarly research and therapeutic practice.
           </p>
         </div>
