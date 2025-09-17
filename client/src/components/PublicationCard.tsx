@@ -1,0 +1,112 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { ExternalLink, Eye } from "lucide-react";
+
+interface PublicationCardProps {
+  title: string;
+  publication: string;
+  year: number;
+  type: "journal" | "book" | "poetry" | "review";
+  abstract?: string;
+  views?: number;
+  downloadUrl?: string;
+  category?: string;
+}
+
+const typeColors = {
+  journal: "bg-primary/10 text-primary",
+  book: "bg-accent/10 text-accent-foreground",
+  poetry: "bg-secondary/10 text-secondary-foreground",
+  review: "bg-muted/10 text-muted-foreground"
+};
+
+export default function PublicationCard({
+  title,
+  publication,
+  year,
+  type,
+  abstract,
+  views,
+  downloadUrl,
+  category
+}: PublicationCardProps) {
+  
+  const handleViewDetails = () => {
+    console.log(`Viewing details for: ${title}`);
+  };
+
+  const handleDownload = () => {
+    console.log(`Downloading: ${title}`);
+    if (downloadUrl) {
+      window.open(downloadUrl, '_blank');
+    }
+  };
+
+  return (
+    <Card className="hover-elevate transition-all duration-200 h-full flex flex-col">
+      <CardHeader className="space-y-3">
+        <div className="flex items-start justify-between gap-3">
+          <Badge variant="outline" className={typeColors[type]}>
+            {type.charAt(0).toUpperCase() + type.slice(1)}
+          </Badge>
+          {views && (
+            <div className="flex items-center text-sm text-muted-foreground">
+              <Eye className="h-3 w-3 mr-1" />
+              {views}
+            </div>
+          )}
+        </div>
+        
+        <h3 className="font-serif text-lg font-semibold leading-tight text-foreground">
+          {title}
+        </h3>
+        
+        <div className="space-y-1">
+          <p className="text-sm font-medium text-muted-foreground">
+            {publication}
+          </p>
+          <p className="text-sm text-muted-foreground">
+            {year}
+          </p>
+          {category && (
+            <p className="text-xs text-muted-foreground">
+              {category}
+            </p>
+          )}
+        </div>
+      </CardHeader>
+
+      <CardContent className="flex-1">
+        {abstract && (
+          <p className="text-sm text-muted-foreground leading-relaxed line-clamp-4">
+            {abstract}
+          </p>
+        )}
+      </CardContent>
+
+      <CardFooter className="flex gap-2 pt-4">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={handleViewDetails}
+          className="flex-1 hover-elevate active-elevate-2"
+          data-testid={`button-view-${title.toLowerCase().replace(/\s+/g, "-")}`}
+        >
+          View Details
+        </Button>
+        {downloadUrl && (
+          <Button
+            size="sm"
+            onClick={handleDownload}
+            className="hover-elevate active-elevate-2"
+            data-testid={`button-download-${title.toLowerCase().replace(/\s+/g, "-")}`}
+          >
+            <ExternalLink className="h-3 w-3 mr-1" />
+            Read
+          </Button>
+        )}
+      </CardFooter>
+    </Card>
+  );
+}
