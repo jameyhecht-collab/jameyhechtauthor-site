@@ -10,10 +10,11 @@ interface NavigationItem {
 
 const navigationItems: NavigationItem[] = [
   { label: "Home", href: "/" },
-  { label: "Published Works", href: "/works" },
-  { label: "Into Theism", href: "/manuscript" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Published Works", href: "#published-works" },
+  { label: "Into Theism", href: "#manuscript" },
+  { label: "Book Store", href: "#bookstore" },
+  { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function NavigationHeader() {
