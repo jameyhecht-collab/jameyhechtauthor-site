@@ -13,10 +13,12 @@ export default function Home() {
       <NavigationHeader />
       <main>
         <HeroSection />
-        <SubstackFeed />
         <PublishedWorksSection />
         <ManuscriptShowcase />
-        <AboutSection />
+        <div className="relative">
+          <AboutSection />
+          <SubstackFeed />
+        </div>
         <ContactSection />
       </main>
       <Footer />

@@ -87,106 +87,123 @@ export default function SubstackFeed() {
   }
 
   return (
-    <section id="recent-writing" className="py-16 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <Badge variant="outline" className="mb-4">
-            <PenTool className="w-4 h-4 mr-2" />
-            Recent Writing
-          </Badge>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Latest from Substack
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Current thoughts on consciousness, philosophy, and the human condition
-          </p>
-        </div>
-
-        {isLoading ? (
-          <div className="flex justify-center">
-            <div className="animate-pulse space-y-4 w-full max-w-4xl">
-              <div className="h-6 bg-muted rounded w-3/4 mx-auto"></div>
-              <div className="h-4 bg-muted rounded w-1/2 mx-auto"></div>
-              <div className="h-20 bg-muted rounded"></div>
-            </div>
+    <div className="absolute bottom-8 left-8 w-80 max-w-sm hidden lg:block" id="recent-writing">
+      <Card className="bg-background/95 backdrop-blur-sm border-border/50 shadow-lg">
+        <CardHeader className="pb-3">
+          <div className="flex items-center space-x-2 mb-2">
+            <PenTool className="w-4 h-4 text-muted-foreground" />
+            <Badge variant="secondary" className="text-xs">
+              Recent Writing
+            </Badge>
           </div>
-        ) : posts.length > 0 ? (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {posts.map((post, index) => (
-              <Card 
-                key={post.link} 
-                className={`group hover-elevate ${index === 0 ? 'lg:col-span-2' : ''}`}
-                data-testid={`substack-post-${index}`}
-              >
-                <CardHeader className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <Badge variant="secondary" className="text-xs">
-                      Substack
-                    </Badge>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <Calendar className="w-4 h-4 mr-1" />
-                      {formatDate(post.pubDate)}
-                    </div>
-                  </div>
-                  <CardTitle className="font-serif text-xl sm:text-2xl leading-tight group-hover:text-primary transition-colors">
-                    {post.title}
-                  </CardTitle>
-                </CardHeader>
-                
-                <CardContent className="space-y-6">
-                  <p className="text-muted-foreground leading-relaxed">
-                    {truncateText(post.description, index === 0 ? 300 : 200)}
-                  </p>
-                  
-                  <Button 
-                    variant="outline"
-                    asChild
-                    className="hover-elevate active-elevate-2"
-                    data-testid={`button-read-post-${index}`}
-                  >
+          <CardTitle className="font-serif text-lg text-foreground">
+            Latest from Substack
+          </CardTitle>
+        </CardHeader>
+        
+        <CardContent className="space-y-4">
+          {isLoading ? (
+            <div className="animate-pulse space-y-2">
+              <div className="h-4 bg-muted rounded w-3/4"></div>
+              <div className="h-3 bg-muted rounded w-1/2"></div>
+              <div className="h-12 bg-muted rounded"></div>
+            </div>
+          ) : posts.length > 0 ? (
+            <div className="space-y-4">
+              <div className="space-y-3">
+                <div>
+                  <h4 className="font-serif text-sm font-medium text-foreground leading-tight mb-1">
                     <a 
-                      href={post.link} 
+                      href={posts[0].link} 
                       target="_blank" 
                       rel="noopener noreferrer"
+                      className="hover:text-primary transition-colors"
+                      data-testid="link-latest-post"
                     >
-                      Read Full Post
-                      <ExternalLink className="w-4 h-4 ml-2" />
+                      {posts[0].title}
                     </a>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        ) : (
-          <div className="text-center">
-            <p className="text-muted-foreground mb-4">No recent posts available.</p>
-            <Button variant="outline" asChild>
+                  </h4>
+                  <div className="flex items-center text-xs text-muted-foreground mb-2">
+                    <Calendar className="w-3 h-3 mr-1" />
+                    {formatDate(posts[0].pubDate)}
+                  </div>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {truncateText(posts[0].description, 120)}
+                  </p>
+                </div>
+              </div>
+              
+              <div className="pt-2 border-t border-border/50">
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  asChild 
+                  className="w-full text-xs"
+                  data-testid="button-read-latest"
+                >
+                  <a 
+                    href={posts[0].link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    Read Post
+                    <ExternalLink className="w-3 h-3 ml-1" />
+                  </a>
+                </Button>
+              </div>
+            </div>
+          ) : error ? (
+            <div className="space-y-3">
+              <p className="text-xs text-muted-foreground">
+                Unable to load recent posts.
+              </p>
+              <Button variant="outline" size="sm" asChild className="w-full text-xs">
+                <a 
+                  href="https://substack.com/@jameyhecht"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visit Substack
+                  <ExternalLink className="w-3 h-3 ml-1" />
+                </a>
+              </Button>
+            </div>
+          ) : (
+            <div className="space-y-3">
+              <p className="text-xs text-muted-foreground">No recent posts available.</p>
+              <Button variant="outline" size="sm" asChild className="w-full text-xs">
+                <a 
+                  href="https://substack.com/@jameyhecht"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visit Substack
+                  <ExternalLink className="w-3 h-3 ml-1" />
+                </a>
+              </Button>
+            </div>
+          )}
+          
+          <div className="pt-2 border-t border-border/50">
+            <Button 
+              variant="ghost" 
+              size="sm"
+              asChild 
+              className="w-full text-xs text-muted-foreground hover:text-foreground"
+              data-testid="button-subscribe-newsletter"
+            >
               <a 
                 href="https://substack.com/@jameyhecht"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Visit Substack
-                <ExternalLink className="w-4 h-4 ml-2" />
+                Subscribe to newsletter
+                <ExternalLink className="w-3 h-3 ml-1" />
               </a>
             </Button>
           </div>
-        )}
-
-        <div className="text-center mt-8">
-          <Button variant="ghost" asChild className="text-muted-foreground hover:text-foreground">
-            <a 
-              href="https://substack.com/@jameyhecht"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-testid="link-substack-subscribe"
-            >
-              Subscribe to the newsletter
-              <ExternalLink className="w-4 h-4 ml-2" />
-            </a>
-          </Button>
-        </div>
-      </div>
-    </section>
+        </CardContent>
+      </Card>
+    </div>
   );
 }
