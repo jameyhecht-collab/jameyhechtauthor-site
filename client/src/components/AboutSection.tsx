@@ -35,7 +35,7 @@ const achievements = [
     description: "Los Angeles, California"
   },
   {
-    title: "Graduate & Alumni",
+    title: "Graduate & Alumnus",
     organization: "New Center for Psychoanalysis",
     description: "Advanced training in psychoanalytic theory and practice"
   }
