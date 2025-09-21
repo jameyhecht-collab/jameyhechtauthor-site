@@ -41,6 +41,7 @@ export const BOOK_CATALOG: Book[] = [
     author: "Dr. Jamey Hecht",
     price: 18.00,
     description: "A comprehensive guide for students and scholars writing about Homer's epics, covering critical approaches, themes, and analytical frameworks.",
+    isbn: "978-1604137163",
     year: 2010,
     condition: "New",
     availability: "In Stock"
@@ -51,6 +52,7 @@ export const BOOK_CATALOG: Book[] = [
     author: "Dr. Jamey Hecht (translator)",
     price: 12.00,
     description: "Translation, notes, and commentary on Sophocles' masterful trilogy. A fresh interpretation of these classical works for contemporary readers.",
+    isbn: "978-1840221442",
     year: 2004,
     condition: "New",
     availability: "In Stock"
@@ -61,6 +63,7 @@ export const BOOK_CATALOG: Book[] = [
     author: "Dr. Jamey Hecht",
     price: 28.00,
     description: "An in-depth analysis of Plato's philosophical masterpiece, exploring themes of love, beauty, and human nature through scholarly examination.",
+    isbn: "978-0805716399",
     year: 1999,
     condition: "New",
     availability: "In Stock"
@@ -71,6 +74,7 @@ export const BOOK_CATALOG: Book[] = [
     author: "Dr. Jamey Hecht",
     price: 20.00,
     description: "A collection spanning three decades of poetic work, exploring themes of memory, loss, and transformation through elegant verse.",
+    isbn: "978-1949093070",
     year: 2019,
     condition: "New",
     availability: "In Stock"
@@ -81,6 +85,7 @@ export const BOOK_CATALOG: Book[] = [
     author: "Dr. Jamey Hecht",
     price: 18.00,
     description: "Fifty 14-line elegies for President John F. Kennedy, exploring themes of political idealism, tragedy, and the American dream through lyrical meditation.",
+    isbn: "978-1597091282",
     year: 2009,
     condition: "New",
     availability: "In Stock"
