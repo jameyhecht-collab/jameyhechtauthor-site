@@ -90,8 +90,8 @@ export default function BookStoreSection() {
             Available Books
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Purchase signed copies of books from Dr. Hecht's personal collection, 
-            carefully selected works in literature, philosophy, and psychology.
+            Purchase signed copies of Dr. Hecht's published works in literary criticism, 
+            poetry, and psychoanalytic theory.
           </p>
         </div>
 
@@ -170,7 +170,7 @@ export default function BookStoreSection() {
         
         <div className="text-center mt-12">
           <p className="text-sm text-muted-foreground mb-4">
-            All books are shipped from Dr. Hecht's personal collection and may include personal inscriptions.
+            All books are personally signed by the author and shipped directly from Dr. Hecht.
           </p>
           <p className="text-xs text-muted-foreground">
             Shipping calculated at checkout. International shipping available.
