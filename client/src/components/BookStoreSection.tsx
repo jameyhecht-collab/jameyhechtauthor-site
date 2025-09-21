@@ -87,11 +87,11 @@ export default function BookStoreSection() {
             Book Store
           </Badge>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Available Books
+            Signed Copies Available
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Purchase signed copies of Dr. Hecht's published works in literary criticism, 
-            poetry, and psychoanalytic theory.
+            Purchase personally signed copies of Dr. Hecht's published works spanning 
+            classical studies, literary criticism, and contemporary poetry.
           </p>
         </div>
 

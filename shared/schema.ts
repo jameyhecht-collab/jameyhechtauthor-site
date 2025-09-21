@@ -33,10 +33,58 @@ export const bookSchema = z.object({
 
 export type Book = z.infer<typeof bookSchema>;
 
-// Dr. Hecht's published works - awaiting details from author
+// Dr. Hecht's published works
 export const BOOK_CATALOG: Book[] = [
-  // Placeholder - will be updated with Dr. Hecht's actual published books
-  // Temporarily empty until author provides book details
+  {
+    id: "blooms-homer",
+    title: "Bloom's How to Write About Homer",
+    author: "Dr. Jamey Hecht",
+    price: 18.00,
+    description: "A comprehensive guide for students and scholars writing about Homer's epics, covering critical approaches, themes, and analytical frameworks.",
+    year: 2010,
+    condition: "New",
+    availability: "In Stock"
+  },
+  {
+    id: "sophocles-theban-plays",
+    title: "Sophocles' Three Theban Plays",
+    author: "Dr. Jamey Hecht (translator)",
+    price: 12.00,
+    description: "Translation, notes, and commentary on Sophocles' masterful trilogy. A fresh interpretation of these classical works for contemporary readers.",
+    year: 2004,
+    condition: "New",
+    availability: "In Stock"
+  },
+  {
+    id: "platos-symposium",
+    title: "Plato's Symposium: Eros and The Human Predicament",
+    author: "Dr. Jamey Hecht",
+    price: 28.00,
+    description: "An in-depth analysis of Plato's philosophical masterpiece, exploring themes of love, beauty, and human nature through scholarly examination.",
+    year: 1999,
+    condition: "New",
+    availability: "In Stock"
+  },
+  {
+    id: "dodo-feathers",
+    title: "Dodo Feathers: Poems 1989–2019",
+    author: "Dr. Jamey Hecht",
+    price: 20.00,
+    description: "A collection spanning three decades of poetic work, exploring themes of memory, loss, and transformation through elegant verse.",
+    year: 2019,
+    condition: "New",
+    availability: "In Stock"
+  },
+  {
+    id: "limousine-midnight-blue",
+    title: "Limousine, Midnight Blue: Fifty Frames from the Zapruder Film",
+    author: "Dr. Jamey Hecht",
+    price: 18.00,
+    description: "Fifty 14-line elegies for President John F. Kennedy, exploring themes of political idealism, tragedy, and the American dream through lyrical meditation.",
+    year: 2009,
+    condition: "New",
+    availability: "In Stock"
+  }
 ];
 
 // Request validation schemas
