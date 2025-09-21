@@ -97,7 +97,7 @@ export default function PublishedWorksSection() {
   };
 
   return (
-    <section className="py-20 bg-background" id="works">
+    <section className="py-20 bg-background" id="published-works">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
