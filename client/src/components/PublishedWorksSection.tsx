@@ -158,7 +158,7 @@ export default function PublishedWorksSection() {
         </div>
 
         {/* Academic Recognition */}
-        <div className="text-center">
+        <div className="text-center space-y-6">
           <div className="inline-flex items-center space-x-2 bg-primary/10 px-6 py-3 rounded-full">
             <Star className="h-5 w-5 text-primary" />
             <span className="text-sm font-semibold text-primary">
@@ -167,6 +167,17 @@ export default function PublishedWorksSection() {
             <span className="text-sm text-muted-foreground">
               • Journal of the American Psychoanalytic Association
             </span>
+          </div>
+          
+          {/* Low-key link for signed copies */}
+          <div className="text-sm text-muted-foreground">
+            <a 
+              href="/shop" 
+              className="hover:text-foreground transition-colors underline decoration-dotted"
+              data-testid="link-signed-copies"
+            >
+              Signed copies of "Limousine, Midnight Blue" available here
+            </a>
           </div>
         </div>
 
