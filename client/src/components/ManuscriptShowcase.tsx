@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, FileText, Mail, Users } from "lucide-react";
-import manuscriptCover from "@assets/generated_images/Into_Theism_book_cover_70f51e81.png";
 
 export default function ManuscriptShowcase() {
   const handleAgentInquiry = () => {
@@ -38,23 +37,15 @@ export default function ManuscriptShowcase() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-4xl mx-auto">
           
-          {/* Book Cover & Stats */}
-          <div className="text-center space-y-8">
-            <div className="relative inline-block">
-              <img
-                src={manuscriptCover}
-                alt="Into Theism book cover"
-                className="w-64 h-auto mx-auto shadow-2xl rounded-lg"
-                data-testid="img-manuscript-cover"
-              />
-              <div className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold">
-                100,000 words
+          {/* Manuscript Stats */}
+          <div className="text-center mb-12">
+            <div className="grid grid-cols-3 gap-8 max-w-md mx-auto">
+              <div className="text-center">
+                <p className="text-2xl font-bold text-foreground">100,000</p>
+                <p className="text-sm text-muted-foreground">Words</p>
               </div>
-            </div>
-            
-            <div className="grid grid-cols-2 gap-4 max-w-sm mx-auto">
               <div className="text-center">
                 <p className="text-2xl font-bold text-foreground">15</p>
                 <p className="text-sm text-muted-foreground">Chapters</p>
