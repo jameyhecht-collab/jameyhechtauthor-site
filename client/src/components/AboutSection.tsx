@@ -6,14 +6,16 @@ const credentials = [
   {
     degree: "PhD",
     field: "English & American Literature",
-    institution: "University",
-    year: "1999"
+    institution: "Brandeis University",
+    advisor: "Allen Grossman",
+    advisorLink: "https://www.allengrossman.com/about.html",
+    year: "1995"
   },
   {
     degree: "PsyD", 
     field: "Psychoanalysis",
-    institution: "New Center for Psychoanalysis",
-    year: "Los Angeles, CA"
+    institution: "New Center for Psychoanalysis (Los Angeles, CA)",
+    year: "2019"
   },
   {
     degree: "LMFT",
@@ -30,14 +32,15 @@ const achievements = [
     description: "Awarded for outstanding scholarly contribution to psychoanalytic literature"
   },
   {
-    title: "Corresponding Member",
+    title: "Graduate & Corresponding Member",
     organization: "New Center for Psychoanalysis",
-    description: "Los Angeles, California"
+    description: "Advanced training in psychoanalytic theory and practice, Los Angeles, California"
   },
   {
-    title: "Graduate & Alumnus",
-    organization: "New Center for Psychoanalysis",
-    description: "Advanced training in psychoanalytic theory and practice"
+    title: "Member",
+    organization: "Society for the Psychology of Religion and Spirituality",
+    organizationLink: "https://www.apadivisions.org/division-36/about/",
+    description: "American Psychological Association Division 36"
   }
 ];
 
@@ -56,7 +59,7 @@ export default function AboutSection() {
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             A career spanning literature, psychoanalysis, and creative writing, 
-            with expertise in both scholarly research and therapeutic practice.
+            with expertise in both scholarly research and clinical practice.
           </p>
         </div>
 
@@ -73,23 +76,22 @@ export default function AboutSection() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Dr. Jamey Adam Hecht is a psychoanalyst and psychotherapist in private practice 
-                  in Park Slope, Brooklyn, NY. He combines his deep literary scholarship with 
+                  Dr. Jamey Adam Hecht, LMFT, is a psychoanalyst and psychotherapist in private practice 
+                  in the Park Slope neighborhood of Brooklyn, New York. He combines his scholarship in the humanities with 
                   clinical expertise in psychoanalysis, bringing a unique perspective to both 
-                  academic writing and therapeutic work.
+                  academic writing and therapeutic practice.
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
-                  His scholarly work spans English and American literature, psychoanalytic theory, 
-                  and cultural studies. As a poet and creative writer, he has published two 
-                  collections of poetry and numerous literary works that bridge the gap between 
-                  academic rigor and artistic expression.
+                  His scholarly work spans English and American literature, Classics, psychoanalytic theory, 
+                  and consciousness studies. As a poet and creative writer, he has published two 
+                  collections of poetry and numerous short stories and book reviews.
                 </p>
 
                 <p className="text-muted-foreground leading-relaxed">
                   Dr. Hecht maintains an active presence in both academic and literary communities, 
                   contributing regularly to scholarly journals while working on his forthcoming 
-                  manuscript exploring contemporary challenges to religious belief.
+                  manuscript exploring obstacles to religious belief.
                 </p>
               </CardContent>
             </Card>
@@ -121,6 +123,18 @@ export default function AboutSection() {
                         </h4>
                         <p className="text-sm text-muted-foreground">
                           {cred.institution}
+                          {cred.advisor && (
+                            <span> (Advisor: <a 
+                              href={cred.advisorLink} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-primary hover:underline"
+                              data-testid="link-advisor"
+                            >
+                              {cred.advisor}
+                            </a>)
+                            </span>
+                          )}
                         </p>
                       </div>
                     </div>
@@ -147,7 +161,19 @@ export default function AboutSection() {
                         {achievement.title}
                       </h4>
                       <p className="text-sm font-medium text-primary mb-2">
-                        {achievement.organization}
+                        {achievement.organizationLink ? (
+                          <a 
+                            href={achievement.organizationLink} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-primary hover:underline"
+                            data-testid="link-organization"
+                          >
+                            {achievement.organization}
+                          </a>
+                        ) : (
+                          achievement.organization
+                        )}
                       </p>
                       <p className="text-sm text-muted-foreground">
                         {achievement.description}
@@ -175,7 +201,7 @@ export default function AboutSection() {
                     "Epic Poetry",
                     "Psychoanalytic Theory",
                     "Literary Criticism",
-                    "Cultural Studies",
+                    "Consciousness Studies",
                     "Religious Philosophy",
                     "Therapeutic Practice",
                     "Academic Writing"
