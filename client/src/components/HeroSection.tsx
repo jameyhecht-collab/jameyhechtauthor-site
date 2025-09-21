@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BookOpen, Users } from "lucide-react";
-import authorImage from "@assets/generated_images/Professional_author_headshot_83ba7f46.png";
+import authorImage from "@assets/AE67DF49-66DE-4828-AF5A-368A0199308F_1_201_a_1758473118885.jpeg";
 
 export default function HeroSection() {
   const handleScrollToWorks = () => {

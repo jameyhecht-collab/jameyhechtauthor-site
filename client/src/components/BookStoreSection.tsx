@@ -1,102 +1,89 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ShoppingCart, Book, Star } from "lucide-react";
+import { ShoppingCart, BookOpen, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useQuery } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
-
-const books = [
-  {
-    id: "schopenhauer-cure",
-    title: "The Schopenhauer Cure",
-    subtitle: "A Novel",
-    author: "Irvin D. Yalom",
-    price: 18.95,
-    description: "A compelling blend of group therapy and philosophy exploring Schopenhauer's pessimistic worldview through narrative.",
-    isbn: "978-0-06-059578-2",
-    pages: 368,
-    year: 2005,
-    condition: "Excellent",
-    availability: "In Stock"
-  },
-  {
-    id: "death-comes-for-the-archbishop", 
-    title: "Death Comes for the Archbishop",
-    subtitle: "",
-    author: "Willa Cather",
-    price: 16.50,
-    description: "A luminous novel about the Catholic Church's mission in the American Southwest during the 19th century.",
-    isbn: "978-0-679-72889-9",
-    pages: 297,
-    year: 1927,
-    condition: "Very Good",
-    availability: "In Stock"
-  },
-  {
-    id: "man-search-meaning",
-    title: "Man's Search for Meaning", 
-    subtitle: "",
-    author: "Viktor E. Frankl",
-    price: 15.95,
-    description: "A profound meditation on finding purpose in suffering, based on the author's experience in Nazi concentration camps.",
-    isbn: "978-0-8070-1427-1",
-    pages: 165,
-    year: 1946,
-    condition: "Good",
-    availability: "In Stock"
-  }
-];
+import type { Book } from "@shared/schema";
 
 export default function BookStoreSection() {
   const [purchasingBook, setPurchasingBook] = useState<string | null>(null);
   const { toast } = useToast();
+  
+  // Fetch books from API
+  const { data: books = [], isLoading, error } = useQuery({
+    queryKey: ['/api/books'],
+    queryFn: async () => {
+      const response = await fetch('/api/books');
+      if (!response.ok) {
+        throw new Error('Failed to fetch books');
+      }
+      return response.json() as Promise<Book[]>;
+    }
+  });
 
-  const handlePurchase = async (bookId: string, amount: number, title: string) => {
+  const handlePurchase = async (bookId: string, title: string) => {
     setPurchasingBook(bookId);
     
     try {
-      const response = await apiRequest("POST", "/api/create-payment-intent", {
-        amount: amount,
-        description: `Purchase of "${title}"`,
-        bookId: bookId
+      const response = await apiRequest("POST", "/api/create-checkout-session", {
+        bookId: bookId,
+        quantity: 1
       });
       
       const data = await response.json();
       
-      if (data.clientSecret) {
-        // In a real implementation, this would redirect to checkout
-        // For now, we'll show a success message
-        toast({
-          title: "Redirecting to Checkout",
-          description: `Processing purchase of "${title}" for $${amount.toFixed(2)}`,
-        });
-        
-        // Simulate checkout process
-        setTimeout(() => {
-          toast({
-            title: "Purchase Successful!",
-            description: `Thank you for purchasing "${title}". You will receive shipping information via email.`,
-          });
-          setPurchasingBook(null);
-        }, 2000);
+      if (data.error) {
+        throw new Error(data.error);
       }
-    } catch (error) {
+      
+      if (data.url) {
+        // Redirect to Stripe Checkout
+        window.location.href = data.url;
+      }
+    } catch (error: any) {
       toast({
         title: "Purchase Failed",
-        description: "Unable to process payment. Please try again.",
+        description: error.message || "Unable to process payment. Please try again.",
         variant: "destructive",
       });
       setPurchasingBook(null);
     }
   };
 
+  if (isLoading) {
+    return (
+      <section id="bookstore" className="py-20 bg-muted/30" data-testid="section-bookstore">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-center py-20">
+            <Loader2 className="h-8 w-8 animate-spin" />
+            <span className="ml-2">Loading books...</span>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section id="bookstore" className="py-20 bg-muted/30" data-testid="section-bookstore">
+        <div className="container mx-auto px-4">
+          <div className="text-center py-20">
+            <p className="text-muted-foreground">Unable to load books. Please try again later.</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section id="bookstore" className="py-20 bg-muted/30" data-testid="section-bookstore">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-4" data-testid="badge-bookstore">
-            <Book className="w-4 h-4 mr-2" />
+            <BookOpen className="w-4 h-4 mr-2" />
             Book Store
           </Badge>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">
@@ -116,11 +103,6 @@ export default function BookStoreSection() {
                   <div className="flex-1">
                     <CardTitle className="font-serif text-xl leading-tight mb-2">
                       {book.title}
-                      {book.subtitle && (
-                        <span className="block text-base font-normal text-muted-foreground mt-1">
-                          {book.subtitle}
-                        </span>
-                      )}
                     </CardTitle>
                     <p className="text-sm text-muted-foreground font-sans">
                       by {book.author}
@@ -163,13 +145,16 @@ export default function BookStoreSection() {
                   </div>
                   
                   <Button
-                    onClick={() => handlePurchase(book.id, book.price, book.title)}
+                    onClick={() => handlePurchase(book.id, book.title)}
                     disabled={purchasingBook === book.id}
                     className="min-w-[120px]"
                     data-testid={`button-purchase-${book.id}`}
                   >
                     {purchasingBook === book.id ? (
-                      "Processing..."
+                      <>
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        Processing...
+                      </>
                     ) : (
                       <>
                         <ShoppingCart className="w-4 h-4 mr-2" />
