@@ -16,6 +16,24 @@ const navigationItems: NavigationItem[] = [
   { label: "Contact", href: "#contact" },
 ];
 
+const scrollToSection = (sectionId: string) => {
+  if (sectionId === "/") {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
+  
+  const targetId = sectionId.replace("#", "");
+  const element = document.getElementById(targetId);
+  
+  if (element) {
+    element.scrollIntoView({ 
+      behavior: "smooth", 
+      block: "start",
+      inline: "nearest"
+    });
+  }
+};
+
 export default function NavigationHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -44,18 +62,29 @@ export default function NavigationHeader() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navigationItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  location === item.href
-                    ? "text-primary border-b-2 border-primary"
-                    : "text-muted-foreground"
-                }`}
-                data-testid={`nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
-              >
-                {item.label}
-              </Link>
+              item.href === "/" ? (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`text-sm font-medium transition-colors hover:text-primary ${
+                    location === item.href
+                      ? "text-primary border-b-2 border-primary"
+                      : "text-muted-foreground"
+                  }`}
+                  data-testid={`nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <button
+                  key={item.href}
+                  onClick={() => scrollToSection(item.href)}
+                  className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
+                  data-testid={`nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
+                >
+                  {item.label}
+                </button>
+              )
             ))}
           </nav>
 
@@ -88,19 +117,33 @@ export default function NavigationHeader() {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-card border-t border-border">
               {navigationItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`block px-3 py-2 text-base font-medium transition-colors hover-elevate rounded-md ${
-                    location === item.href
-                      ? "text-primary bg-primary/10"
-                      : "text-muted-foreground"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                  data-testid={`mobile-nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
-                >
-                  {item.label}
-                </Link>
+                item.href === "/" ? (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`block px-3 py-2 text-base font-medium transition-colors hover-elevate rounded-md ${
+                      location === item.href
+                        ? "text-primary bg-primary/10"
+                        : "text-muted-foreground"
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                    data-testid={`mobile-nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <button
+                    key={item.href}
+                    onClick={() => {
+                      scrollToSection(item.href);
+                      setIsMenuOpen(false);
+                    }}
+                    className="block w-full text-left px-3 py-2 text-base font-medium transition-colors hover-elevate rounded-md text-muted-foreground"
+                    data-testid={`mobile-nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
+                  >
+                    {item.label}
+                  </button>
+                )
               ))}
             </div>
           </div>
