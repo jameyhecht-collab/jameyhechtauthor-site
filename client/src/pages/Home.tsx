@@ -1,5 +1,6 @@
 import NavigationHeader from "@/components/NavigationHeader";
 import HeroSection from "@/components/HeroSection";
+import SubstackFeed from "@/components/SubstackFeed";
 import PublishedWorksSection from "@/components/PublishedWorksSection";
 import ManuscriptShowcase from "@/components/ManuscriptShowcase";
 import AboutSection from "@/components/AboutSection";
@@ -12,6 +13,7 @@ export default function Home() {
       <NavigationHeader />
       <main>
         <HeroSection />
+        <SubstackFeed />
         <PublishedWorksSection />
         <ManuscriptShowcase />
         <AboutSection />
