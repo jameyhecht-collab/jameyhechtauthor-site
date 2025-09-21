@@ -27,6 +27,9 @@ export default function HeroSection() {
               <p className="font-serif text-xl sm:text-2xl text-muted-foreground font-medium">
                 Author, Scholar, Psychoanalyst
               </p>
+              <p className="font-serif text-lg sm:text-xl text-primary/80 italic leading-relaxed max-w-2xl">
+                "Exploring consciousness, philosophy, and theism—without certainty or despair."
+              </p>
             </div>
 
             <div className="space-y-6">
