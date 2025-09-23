@@ -44,6 +44,28 @@ const publications = [
     downloadUrl: "#",
     category: "Literary Criticism"
   },
+  {
+    id: 13,
+    title: "Bloom's How To Write About Plato",
+    publication: "Infobase",
+    year: 2011,
+    type: "book" as const,
+    abstract: "A comprehensive guide for students and scholars analyzing Plato's dialogues, covering philosophical approaches, major themes, and critical frameworks.",
+    views: 156,
+    downloadUrl: "#",
+    category: "Philosophy"
+  },
+  {
+    id: 14,
+    title: "Bloom's How To Write About Sophocles",
+    publication: "Infobase", 
+    year: 2012,
+    type: "book" as const,
+    abstract: "An analytical guide to Sophocles' tragedies, examining dramatic structure, character development, and thematic interpretation in classical Greek drama.",
+    views: 142,
+    downloadUrl: "#",
+    category: "Classical Literature"
+  },
   // SCHOLARLY PAPERS
   {
     id: 4,
