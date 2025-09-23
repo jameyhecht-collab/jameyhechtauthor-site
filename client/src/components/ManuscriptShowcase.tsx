@@ -32,8 +32,8 @@ export default function ManuscriptShowcase() {
             Into Theism: Overcoming Obstacles to Belief in God
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            A comprehensive exploration of the philosophical, psychological, and cultural barriers 
-            to religious belief in the modern world, offering pathways to authentic faith.
+            A multidisciplinary engagement with the major philosophical, psychological, and cultural barriers 
+            to religious belief in the modern world, offering pathways to faith without dogma.
           </p>
         </div>
 
