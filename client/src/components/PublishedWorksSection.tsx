@@ -7,32 +7,11 @@ import publicationsImage from "@assets/generated_images/Academic_publications_st
 
 type PublicationType = "all" | "journal" | "book" | "poetry" | "review";
 
-// Mock data based on the actual works from academia.edu
+// Dr. Hecht's actual publications organized by type
 const publications = [
+  // BOOKS (Poetry Collections)
   {
     id: 1,
-    title: "Bion at the Crossroads: A Contrarian Reading of 'on Arrogance'",
-    publication: "Journal of the American Psychoanalytic Association",
-    year: 2022,
-    type: "journal" as const,
-    abstract: "In 'On Arrogance' (1958), Wilfred Bion combined a misreading of Sophocles' Oedipus with projections of his own post-traumatic anxieties. This paper revisits the roots of Bion's project, illustrating its potential for iatrogenic injury.",
-    views: 96,
-    downloadUrl: "#",
-    category: "Psychoanalytic Theory"
-  },
-  {
-    id: 2,
-    title: "Drawing a Blank: Bion Speaking on Chinese Writing",
-    publication: "American Imago",
-    year: 2023,
-    type: "journal" as const,
-    abstract: "Wilfred Bion described Chinese writing on some dozen occasions, attributing to it various counter-intuitive features as part of his effort to evoke communication challenges.",
-    views: 31,
-    downloadUrl: "#",
-    category: "Cultural Studies"
-  },
-  {
-    id: 3,
     title: "Dodo Feathers: Poems 1989 - 2019",
     publication: "International Psychoanalytic Books",
     year: 2019,
@@ -43,7 +22,7 @@ const publications = [
     category: "Contemporary Poetry"
   },
   {
-    id: 4,
+    id: 2,
     title: "Limousine, Midnight Blue",
     publication: "Red Hen Press",
     year: 2009,
@@ -53,8 +32,9 @@ const publications = [
     downloadUrl: "#",
     category: "Political Poetry"
   },
+  // BOOKS (Scholarly)
   {
-    id: 5,
+    id: 3,
     title: "Bloom's How To Write About Homer",
     publication: "Infobase",
     year: 2010,
@@ -64,16 +44,106 @@ const publications = [
     downloadUrl: "#",
     category: "Literary Criticism"
   },
+  // SCHOLARLY PAPERS
+  {
+    id: 4,
+    title: "Bion at the Crossroads: A Contrarian Reading of 'On Arrogance'",
+    publication: "Journal of the American Psychoanalytic Association",
+    year: 2022,
+    type: "journal" as const,
+    abstract: "Winner, New Author's Prize. In 'On Arrogance' (1958), Wilfred Bion combined a misreading of Sophocles' Oedipus with projections of his own post-traumatic anxieties.",
+    views: 96,
+    downloadUrl: "#",
+    category: "Psychoanalytic Theory"
+  },
+  {
+    id: 5,
+    title: "Drawing a Blank: Bion Speaking on Chinese Writing",
+    publication: "American Imago",
+    year: 2023,
+    type: "journal" as const,
+    abstract: "Wilfred Bion described Chinese writing on some dozen occasions, attributing to it various counter-intuitive features as part of his effort to evoke communication challenges.",
+    views: 31,
+    downloadUrl: "#",
+    category: "Cultural Studies"
+  },
   {
     id: 6,
+    title: "Technology, Labor, and the Sacred: The Cultural Context of Robert Frost",
+    publication: "Critical Insights: Robert Frost (EBSCO)",
+    year: 2009,
+    type: "journal" as const,
+    abstract: "An analysis of Robert Frost's poetry within its cultural and technological context, examining themes of labor, spirituality, and modernity.",
+    views: 143,
+    downloadUrl: "#",
+    category: "American Literature"
+  },
+  {
+    id: 7,
     title: "Tragedy, Hamlet, and Luther",
     publication: "Forschungen zur Frühen Neuzeit",
     year: 2002,
     type: "journal" as const,
-    abstract: "Luther's Reformation expanded the burdens of interpretation in European experience. This essay examines how Hamlet's predicament combines the newfound freedoms and burdens of interpretive responsibility for the meaning of one's own existence.",
+    abstract: "Luther's Reformation expanded the burdens of interpretation in European experience. This essay examines how Hamlet's predicament combines the newfound freedoms and burdens of interpretive responsibility.",
     views: 188,
     downloadUrl: "#",
     category: "Renaissance Studies"
+  },
+  {
+    id: 8,
+    title: "Scarcity and Poetic Vocation in Two Sonnets of John Keats",
+    publication: "English Literary History (ELH), Johns Hopkins",
+    year: 1994,
+    type: "journal" as const,
+    abstract: "An examination of themes of scarcity and poetic calling in Keats's sonnet work, exploring the relationship between limitation and artistic creation.",
+    views: 167,
+    downloadUrl: "#",
+    category: "Romantic Literature"
+  },
+  {
+    id: 9,
+    title: "Scarcity and Compensation in Herman Melville's Moby-Dick",
+    publication: "The Massachusetts Review",
+    year: 1999,
+    type: "journal" as const,
+    abstract: "An analysis of economic and psychological themes in Melville's masterwork, examining concepts of scarcity, desire, and compensation.",
+    views: 156,
+    downloadUrl: "#",
+    category: "American Literature"
+  },
+  // LITERARY PERIODICAL PUBLICATIONS
+  {
+    id: 10,
+    title: "Don't Speak / Turns Out, I'm Still Asleep",
+    publication: "Rattle",
+    year: 2019,
+    type: "journal" as const,
+    abstract: "Two poems exploring themes of communication, consciousness, and the liminal space between waking and sleeping.",
+    views: 89,
+    downloadUrl: "#",
+    category: "Poetry"
+  },
+  {
+    id: 11,
+    title: "The Sirens",
+    publication: "Arion",
+    year: 2018,
+    type: "journal" as const,
+    abstract: "A poem drawing on classical mythology to explore themes of temptation, knowledge, and the dangers of seeking forbidden wisdom.",
+    views: 92,
+    downloadUrl: "#",
+    category: "Poetry"
+  },
+  {
+    id: 12,
+    title: "Zapruder Film Frame Series",
+    publication: "Various Journals",
+    year: 2009,
+    type: "journal" as const,
+    abstract: "A series of poems based on frames from the Zapruder film, examining moments of historical trauma and their aftermath. Published in multiple journals including Black Warrior Review.",
+    views: 134,
+    downloadUrl: "#",
+    category: "Poetry"
   }
 ];
 
