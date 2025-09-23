@@ -80,6 +80,10 @@ const publications = [
 export default function PublishedWorksSection() {
   const [activeFilter, setActiveFilter] = useState<PublicationType>("all");
 
+  // Separate books from other publications
+  const books = publications.filter(pub => pub.type === "book" || pub.type === "poetry");
+  const otherPublications = publications.filter(pub => pub.type === "journal");
+  
   const filteredPublications = publications.filter(pub => 
     activeFilter === "all" || pub.type === activeFilter
   );
@@ -109,8 +113,7 @@ export default function PublishedWorksSection() {
             Literary & Scholarly Publications
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            A collection of scholarly articles, literary criticism, 
-            poetry, and books on literature, psychoanalysis, and consciousness studies.
+            Books, scholarly articles, and literary works on literature, psychoanalysis, and consciousness studies.
           </p>
         </div>
 
@@ -140,25 +143,85 @@ export default function PublishedWorksSection() {
           ))}
         </div>
 
-        {/* Publications Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {filteredPublications.map((publication) => (
-            <PublicationCard
-              key={publication.id}
-              title={publication.title}
-              publication={publication.publication}
-              year={publication.year}
-              type={publication.type}
-              abstract={publication.abstract}
-              views={publication.views}
-              downloadUrl={publication.downloadUrl}
-              category={publication.category}
-            />
-          ))}
-        </div>
+        {/* Publications Display - Conditional based on filter */}
+        {activeFilter === "all" ? (
+          <div className="space-y-16">
+            {/* Books Section - Prominent Display */}
+            <div>
+              <div className="text-center mb-8">
+                <h3 className="font-serif text-2xl font-semibold text-foreground mb-2">
+                  Books
+                </h3>
+                <p className="text-muted-foreground">
+                  Published volumes and collections
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                {books.map((publication) => (
+                  <div key={publication.id} className="transform scale-105">
+                    <PublicationCard
+                      title={publication.title}
+                      publication={publication.publication}
+                      year={publication.year}
+                      type={publication.type}
+                      abstract={publication.abstract}
+                      views={publication.views}
+                      downloadUrl={publication.downloadUrl}
+                      category={publication.category}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Articles & Papers Section */}
+            <div>
+              <div className="text-center mb-8">
+                <h3 className="font-serif text-xl font-semibold text-foreground mb-2">
+                  Articles & Papers
+                </h3>
+                <p className="text-muted-foreground">
+                  Scholarly publications and essays
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {otherPublications.map((publication) => (
+                  <PublicationCard
+                    key={publication.id}
+                    title={publication.title}
+                    publication={publication.publication}
+                    year={publication.year}
+                    type={publication.type}
+                    abstract={publication.abstract}
+                    views={publication.views}
+                    downloadUrl={publication.downloadUrl}
+                    category={publication.category}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : (
+          /* Filtered View - Traditional Grid */
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredPublications.map((publication) => (
+              <PublicationCard
+                key={publication.id}
+                title={publication.title}
+                publication={publication.publication}
+                year={publication.year}
+                type={publication.type}
+                abstract={publication.abstract}
+                views={publication.views}
+                downloadUrl={publication.downloadUrl}
+                category={publication.category}
+              />
+            ))}
+          </div>
+        )}
 
         {/* Academic Recognition */}
-        <div className="text-center space-y-6">
+        <div className="text-center space-y-6 mt-16">
           <div className="inline-flex items-center space-x-2 bg-primary/10 px-6 py-3 rounded-full">
             <Star className="h-5 w-5 text-primary" />
             <span className="text-sm font-semibold text-primary">
