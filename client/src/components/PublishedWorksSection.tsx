@@ -15,7 +15,7 @@ const publications = [
     publication: "Journal of the American Psychoanalytic Association",
     year: 2022,
     type: "journal" as const,
-    abstract: "In 'On Arrogance,' Wilfred Bion made a remarkable claim about treating neurotic patients. This paper examines Bion's construction through a psychoanalytic lens and explores clinical implications.",
+    abstract: "In 'On Arrogance' (1958), Wilfred Bion combined a misreading of Sophocles' Oedipus with projections of his own post-traumatic anxieties. This paper revisits the roots of Bion's project, illustrating its potential for iatrogenic injury.",
     views: 96,
     downloadUrl: "#",
     category: "Psychoanalytic Theory"
@@ -34,10 +34,10 @@ const publications = [
   {
     id: 3,
     title: "Dodo Feathers: Poems 1989 - 2019",
-    publication: "IPBooks",
+    publication: "International Psychoanalytic Books",
     year: 2019,
     type: "poetry" as const,
-    abstract: "A collection of poems spanning three decades, exploring themes of memory, loss, and transformation through elegant verse and vivid imagery.",
+    abstract: "A collection of poems spanning three decades, exploring themes of loss, thwarted ambition, and transformation.",
     views: 245,
     downloadUrl: "#",
     category: "Contemporary Poetry"
@@ -59,7 +59,7 @@ const publications = [
     publication: "Infobase",
     year: 2010,
     type: "book" as const,
-    abstract: "A comprehensive guide for students and scholars writing about Homer's epics, covering critical approaches, themes, and analytical frameworks.",
+    abstract: "A guide for students and scholars writing about Homer's Iliad and Odyssey, covering critical approaches, themes, and analytical frameworks.",
     views: 187,
     downloadUrl: "#",
     category: "Literary Criticism"
@@ -67,10 +67,10 @@ const publications = [
   {
     id: 6,
     title: "Tragedy, Hamlet, and Luther",
-    publication: "Academic Journal",
-    year: 2018,
+    publication: "Forschungen zur Frühen Neuzeit",
+    year: 2002,
     type: "journal" as const,
-    abstract: "Luther's Reformation expanded interpretation in European experience. This essay examines how Hamlet's predicament reflects Protestant individualism and interpretive burden.",
+    abstract: "Luther's Reformation expanded the burdens of interpretation in European experience. This essay examines how Hamlet's predicament combines the newfound freedoms and burdens of interpretive responsibility for the meaning of one's own existence.",
     views: 188,
     downloadUrl: "#",
     category: "Renaissance Studies"
@@ -85,7 +85,7 @@ export default function PublishedWorksSection() {
   );
 
   const filterButtons = [
-    { key: "all" as const, label: "All Works", icon: BookOpen },
+    { key: "all" as const, label: "Selected Works", icon: BookOpen },
     { key: "journal" as const, label: "Articles", icon: FileText },
     { key: "book" as const, label: "Books", icon: BookOpen },
     { key: "poetry" as const, label: "Poetry", icon: PenTool }
@@ -109,8 +109,8 @@ export default function PublishedWorksSection() {
             Literary & Scholarly Publications
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            A comprehensive collection of scholarly articles, literary criticism, 
-            poetry, and books spanning literature, psychoanalysis, and cultural studies.
+            A collection of scholarly articles, literary criticism, 
+            poetry, and books on literature, psychoanalysis, and consciousness studies.
           </p>
         </div>
 
