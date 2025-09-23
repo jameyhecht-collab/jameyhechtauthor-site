@@ -80,9 +80,9 @@ const publications = [
 export default function PublishedWorksSection() {
   const [activeFilter, setActiveFilter] = useState<PublicationType>("all");
 
-  // Separate books from other publications
+  // Separate books from papers/periodicals
   const books = publications.filter(pub => pub.type === "book" || pub.type === "poetry");
-  const otherPublications = publications.filter(pub => pub.type === "journal");
+  const papersAndPeriodicals = publications.filter(pub => pub.type === "journal");
   
   const filteredPublications = publications.filter(pub => 
     activeFilter === "all" || pub.type === activeFilter
@@ -153,7 +153,7 @@ export default function PublishedWorksSection() {
                   Books
                 </h3>
                 <p className="text-muted-foreground">
-                  Published volumes and collections
+                  Scholarly and literary books, including poetry collections
                 </p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -178,14 +178,14 @@ export default function PublishedWorksSection() {
             <div>
               <div className="text-center mb-8">
                 <h3 className="font-serif text-xl font-semibold text-foreground mb-2">
-                  Articles & Papers
+                  Papers & Periodicals
                 </h3>
                 <p className="text-muted-foreground">
-                  Scholarly publications and essays
+                  Scholarly papers and literary publications in journals and magazines
                 </p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {otherPublications.map((publication) => (
+                {papersAndPeriodicals.map((publication) => (
                   <PublicationCard
                     key={publication.id}
                     title={publication.title}
