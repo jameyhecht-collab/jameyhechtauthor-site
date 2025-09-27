@@ -50,7 +50,7 @@ const publications = [
     publication: "Twayne, Macmillan",
     year: 1999,
     type: "book" as const,
-    abstract: "A clear exposition of Plato's great dialogue on love and sexuality, with each passage translated by the author and explained in the ocntext of ancient Athenian culture and the Socratic movement.",
+    abstract: "A clear exposition of Plato's great dialogue on love and sexuality, with each passage translated by the author and explained in the context of ancient Athenian culture and the Socratic movement.",
     views: 156,
     downloadUrl: "#",
     category: "Philosophy"
@@ -117,7 +117,7 @@ const publications = [
     publication: "English Literary History (ELH), Johns Hopkins",
     year: 1994,
     type: "journal" as const,
-    abstract: "An examination of themes of scarcity and poetic vocation in Keats's \"On First Looking into Chapman's Homer\" and \"When I Have Fears That I May Cease to Be.\"",
+    abstract: "An examination of themes of scarcity and poetic vocation in Keats's "On First Looking into Chapman's Homer" and "When I Have Fears That I May Cease to Be.""
     views: 167,
     downloadUrl: "#",
     category: "Romantic Literature"
