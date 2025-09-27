@@ -105,7 +105,7 @@ export default function PublicationCard({
 
       <CardContent className="flex-1">
         {abstract && (
-          <p className="text-base text-muted-foreground leading-relaxed line-clamp-4">
+          <p className="text-sm text-muted-foreground leading-relaxed line-clamp-4">
             {abstract.includes("available here") ? (
               <>
                 {renderTextWithItalics(abstract.split("available here")[0])}
