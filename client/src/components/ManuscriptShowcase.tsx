@@ -33,7 +33,7 @@ export default function ManuscriptShowcase() {
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             A multidisciplinary engagement with the major philosophical, psychological, and cultural barriers 
-            to religious belief in the modern world, offering pathways to faith without dogma.
+            impeding religious belief today.
           </p>
         </div>
 
@@ -47,11 +47,11 @@ export default function ManuscriptShowcase() {
                 <p className="text-sm text-muted-foreground">Words</p>
               </div>
               <div className="text-center">
-                <p className="text-2xl font-bold text-foreground">15</p>
+                <p className="text-2xl font-bold text-foreground">12</p>
                 <p className="text-sm text-muted-foreground">Chapters</p>
               </div>
               <div className="text-center">
-                <p className="text-2xl font-bold text-foreground">2024</p>
+                <p className="text-2xl font-bold text-foreground">2025</p>
                 <p className="text-sm text-muted-foreground">Completed</p>
               </div>
             </div>
@@ -81,7 +81,7 @@ export default function ManuscriptShowcase() {
                     <li>The psychology of belief and doubt</li>
                     <li>Scientific materialism and spiritual experience</li>
                     <li>Cultural barriers to religious commitment</li>
-                    <li>Pathways to authentic faith in modernity</li>
+                    <li>Pathways to theistic faith amid postmodernity</li>
                   </ul>
                 </div>
               </CardContent>

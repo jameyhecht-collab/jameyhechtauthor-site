@@ -39,29 +39,29 @@ const publications = [
     publication: "Infobase",
     year: 2010,
     type: "book" as const,
-    abstract: "A guide for students and scholars writing about Homer's Iliad and Odyssey, covering critical approaches, themes, and analytical frameworks.",
+    abstract: "A guide for students and scholars writing about Homer's Iliad and Odyssey, covering critical approaches, themes, and analytical frameworks, with essay prompts and writing guides.",
     views: 187,
     downloadUrl: "#",
     category: "Literary Criticism"
   },
   {
     id: 13,
-    title: "Bloom's How To Write About Plato",
-    publication: "Infobase",
-    year: 2011,
+    title: "Plato's Symposium: Eros and the Human Predicament",
+    publication: "Twayne, Macmillan",
+    year: 1999,
     type: "book" as const,
-    abstract: "A comprehensive guide for students and scholars analyzing Plato's dialogues, covering philosophical approaches, major themes, and critical frameworks.",
+    abstract: "A clear exposition of Plato's great dialogue on love and sexuality, with each passage translated by the author and explained in the ocntext of ancient Athenian culture and the Socratic movement.",
     views: 156,
     downloadUrl: "#",
     category: "Philosophy"
   },
   {
     id: 14,
-    title: "Bloom's How To Write About Sophocles",
-    publication: "Infobase", 
-    year: 2012,
+    title: "Sophocles' Three Theban Plays",
+    publication: "Wordsworth Editions", 
+    year: 2004,
     type: "book" as const,
-    abstract: "An analytical guide to Sophocles' tragedies, examining dramatic structure, character development, and thematic interpretation in classical Greek drama.",
+    abstract: "A blank verse translation with notes and commentary, and an introduction analyzing Antigone, Oedipus the Tyrant, and Oedipus at Colonus.",
     views: 142,
     downloadUrl: "#",
     category: "Classical Literature"
@@ -113,11 +113,11 @@ const publications = [
   },
   {
     id: 8,
-    title: "Scarcity and Poetic Vocation in Two Sonnets of John Keats",
+    title: "Scarcity and Poetic Election in Two Sonnets of John Keats",
     publication: "English Literary History (ELH), Johns Hopkins",
     year: 1994,
     type: "journal" as const,
-    abstract: "An examination of themes of scarcity and poetic calling in Keats's sonnet work, exploring the relationship between limitation and artistic creation.",
+    abstract: "An examination of themes of scarcity and poetic vocation in Keats's "On First Looking into Chapman's Homer" and "When I Have Fears That I May Cease to Be.""
     views: 167,
     downloadUrl: "#",
     category: "Romantic Literature"
