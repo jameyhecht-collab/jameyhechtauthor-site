@@ -448,7 +448,7 @@ export default function PublishedWorksSection() {
                 <h3 className="font-serif text-xl font-semibold text-foreground mb-2">
                   Poems in Literary Journals & Periodicals
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-base text-muted-foreground">
                   A comprehensive list of individual poems published in literary journals, magazines, and periodicals (2004-2025)
                 </p>
               </div>
@@ -463,7 +463,7 @@ export default function PublishedWorksSection() {
                             const title = isLinked ? poem.title : poem as string;
                             
                             return (
-                              <p key={poemIndex} className="text-sm font-medium text-foreground italic">
+                              <p key={poemIndex} className="text-base font-medium text-foreground italic">
                                 {isLinked ? (
                                   <a 
                                     href={poem.url} 
@@ -481,11 +481,11 @@ export default function PublishedWorksSection() {
                             );
                           })}
                         </div>
-                        <p className="text-sm font-medium text-muted-foreground">
+                        <p className="text-base font-medium text-muted-foreground">
                           {entry.journal}
                         </p>
                         {entry.date && (
-                          <p className="text-xs text-muted-foreground">
+                          <p className="text-sm text-muted-foreground">
                             {entry.date}
                           </p>
                         )}
@@ -505,7 +505,7 @@ export default function PublishedWorksSection() {
                   <h3 className="font-serif text-xl font-semibold text-foreground mb-2">
                     Poems in Literary Journals & Periodicals
                   </h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-base text-muted-foreground">
                     Individual poems published in literary journals, magazines, and periodicals (2004-2025)
                   </p>
                 </div>
@@ -520,7 +520,7 @@ export default function PublishedWorksSection() {
                               const title = isLinked ? poem.title : poem as string;
                               
                               return (
-                                <p key={poemIndex} className="text-sm font-medium text-foreground italic">
+                                <p key={poemIndex} className="text-base font-medium text-foreground italic">
                                   {isLinked ? (
                                     <a 
                                       href={poem.url} 
@@ -538,11 +538,11 @@ export default function PublishedWorksSection() {
                               );
                             })}
                           </div>
-                          <p className="text-sm font-medium text-muted-foreground">
+                          <p className="text-base font-medium text-muted-foreground">
                             {entry.journal}
                           </p>
                           {entry.date && (
-                            <p className="text-xs text-muted-foreground">
+                            <p className="text-sm text-muted-foreground">
                               {entry.date}
                             </p>
                           )}

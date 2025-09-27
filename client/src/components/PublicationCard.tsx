@@ -52,7 +52,7 @@ export default function PublicationCard({
             {type === "book_chapter" ? "Book Chapter" : type.charAt(0).toUpperCase() + type.slice(1)}
           </Badge>
           {views && (
-            <div className="flex items-center text-sm text-muted-foreground">
+            <div className="flex items-center text-base text-muted-foreground">
               <Eye className="h-3 w-3 mr-1" />
               {views}
             </div>
@@ -64,14 +64,14 @@ export default function PublicationCard({
         </h3>
         
         <div className="space-y-1">
-          <p className="text-sm font-medium text-muted-foreground">
+          <p className="text-base font-medium text-muted-foreground">
             {publication}
           </p>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-base text-muted-foreground">
             {year}
           </p>
           {category && (
-            <p className="text-xs text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               {category}
             </p>
           )}
@@ -80,7 +80,7 @@ export default function PublicationCard({
 
       <CardContent className="flex-1">
         {abstract && (
-          <p className="text-sm text-muted-foreground leading-relaxed line-clamp-4">
+          <p className="text-base text-muted-foreground leading-relaxed line-clamp-4">
             {abstract.includes("available here") ? (
               <>
                 {abstract.split("available here")[0]}
