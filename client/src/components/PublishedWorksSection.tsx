@@ -169,6 +169,34 @@ const publications = [
   }
 ];
 
+// Comprehensive list of Dr. Hecht's poems published in literary journals and periodicals
+const periodicalPoems = [
+  { poems: ["Get It Right (for Xenophanes)", "Father McKenzie's Banquet"], journal: "Marsh Hawk Review", date: "Fall 2024 / Spring 2025 Issue" },
+  { poems: ["Sensible Woman Speaks", "What I Can't Do"], journal: "Politics & Letters", date: "April 2021" },
+  { poems: ["Back to the Old House", "New Ghost, Old Mirror"], journal: "Marsh Hawk Review", date: "Spring 2019" },
+  { poems: ["Don't Speak", "Turns Out, I'm Still Asleep"], journal: "Rattle, No. 65", date: "September 1, 2019" },
+  { poems: ["The Sirens"], journal: "Arion", date: "March 2018" },
+  { poems: ["Mania"], journal: "American Journal of Poetry", date: "January 2018" },
+  { poems: ["Aftermath"], journal: "Rattle, No. 58", date: "Winter 2017" },
+  { poems: ["Aafje Heynis", "Maria Callas", "Claudia Muzio", "Hugo Wolf"], journal: "Amalgre Review", date: "December 2017" },
+  { poems: ["Landscape with Tramp"], journal: "Hiram Poetry Review", date: "Spring 2017" },
+  { poems: ["The Sonnet You Deserve", "Tyrannosaurus Rex"], journal: "Marsh Hawk Review", date: "November 2009" },
+  { poems: ["Zapruder Film Frame 167"], journal: "The St. Ann's Review Vol. 9. No.1", date: "Fall 2009" },
+  { poems: ["Eagle Nebula"], journal: "Isotope, Fall/Winter, Vol. 7. No. 2", date: "2009" },
+  { poems: ["New York Fresco"], journal: "Shofar, Vol. 27, No. 3", date: "2009" },
+  { poems: ["Grossman's Tooth"], journal: "Tikkun", date: "March / April 2009" },
+  { poems: ["Genesis"], journal: "Caesura", date: "Spring 2008" },
+  { poems: ["First Divorce (after Lattimore's Homer)"], journal: "Rattle, No. 29", date: "June 2008" },
+  { poems: ["Zapruder Film Frame 155", "Zapruder Film Frame 192"], journal: "Anthony Hecht Poetry Prize Finalist, Waywiser Press", date: "" },
+  { poems: ["Exposition of the Contents of a Cab"], journal: "Tupelo Press Poetry Project", date: "" },
+  { poems: ["Zapruder Film Frame 158", "Zapruder Film Frame 163"], journal: "November 3rd Club", date: "" },
+  { poems: ["The Round Square"], journal: "Free Inquiry Vol 26 No. 6", date: "October / November 2006" },
+  { poems: ["Fido"], journal: "Block Magazine", date: "Brooklyn, NY, Summer 2006" },
+  { poems: ["Zapruder Film Frame 156", "Zapruder Film Frame 157", "Zapruder Film Frame 179"], journal: "Black Warrior Review, Vol. 32, No. 1", date: "Fall 2005" },
+  { poems: ["Zapruder Film Frame 178"], journal: "River City, Vol. 24, No. 2", date: "Summer 2004" },
+  { poems: ["Night"], journal: "River City, Vol. 24, No. 1", date: "Winter 2004" }
+];
+
 export default function PublishedWorksSection() {
   const [activeFilter, setActiveFilter] = useState<PublicationType>("all");
 
@@ -292,23 +320,99 @@ export default function PublishedWorksSection() {
                 ))}
               </div>
             </div>
+            
+            {/* Comprehensive Poetry in Periodicals Section */}
+            <div>
+              <div className="text-center mb-8">
+                <h3 className="font-serif text-xl font-semibold text-foreground mb-2">
+                  Poems in Literary Journals & Periodicals
+                </h3>
+                <p className="text-muted-foreground">
+                  A comprehensive list of individual poems published in literary journals, magazines, and periodicals (2004-2025)
+                </p>
+              </div>
+              <div className="bg-card rounded-lg p-8 shadow-sm border max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {periodicalPoems.map((entry, index) => (
+                    <div key={index} className="border-b border-border pb-4 last:border-b-0">
+                      <div className="space-y-2">
+                        <div className="space-y-1">
+                          {entry.poems.map((poem, poemIndex) => (
+                            <p key={poemIndex} className="text-sm font-medium text-foreground italic">
+                              "{poem}"
+                            </p>
+                          ))}
+                        </div>
+                        <p className="text-sm font-medium text-muted-foreground">
+                          {entry.journal}
+                        </p>
+                        {entry.date && (
+                          <p className="text-xs text-muted-foreground">
+                            {entry.date}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         ) : (
           /* Filtered View - Traditional Grid */
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredPublications.map((publication) => (
-              <PublicationCard
-                key={publication.id}
-                title={publication.title}
-                publication={publication.publication}
-                year={publication.year}
-                type={publication.type}
-                abstract={publication.abstract}
-                views={publication.views}
-                downloadUrl={publication.downloadUrl}
-                category={publication.category}
-              />
-            ))}
+          <div>
+            {activeFilter === "poetry" && (
+              <div className="mb-12">
+                <div className="text-center mb-8">
+                  <h3 className="font-serif text-xl font-semibold text-foreground mb-2">
+                    Poems in Literary Journals & Periodicals
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Individual poems published in literary journals, magazines, and periodicals (2004-2025)
+                  </p>
+                </div>
+                <div className="bg-card rounded-lg p-8 shadow-sm border max-w-6xl mx-auto">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {periodicalPoems.map((entry, index) => (
+                      <div key={index} className="border-b border-border pb-4 last:border-b-0">
+                        <div className="space-y-2">
+                          <div className="space-y-1">
+                            {entry.poems.map((poem, poemIndex) => (
+                              <p key={poemIndex} className="text-sm font-medium text-foreground italic">
+                                "{poem}"
+                              </p>
+                            ))}
+                          </div>
+                          <p className="text-sm font-medium text-muted-foreground">
+                            {entry.journal}
+                          </p>
+                          {entry.date && (
+                            <p className="text-xs text-muted-foreground">
+                              {entry.date}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredPublications.map((publication) => (
+                <PublicationCard
+                  key={publication.id}
+                  title={publication.title}
+                  publication={publication.publication}
+                  year={publication.year}
+                  type={publication.type}
+                  abstract={publication.abstract}
+                  views={publication.views}
+                  downloadUrl={publication.downloadUrl}
+                  category={publication.category}
+                />
+              ))}
+            </div>
           </div>
         )}
 
