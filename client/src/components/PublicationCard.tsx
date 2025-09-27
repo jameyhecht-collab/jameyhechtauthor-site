@@ -7,7 +7,7 @@ interface PublicationCardProps {
   title: string;
   publication: string;
   year: number;
-  type: "journal" | "book" | "poetry" | "review";
+  type: "journal" | "book" | "poetry" | "review" | "book_chapter";
   abstract?: string;
   views?: number;
   downloadUrl?: string;
@@ -18,7 +18,8 @@ const typeColors = {
   journal: "bg-primary/10 text-primary",
   book: "bg-accent/10 text-accent-foreground",
   poetry: "bg-secondary/10 text-secondary-foreground",
-  review: "bg-muted/10 text-muted-foreground"
+  review: "bg-muted/10 text-muted-foreground",
+  book_chapter: "bg-accent/10 text-accent-foreground"
 };
 
 export default function PublicationCard({

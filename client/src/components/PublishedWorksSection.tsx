@@ -5,7 +5,7 @@ import PublicationCard from "./PublicationCard";
 import { BookOpen, FileText, PenTool, Star } from "lucide-react";
 import publicationsImage from "@assets/generated_images/Academic_publications_stack_48fd22ad.png";
 
-type PublicationType = "all" | "journal" | "book" | "poetry" | "review";
+type PublicationType = "all" | "journal" | "book" | "poetry" | "review" | "book_chapter";
 
 // Dr. Hecht's actual publications organized by type
 const publications = [
@@ -23,7 +23,7 @@ const publications = [
   },
   {
     id: 2,
-    title: "Limousine, Midnight Blue",
+    title: "Limousine, Midnight Blue: Fifty Frames form the Zapruder Film",
     publication: "Red Hen Press",
     year: 2009,
     type: "poetry" as const,
@@ -70,7 +70,7 @@ const publications = [
   {
     id: 4,
     title: "Bion at the Crossroads: A Contrarian Reading of 'On Arrogance'",
-    publication: "Journal of the American Psychoanalytic Association",
+    publication: "Journal of the American Psychoanalytic Association (JAPA)",
     year: 2022,
     type: "journal" as const,
     abstract: "Winner, New Author's Prize. In 'On Arrogance' (1958), Wilfred Bion combined a misreading of Sophocles' Oedipus with projections of his own post-traumatic anxieties.",
@@ -94,7 +94,7 @@ const publications = [
     title: "Technology, Labor, and the Sacred: The Cultural Context of Robert Frost",
     publication: "Critical Insights: Robert Frost (EBSCO)",
     year: 2009,
-    type: "book" as const,
+    type: "book_chapter" as const,
     abstract: "An analysis of Robert Frost's poetry within its cultural and technological context, examining themes of labor, spirituality, and modernity.",
     views: 143,
     downloadUrl: "#",
@@ -103,7 +103,7 @@ const publications = [
   {
     id: 7,
     title: "Tragedy, Hamlet, and Luther",
-    publication: "Forschungen zur Frühen Neuzeit",
+    publication: "Forschungen zur Frühen Neuzeit, Goethe University, Frankfurt",
     year: 2002,
     type: "journal" as const,
     abstract: "Luther's Reformation expanded the burdens of interpretation in European experience. This essay examines how Hamlet's predicament combines the newfound freedoms and burdens of interpretive responsibility.",
@@ -136,11 +136,11 @@ const publications = [
   // LITERARY PERIODICAL PUBLICATIONS
   {
     id: 10,
-    title: "Don't Speak / Turns Out, I'm Still Asleep",
+    title: "\"Don't Speak\" / \"Turns Out, I'm Still Asleep\"",
     publication: "Rattle",
     year: 2019,
-    type: "journal" as const,
-    abstract: "Two poems exploring themes of communication, consciousness, and the liminal space between waking and sleeping.",
+    type: "poetry" as const,
+    abstract: "Two sonnets from a painful breakup.",
     views: 89,
     downloadUrl: "#",
     category: "Poetry"
@@ -173,7 +173,7 @@ export default function PublishedWorksSection() {
   const [activeFilter, setActiveFilter] = useState<PublicationType>("all");
 
   // Separate books from papers/periodicals
-  const books = publications.filter(pub => pub.type === "book" || pub.type === "poetry");
+  const books = publications.filter(pub => pub.type === "book" || pub.type === "poetry" || pub.type === "book_chapter");
   const papersAndPeriodicals = publications.filter(pub => pub.type === "journal");
   
   const filteredPublications = publications.filter(pub => 
@@ -182,7 +182,7 @@ export default function PublishedWorksSection() {
 
   const filterButtons = [
     { key: "all" as const, label: "Selected Works", icon: BookOpen },
-    { key: "journal" as const, label: "Articles", icon: FileText },
+    { key: "journal" as const, label: "Journal Articles", icon: FileText },
     { key: "book" as const, label: "Books", icon: BookOpen },
     { key: "poetry" as const, label: "Poetry", icon: PenTool }
   ];
@@ -270,7 +270,7 @@ export default function PublishedWorksSection() {
             <div>
               <div className="text-center mb-8">
                 <h3 className="font-serif text-xl font-semibold text-foreground mb-2">
-                  Papers & Periodicals
+                  Scholarly Papers and Literary Publications
                 </h3>
                 <p className="text-muted-foreground">
                   Scholarly papers and literary publications in journals and magazines
