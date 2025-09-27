@@ -139,7 +139,7 @@ const publications = [
     publication: "The Function of Evil Across Disciplinary Contexts (Lexington Books)",
     year: 2017,
     type: "book_chapter" as const,
-    abstract: "Several literary villains are compared in their ambition-driven violence, the ontological status they give the supernatural, and its implications for the nature of evil. As extrinsic sequels to human conduct, postmortem reward-and-punishment supplant compassion as virtue's central motive.",
+    abstract: "Several literary villains are compared in their ambition-driven violence, the ontological status they give the supernatural, and its implications for the nature of evil. As extrinsic sequels to human conduct, postmortem reward—and—punishment supplant compassion as virtue's central motive.",
     views: 134,
     downloadUrl: "#",
     category: "Renaissance Studies"
@@ -156,17 +156,6 @@ const publications = [
     category: "Film Studies"
   },
   // LITERARY PERIODICAL PUBLICATIONS
-  {
-    id: 10,
-    title: "\"Don't Speak\" / \"Turns Out, I'm Still Asleep\"",
-    publication: "Rattle",
-    year: 2019,
-    type: "poetry" as const,
-    abstract: "Two sonnets from a painful breakup.",
-    views: 89,
-    downloadUrl: "#",
-    category: "Poetry"
-  },
   {
     id: 11,
     title: "The Sirens",

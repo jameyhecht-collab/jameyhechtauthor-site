@@ -72,7 +72,7 @@ export default function ManuscriptShowcase() {
                   This work addresses the intellectual and emotional challenges that prevent 
                   contemporary individuals from embracing religious faith. Drawing from 
                   philosophy, psychology, literature, and personal reflection, it offers 
-                  a thoughtful examination of doubt, meaning, and transcendence. It frames existing religious traditions as cultural windows on a Divine ultimate reality to which they refer and aspire--rather than revealed truths of God's nature or God's demands.
+                  a thoughtful examination of doubt, meaning, and transcendence. It frames existing religious traditions as cultural windows on a Divine ultimate reality to which they refer and aspire—rather than revealed truths of God's nature or God's demands.
                 </p>
                 
                 <div className="space-y-2">
