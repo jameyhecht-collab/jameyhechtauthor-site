@@ -169,32 +169,153 @@ const publications = [
   }
 ];
 
+// Type for poem entries - can be either a string title or an object with title and URL
+type PoemEntry = string | { title: string; url: string };
+
 // Comprehensive list of Dr. Hecht's poems published in literary journals and periodicals
-const periodicalPoems = [
-  { poems: ["Get It Right (for Xenophanes)", "Father McKenzie's Banquet"], journal: "Marsh Hawk Review", date: "Fall 2024 / Spring 2025 Issue" },
-  { poems: ["Sensible Woman Speaks", "What I Can't Do"], journal: "Politics & Letters", date: "April 2021" },
-  { poems: ["Back to the Old House", "New Ghost, Old Mirror"], journal: "Marsh Hawk Review", date: "Spring 2019" },
-  { poems: ["Don't Speak", "Turns Out, I'm Still Asleep"], journal: "Rattle, No. 65", date: "September 1, 2019" },
-  { poems: ["The Sirens"], journal: "Arion", date: "March 2018" },
-  { poems: ["Mania"], journal: "American Journal of Poetry", date: "January 2018" },
-  { poems: ["Aftermath"], journal: "Rattle, No. 58", date: "Winter 2017" },
-  { poems: ["Aafje Heynis", "Maria Callas", "Claudia Muzio", "Hugo Wolf"], journal: "Amalgre Review", date: "December 2017" },
-  { poems: ["Landscape with Tramp"], journal: "Hiram Poetry Review", date: "Spring 2017" },
-  { poems: ["The Sonnet You Deserve", "Tyrannosaurus Rex"], journal: "Marsh Hawk Review", date: "November 2009" },
-  { poems: ["Zapruder Film Frame 167"], journal: "The St. Ann's Review Vol. 9. No.1", date: "Fall 2009" },
-  { poems: ["Eagle Nebula"], journal: "Isotope, Fall/Winter, Vol. 7. No. 2", date: "2009" },
-  { poems: ["New York Fresco"], journal: "Shofar, Vol. 27, No. 3", date: "2009" },
-  { poems: ["Grossman's Tooth"], journal: "Tikkun", date: "March / April 2009" },
-  { poems: ["Genesis"], journal: "Caesura", date: "Spring 2008" },
-  { poems: ["First Divorce (after Lattimore's Homer)"], journal: "Rattle, No. 29", date: "June 2008" },
-  { poems: ["Zapruder Film Frame 155", "Zapruder Film Frame 192"], journal: "Anthony Hecht Poetry Prize Finalist, Waywiser Press", date: "" },
-  { poems: ["Exposition of the Contents of a Cab"], journal: "Tupelo Press Poetry Project", date: "" },
-  { poems: ["Zapruder Film Frame 158", "Zapruder Film Frame 163"], journal: "November 3rd Club", date: "" },
-  { poems: ["The Round Square"], journal: "Free Inquiry Vol 26 No. 6", date: "October / November 2006" },
-  { poems: ["Fido"], journal: "Block Magazine", date: "Brooklyn, NY, Summer 2006" },
-  { poems: ["Zapruder Film Frame 156", "Zapruder Film Frame 157", "Zapruder Film Frame 179"], journal: "Black Warrior Review, Vol. 32, No. 1", date: "Fall 2005" },
-  { poems: ["Zapruder Film Frame 178"], journal: "River City, Vol. 24, No. 2", date: "Summer 2004" },
-  { poems: ["Night"], journal: "River City, Vol. 24, No. 1", date: "Winter 2004" }
+const periodicalPoems: { poems: PoemEntry[]; journal: string; date: string }[] = [
+  { 
+    poems: [
+      { title: "Get It Right (for Xenophanes)", url: "https://marshhawkreview.com/Hecht-MHR-Sp25.html" }, 
+      { title: "Father McKenzie's Banquet", url: "https://marshhawkreview.com/Hecht-MHR-Sp25.html" }
+    ], 
+    journal: "Marsh Hawk Review", 
+    date: "Fall 2024 / Spring 2025 Issue" 
+  },
+  { 
+    poems: [
+      { title: "Sensible Woman Speaks", url: "http://politicsslashletters.org/the-literary-section/hook-up-poems/sensible-woman-speaks/" }, 
+      { title: "What I Can't Do", url: "http://politicsslashletters.org/the-literary-section/breakup-poems/what-i-cant-do/" }
+    ], 
+    journal: "Politics & Letters", 
+    date: "February 2021" 
+  },
+  { 
+    poems: [
+      { title: "Back to the Old House", url: "https://marshhawkpress.org/wp-content/uploads/2019/04/Marsh-Hawk-Press-Review-Spring-2019.pdf" }, 
+      { title: "New Ghost, Old Mirror", url: "https://marshhawkpress.org/wp-content/uploads/2019/04/Marsh-Hawk-Press-Review-Spring-2019.pdf" }
+    ], 
+    journal: "Marsh Hawk Review", 
+    date: "Spring 2019" 
+  },
+  { 
+    poems: [
+      { title: "Don't Speak", url: "https://rattle.com/dont-speak-by-jamey-hecht/" }, 
+      { title: "Turns Out, I'm Still Asleep", url: "https://rattle.com/turns-out-im-still-asleep-by-jamey-hecht/" }
+    ], 
+    journal: "Rattle, No. 65", 
+    date: "September 1, 2019" 
+  },
+  { 
+    poems: [
+      { title: "The Sirens", url: "https://www.academia.edu/37682486/The_Sirens" }
+    ], 
+    journal: "Arion", 
+    date: "March 2018" 
+  },
+  { 
+    poems: ["Mania"], 
+    journal: "American Journal of Poetry", 
+    date: "January 2018" 
+  },
+  { 
+    poems: [
+      { title: "Aftermath", url: "https://rattle.com/aftermath-by-jamey-hecht/" }
+    ], 
+    journal: "Rattle, No. 58", 
+    date: "Winter 2017" 
+  },
+  { 
+    poems: ["Aafje Heynis", "Maria Callas", "Claudia Muzio", "Hugo Wolf"], 
+    journal: "Amalgre Review", 
+    date: "December 2017" 
+  },
+  { 
+    poems: [
+      { title: "Landscape with Tramp", url: "https://hirampoetryreview.wordpress.com/wp-content/uploads/2017/06/hpr2017.pdf" }
+    ], 
+    journal: "Hiram Poetry Review", 
+    date: "Spring 2017" 
+  },
+  { 
+    poems: ["The Sonnet You Deserve", "Tyrannosaurus Rex"], 
+    journal: "Marsh Hawk Review", 
+    date: "November 2009" 
+  },
+  { 
+    poems: ["Zapruder Film Frame 167"], 
+    journal: "The St. Ann's Review Vol. 9. No.1", 
+    date: "Fall 2009" 
+  },
+  { 
+    poems: ["Eagle Nebula"], 
+    journal: "Isotope, Fall/Winter, Vol. 7. No. 2", 
+    date: "2009" 
+  },
+  { 
+    poems: ["New York Fresco"], 
+    journal: "Shofar, Vol. 27, No. 3", 
+    date: "2009" 
+  },
+  { 
+    poems: [
+      { title: "Grossman's Tooth", url: "https://www.academia.edu/32548109/Grossman_s_Tooth" }
+    ], 
+    journal: "Tikkun", 
+    date: "March / April 2009" 
+  },
+  { 
+    poems: ["Genesis"], 
+    journal: "Caesura", 
+    date: "Spring 2008" 
+  },
+  { 
+    poems: [
+      { title: "First Divorce (after Lattimore's Homer)", url: "https://rattle.com/first-divorce-by-jamey-hecht/" }
+    ], 
+    journal: "Rattle, No. 29", 
+    date: "June 2008" 
+  },
+  { 
+    poems: ["Zapruder Film Frame 155", "Zapruder Film Frame 192"], 
+    journal: "Anthony Hecht Poetry Prize Finalist, Waywiser Press", 
+    date: "" 
+  },
+  { 
+    poems: ["Exposition of the Contents of a Cab"], 
+    journal: "Tupelo Press Poetry Project", 
+    date: "" 
+  },
+  { 
+    poems: ["Zapruder Film Frame 158", "Zapruder Film Frame 163"], 
+    journal: "November 3rd Club", 
+    date: "" 
+  },
+  { 
+    poems: ["The Round Square"], 
+    journal: "Free Inquiry Vol 26 No. 6", 
+    date: "October / November 2006" 
+  },
+  { 
+    poems: ["Fido"], 
+    journal: "Block Magazine", 
+    date: "Brooklyn, NY, Summer 2006" 
+  },
+  { 
+    poems: ["Zapruder Film Frame 156", "Zapruder Film Frame 157", "Zapruder Film Frame 179"], 
+    journal: "Black Warrior Review, Vol. 32, No. 1", 
+    date: "Fall 2005" 
+  },
+  { 
+    poems: ["Zapruder Film Frame 178"], 
+    journal: "River City, Vol. 24, No. 2", 
+    date: "Summer 2004" 
+  },
+  { 
+    poems: ["Night"], 
+    journal: "River City, Vol. 24, No. 1", 
+    date: "Winter 2004" 
+  }
 ];
 
 export default function PublishedWorksSection() {
@@ -337,11 +458,28 @@ export default function PublishedWorksSection() {
                     <div key={index} className="border-b border-border pb-4 last:border-b-0">
                       <div className="space-y-2">
                         <div className="space-y-1">
-                          {entry.poems.map((poem, poemIndex) => (
-                            <p key={poemIndex} className="text-sm font-medium text-foreground italic">
-                              "{poem}"
-                            </p>
-                          ))}
+                          {entry.poems.map((poem, poemIndex) => {
+                            const isLinked = typeof poem === 'object' && poem.url;
+                            const title = isLinked ? poem.title : poem as string;
+                            
+                            return (
+                              <p key={poemIndex} className="text-sm font-medium text-foreground italic">
+                                {isLinked ? (
+                                  <a 
+                                    href={poem.url} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="hover:text-primary transition-colors underline decoration-dotted"
+                                    data-testid={`link-poem-${poemIndex}`}
+                                  >
+                                    "{title}"
+                                  </a>
+                                ) : (
+                                  `"${title}"`
+                                )}
+                              </p>
+                            );
+                          })}
                         </div>
                         <p className="text-sm font-medium text-muted-foreground">
                           {entry.journal}
@@ -377,11 +515,28 @@ export default function PublishedWorksSection() {
                       <div key={index} className="border-b border-border pb-4 last:border-b-0">
                         <div className="space-y-2">
                           <div className="space-y-1">
-                            {entry.poems.map((poem, poemIndex) => (
-                              <p key={poemIndex} className="text-sm font-medium text-foreground italic">
-                                "{poem}"
-                              </p>
-                            ))}
+                            {entry.poems.map((poem, poemIndex) => {
+                              const isLinked = typeof poem === 'object' && poem.url;
+                              const title = isLinked ? poem.title : poem as string;
+                              
+                              return (
+                                <p key={poemIndex} className="text-sm font-medium text-foreground italic">
+                                  {isLinked ? (
+                                    <a 
+                                      href={poem.url} 
+                                      target="_blank" 
+                                      rel="noopener noreferrer"
+                                      className="hover:text-primary transition-colors underline decoration-dotted"
+                                      data-testid={`link-poem-filtered-${poemIndex}`}
+                                    >
+                                      "{title}"
+                                    </a>
+                                  ) : (
+                                    `"${title}"`
+                                  )}
+                                </p>
+                              );
+                            })}
                           </div>
                           <p className="text-sm font-medium text-muted-foreground">
                             {entry.journal}
