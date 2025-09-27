@@ -117,7 +117,7 @@ const publications = [
     publication: "English Literary History (ELH), Johns Hopkins",
     year: 1994,
     type: "journal" as const,
-    abstract: "An examination of themes of scarcity and poetic vocation in Keats's "On First Looking into Chapman's Homer" and "When I Have Fears That I May Cease to Be.""
+    abstract: "An examination of themes of scarcity and poetic vocation in Keats's \"On First Looking into Chapman's Homer\" and \"When I Have Fears That I May Cease to Be.\"",
     views: 167,
     downloadUrl: "#",
     category: "Romantic Literature"
