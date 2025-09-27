@@ -128,7 +128,7 @@ const publications = [
     publication: "The Massachusetts Review",
     year: 1999,
     type: "journal" as const,
-    abstract: "An analysis of economic and psychological themes in Melville's masterwork, examining concepts of scarcity, desire, and compensation.",
+    abstract: "An analysis of metaphysical, epistemological, and economic themes in Melville's masterwork, examining concepts of scarcity, desire, and compensation.",
     views: 156,
     downloadUrl: "#",
     category: "American Literature"
@@ -148,10 +148,10 @@ const publications = [
   {
     id: 11,
     title: "The Sirens",
-    publication: "Arion",
+    publication: "Arion: A Journal of Humanities and the Classics",
     year: 2018,
-    type: "journal" as const,
-    abstract: "A poem drawing on classical mythology to explore themes of temptation, knowledge, and the dangers of seeking forbidden wisdom.",
+    type: "poetry" as const,
+    abstract: "A poem in the Homeric tradition of Tennyson's 'Ulysses,' focused on Odysseus' lived experience of the Sirens episode, with its themes of survival, betrayal, and the perilous desire for the sublime.",
     views: 92,
     downloadUrl: "#",
     category: "Poetry"
@@ -159,10 +159,10 @@ const publications = [
   {
     id: 12,
     title: "Zapruder Film Frame Series",
-    publication: "Various Journals",
+    publication: "Black Warrior Review, Rattle, Prairie Schooner",
     year: 2009,
-    type: "journal" as const,
-    abstract: "A series of poems based on frames from the Zapruder film, examining moments of historical trauma and their aftermath. Published in multiple journals including Black Warrior Review.",
+    type: "poetry" as const,
+    abstract: "These various elegies for President John F. Kennedy later appeared in the book Limousine, Midnight Blue, available here.",
     views: 134,
     downloadUrl: "#",
     category: "Poetry"

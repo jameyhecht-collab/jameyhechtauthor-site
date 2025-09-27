@@ -49,7 +49,7 @@ export default function PublicationCard({
       <CardHeader className="space-y-3">
         <div className="flex items-start justify-between gap-3">
           <Badge variant="outline" className={typeColors[type]}>
-            {type.charAt(0).toUpperCase() + type.slice(1)}
+            {type === "book_chapter" ? "Book Chapter" : type.charAt(0).toUpperCase() + type.slice(1)}
           </Badge>
           {views && (
             <div className="flex items-center text-sm text-muted-foreground">
@@ -81,7 +81,15 @@ export default function PublicationCard({
       <CardContent className="flex-1">
         {abstract && (
           <p className="text-sm text-muted-foreground leading-relaxed line-clamp-4">
-            {abstract}
+            {abstract.includes("available here") ? (
+              <>
+                {abstract.split("available here")[0]}
+                <a href="/shop" className="underline hover:text-foreground transition-colors">
+                  available here
+                </a>
+                {abstract.split("available here")[1]}
+              </>
+            ) : abstract}
           </p>
         )}
       </CardContent>
