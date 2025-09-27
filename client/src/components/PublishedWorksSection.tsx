@@ -133,6 +133,28 @@ const publications = [
     downloadUrl: "#",
     category: "American Literature"
   },
+  {
+    id: 15,
+    title: "Guilt, Evil, and Hell in Macbeth, Hamlet, and Doctor Faustus",
+    publication: "The Function of Evil Across Disciplinary Contexts (Lexington Books)",
+    year: 2017,
+    type: "book_chapter" as const,
+    abstract: "Several literary villains are compared in their ambition-driven violence, the ontological status they give the supernatural, and its implications for the nature of evil. As extrinsic sequels to human conduct, postmortem reward-and-punishment supplant compassion as virtue's central motive.",
+    views: 134,
+    downloadUrl: "#",
+    category: "Renaissance Studies"
+  },
+  {
+    id: 16,
+    title: "Ingmar Bergman's 'Wild Strawberries': The Failure of Sublimation and the Fate of Pain",
+    publication: "American Imago, Volume 73, Number 2",
+    year: 2016,
+    type: "journal" as const,
+    abstract: "Ingmar Bergman's 1957 film 'Wild Strawberries' is a resolved study in unresolved psychic pain. What Bergman sublimates into art is tragically repressed by his protagonist. Love and its lack determine our pain; work and its success or failure determine the fate of that pain in generativity or in stagnation.",
+    views: 148,
+    downloadUrl: "#",
+    category: "Film Studies"
+  },
   // LITERARY PERIODICAL PUBLICATIONS
   {
     id: 10,
