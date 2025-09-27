@@ -23,7 +23,7 @@ const publications = [
   },
   {
     id: 2,
-    title: "Limousine, Midnight Blue: Fifty Frames form the Zapruder Film",
+    title: "Limousine, Midnight Blue: Fifty Frames from the Zapruder Film",
     publication: "Red Hen Press",
     year: 2009,
     type: "poetry" as const,
@@ -159,7 +159,7 @@ const publications = [
   {
     id: 12,
     title: "Zapruder Film Frame Series",
-    publication: "Black Warrior Review, Rattle, Prairie Schooner",
+    publication: "Black Warrior Review, Rattle, Anthony Hecht Poetry Prize Anthology (Finalist), The St. Ann's Review",
     year: 2009,
     type: "poetry" as const,
     abstract: "These various elegies for President John F. Kennedy later appeared in the book Limousine, Midnight Blue, available here.",
@@ -449,7 +449,7 @@ export default function PublishedWorksSection() {
                   Poems in Literary Journals & Periodicals
                 </h3>
                 <p className="text-base text-muted-foreground">
-                  A comprehensive list of individual poems published in literary journals, magazines, and periodicals (2004-2025)
+                  A selection of individual poems published in literary journals, magazines, and periodicals (2004-2025)
                 </p>
               </div>
               <div className="bg-card rounded-lg p-8 shadow-sm border max-w-6xl mx-auto">
@@ -611,7 +611,7 @@ export default function PublishedWorksSection() {
                     className="hover:text-primary transition-colors underline decoration-dotted"
                     data-testid="link-rattle-review"
                   >
-                    Rattle Review
+                    Rattle
                   </a>
                 </p>
                 <p className="text-sm text-muted-foreground">

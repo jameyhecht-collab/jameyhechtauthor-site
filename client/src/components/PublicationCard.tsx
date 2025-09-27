@@ -44,6 +44,31 @@ export default function PublicationCard({
     }
   };
 
+  // Helper function to render text with italicized book/play titles and proper award formatting
+  const renderTextWithItalics = (text: string) => {
+    const bookTitles = [
+      'Antigone', 'Oedipus the Tyrant', 'Oedipus at Colonus', 'Oedipus', 
+      'Hamlet', 'Moby-Dick', 'Macbeth', 'Doctor Faustus'
+    ];
+    
+    let processedText = text;
+    
+    // Handle the specific case of "Winner, New Author's Prize" for better formatting
+    if (processedText.includes("Winner, New Author's Prize.")) {
+      processedText = processedText.replace(
+        "Winner, New Author's Prize. In", 
+        "Winner, New Author's Prize.<br/><br/>In"
+      );
+    }
+    
+    bookTitles.forEach(title => {
+      const regex = new RegExp(`\\b${title}\\b`, 'g');
+      processedText = processedText.replace(regex, `<em>${title}</em>`);
+    });
+    
+    return <span dangerouslySetInnerHTML={{ __html: processedText }} />;
+  };
+
   return (
     <Card className="hover-elevate transition-all duration-200 h-full flex flex-col">
       <CardHeader className="space-y-3">
@@ -83,13 +108,13 @@ export default function PublicationCard({
           <p className="text-base text-muted-foreground leading-relaxed line-clamp-4">
             {abstract.includes("available here") ? (
               <>
-                {abstract.split("available here")[0]}
+                {renderTextWithItalics(abstract.split("available here")[0])}
                 <a href="/shop" className="underline hover:text-foreground transition-colors">
                   available here
                 </a>
-                {abstract.split("available here")[1]}
+                {renderTextWithItalics(abstract.split("available here")[1] || "")}
               </>
-            ) : abstract}
+            ) : renderTextWithItalics(abstract)}
           </p>
         )}
       </CardContent>

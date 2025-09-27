@@ -27,11 +27,6 @@ const credentials = [
 
 const achievements = [
   {
-    title: "2022 New Authors Prize",
-    organization: "Journal of the American Psychoanalytic Association",
-    description: "Awarded for outstanding scholarly contribution to psychoanalytic literature"
-  },
-  {
     title: "Graduate & Corresponding Member",
     organization: "New Center for Psychoanalysis",
     description: "Advanced training in psychoanalytic theory and practice, Los Angeles, California"
