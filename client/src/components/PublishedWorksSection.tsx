@@ -572,7 +572,7 @@ export default function PublishedWorksSection() {
         )}
 
         {/* Academic Recognition */}
-        <div className="text-center space-y-6 mt-16">
+        <div className="text-center space-y-8 mt-16">
           <div className="inline-flex items-center space-x-2 bg-primary/10 px-6 py-3 rounded-full">
             <Star className="h-5 w-5 text-primary" />
             <span className="text-sm font-semibold text-primary">
@@ -582,9 +582,65 @@ export default function PublishedWorksSection() {
               • Journal of the American Psychoanalytic Association
             </span>
           </div>
+
+          {/* Critical Praise for Limousine, Midnight Blue */}
+          <div className="space-y-6 max-w-4xl mx-auto">
+            <h3 className="font-serif text-xl font-semibold text-foreground mb-4">
+              Critical Praise for <em>Limousine, Midnight Blue</em>
+            </h3>
+            
+            {/* Billy Collins Blurb */}
+            <div className="bg-primary/5 rounded-lg p-6 border-l-4 border-primary">
+              <blockquote className="text-base italic text-foreground leading-relaxed mb-4">
+                "Ovid himself might have taken notice of this volume. It's one thing to turn a woman into a tree, another more advanced thing to transform fifty frames of the Zapruder film into as many sonnets. Limousine, Midnight Blue is a radical display of poetry's ability to freeze time, to catch fugitive - and here, disputed - moments in the amber of form."
+              </blockquote>
+              <cite className="text-base font-semibold text-primary">
+                —Billy Collins, former Poet Laureate of the United States
+              </cite>
+            </div>
+
+            {/* Reviews */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-card rounded-lg p-4 border">
+                <h4 className="font-semibold text-foreground mb-2">Review</h4>
+                <p className="text-base text-muted-foreground mb-2">
+                  <a 
+                    href="https://rattle.com/limousine-midnight-blue-by-jamey-hecht/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition-colors underline decoration-dotted"
+                    data-testid="link-rattle-review"
+                  >
+                    Rattle Review
+                  </a>
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  by Joanne Baines • August 30, 2009
+                </p>
+              </div>
+              
+              <div className="bg-card rounded-lg p-4 border">
+                <h4 className="font-semibold text-foreground mb-2">Review</h4>
+                <p className="text-base text-muted-foreground mb-2">
+                  <a 
+                    href="https://thenextbestbookblog.blogspot.com/2016/12/lindsey-reviews-limousine-midnight-blue.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition-colors underline decoration-dotted"
+                    data-testid="link-dog-eared-review"
+                  >
+                    Dog Eared Review
+                  </a>
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  by Lindsey Lewis Smithson • December 22, 2016
+                </p>
+              </div>
+            </div>
+          </div>
           
           {/* Low-key link for signed copies */}
-          <div className="text-sm text-muted-foreground">
+          <div className="text-base text-muted-foreground">
             <a 
               href="/shop" 
               className="hover:text-foreground transition-colors underline decoration-dotted"
