@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import PublicationCard from "./PublicationCard";
-import { BookOpen, FileText, PenTool, Star } from "lucide-react";
+import { BookOpen, FileText, PenTool, Star, Grid3X3 } from "lucide-react";
 import publicationsImage from "@assets/BOOKS and LIT MAGS 3_1759026096692.jpg";
 
 type PublicationType = "all" | "journal" | "book" | "poetry" | "fiction" | "review" | "book_chapter";
@@ -340,6 +340,7 @@ export default function PublishedWorksSection() {
   );
 
   const filterButtons = [
+    { key: "all" as const, label: "All", icon: Grid3X3 },
     { key: "journal" as const, label: "Journal Articles", icon: FileText },
     { key: "book" as const, label: "Books", icon: BookOpen },
     { key: "poetry" as const, label: "Poetry", icon: PenTool },
