@@ -80,7 +80,7 @@ export default function PublicationCard({
         </div>
         
         <h3 className="font-serif text-lg font-semibold leading-tight text-foreground">
-          {title}
+          {renderTextWithItalics(title)}
         </h3>
         
         <div className="space-y-1">

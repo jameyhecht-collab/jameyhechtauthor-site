@@ -268,6 +268,11 @@ const periodicalPoems: { poems: PoemEntry[]; journal: string; date: string }[] =
     date: "Spring 2017" 
   },
   { 
+    poems: ["The Familiar Is Obvious"], 
+    journal: "Blue Monday Review, Issue 1", 
+    date: "January 2014" 
+  },
+  { 
     poems: ["The Sonnet You Deserve", "Tyrannosaurus Rex"], 
     journal: "Marsh Hawk Review", 
     date: "November 2009" 
