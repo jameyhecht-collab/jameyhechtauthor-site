@@ -18,7 +18,7 @@ const typeColors = {
   journal: "bg-primary/10 text-primary",
   book: "bg-accent/10 text-accent-foreground",
   poetry: "bg-secondary/10 text-secondary-foreground",
-  fiction: "bg-purple/10 text-purple-foreground",
+  fiction: "bg-green/10 text-green-foreground",
   review: "bg-muted/10 text-muted-foreground",
   book_chapter: "bg-accent/10 text-accent-foreground"
 };
