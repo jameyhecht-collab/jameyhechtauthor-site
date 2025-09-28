@@ -34,9 +34,6 @@ export default function PublicationCard({
   category
 }: PublicationCardProps) {
   
-  const handleViewDetails = () => {
-    console.log(`Viewing details for: ${title}`);
-  };
 
   const handleDownload = () => {
     console.log(`Downloading: ${title}`);
@@ -120,21 +117,12 @@ export default function PublicationCard({
         )}
       </CardContent>
 
-      <CardFooter className="flex gap-2 pt-4">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={handleViewDetails}
-          className="flex-1 hover-elevate active-elevate-2"
-          data-testid={`button-view-${title.toLowerCase().replace(/\s+/g, "-")}`}
-        >
-          View Details
-        </Button>
+      <CardFooter className="pt-4">
         {downloadUrl && (
           <Button
             size="sm"
             onClick={handleDownload}
-            className="hover-elevate active-elevate-2"
+            className="w-full hover-elevate active-elevate-2"
             data-testid={`button-download-${title.toLowerCase().replace(/\s+/g, "-")}`}
           >
             <ExternalLink className="h-3 w-3 mr-1" />
