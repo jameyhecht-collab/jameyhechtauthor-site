@@ -156,12 +156,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Attribution Note */}
-        <div className="mt-6 pt-6 border-t border-border/50">
-          <p className="text-center text-xs text-muted-foreground">
-            Professional author website • Squarespace compatible design
-          </p>
-        </div>
       </div>
     </footer>
   );

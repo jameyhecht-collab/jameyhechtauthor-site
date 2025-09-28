@@ -72,9 +72,6 @@ export default function ContactSection() {
         
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
-          <Badge variant="outline" className="mb-4">
-            Literary Inquiries
-          </Badge>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground">
             Contact Dr. Jamey Hecht
           </h2>
@@ -145,7 +142,7 @@ export default function ContactSection() {
                       <Button
                         key={key}
                         type="button"
-                        variant={formData.inquiryType === key ? "default" : "outline"}
+                        variant="default"
                         className="justify-start hover-elevate active-elevate-2"
                         onClick={() => handleInquiryTypeChange(key)}
                         data-testid={`inquiry-type-${key}`}
@@ -264,7 +261,7 @@ export default function ContactSection() {
                     data-testid="link-therapy-contact"
                   >
                     drjameyhecht.com/contact
-                  </a>
+                  </a>. Thanks
                 </p>
               </CardContent>
             </Card>
@@ -279,7 +276,7 @@ export default function ContactSection() {
                       Response Time
                     </p>
                     <p className="text-xs text-muted-foreground">
-                      Typically within 24-48 hours for professional inquiries
+                      Typically within 24-48 hours
                     </p>
                   </div>
                 </div>

@@ -108,7 +108,7 @@ export default function ManuscriptShowcase() {
 
             {/* Action Buttons */}
             <div className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <Button 
                   onClick={handleAgentInquiry}
                   className="hover-elevate active-elevate-2"
@@ -120,24 +120,24 @@ export default function ManuscriptShowcase() {
                 
                 <Button 
                   variant="outline"
-                  onClick={handleReadExcerpt}
+                  onClick={handleDownloadProposal}
                   className="hover-elevate active-elevate-2"
-                  data-testid="button-read-excerpt"
+                  data-testid="button-download-proposal"
+                >
+                  <FileText className="mr-2 h-4 w-4" />
+                  Book Proposal
+                </Button>
+                
+                <Button 
+                  variant="outline"
+                  onClick={() => console.log("Opening chapter outline")}
+                  className="hover-elevate active-elevate-2"
+                  data-testid="button-chapter-outline"
                 >
                   <BookOpen className="mr-2 h-4 w-4" />
-                  Read Excerpt
+                  Chapter Outline
                 </Button>
               </div>
-              
-              <Button 
-                variant="secondary"
-                onClick={handleDownloadProposal}
-                className="w-full hover-elevate active-elevate-2"
-                data-testid="button-download-proposal"
-              >
-                <FileText className="mr-2 h-4 w-4" />
-                Download Book Proposal
-              </Button>
             </div>
 
             {/* Agent Contact Note */}
