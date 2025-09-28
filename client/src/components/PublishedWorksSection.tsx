@@ -157,16 +157,6 @@ const publications = [
   },
   // LITERARY PERIODICAL PUBLICATIONS
   {
-    id: 11,
-    title: "The Sirens",
-    publication: "Arion: A Journal of Humanities and the Classics",
-    year: 2018,
-    type: "journal" as const,
-    abstract: "A poem in the Homeric tradition of Tennyson's 'Ulysses,' focused on Odysseus' lived experience of the Sirens episode, with its themes of survival, betrayal, and the perilous desire for the sublime.",
-    downloadUrl: "#",
-    category: "Poetry"
-  },
-  {
     id: 17,
     title: "Tim the Immortal Giraffe: True Story",
     publication: "American Short Fiction, Vol. 13, Issue 47",
@@ -185,6 +175,16 @@ const publications = [
     abstract: "A work of literary fiction exploring themes of technology, human connection, and the metaphorical hardware of our emotional lives.",
     downloadUrl: "#",
     category: "Fiction"
+  },
+  {
+    id: 11,
+    title: "The Sirens",
+    publication: "Arion: A Journal of Humanities and the Classics",
+    year: 2018,
+    type: "journal" as const,
+    abstract: "A poem in the Homeric tradition of Tennyson's 'Ulysses,' focused on Odysseus' lived experience of the Sirens episode, with its themes of survival, betrayal, and the perilous desire for the sublime.",
+    downloadUrl: "#",
+    category: "Poetry"
   },
   {
     id: 12,
