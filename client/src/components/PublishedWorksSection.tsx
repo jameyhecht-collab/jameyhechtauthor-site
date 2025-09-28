@@ -30,6 +30,16 @@ const publications = [
     downloadUrl: "#",
     category: "Political Poetry"
   },
+  {
+    id: 17,
+    title: "Tim the Immortal Giraffe: True Story",
+    publication: "American Short Fiction, Vol. 13, Issue 47",
+    year: 2010,
+    type: "fiction" as const,
+    abstract: "A work of literary fiction exploring themes of mortality, identity, and the extraordinary within the ordinary.",
+    downloadUrl: "#",
+    category: "Fiction"
+  },
   // BOOKS (Scholarly)
   {
     id: 3,
@@ -166,16 +176,6 @@ const publications = [
 
     downloadUrl: "#",
     category: "Poetry"
-  },
-  {
-    id: 17,
-    title: "Tim the Immortal Giraffe: True Story",
-    publication: "American Short Fiction, Vol. 13, Issue 47",
-    year: 2010,
-    type: "fiction" as const,
-    abstract: "A work of literary fiction exploring themes of mortality, identity, and the extraordinary within the ordinary.",
-    downloadUrl: "#",
-    category: "Fiction"
   }
 ];
 
@@ -332,8 +332,8 @@ export default function PublishedWorksSection() {
   const [activeFilter, setActiveFilter] = useState<PublicationType>("all");
 
   // Separate books from papers/periodicals
-  const books = publications.filter(pub => pub.type === "book" || pub.type === "poetry" || pub.type === "book_chapter");
-  const papersAndPeriodicals = publications.filter(pub => pub.type === "journal" || pub.type === "fiction");
+  const books = publications.filter(pub => pub.type === "book" || pub.type === "poetry" || pub.type === "book_chapter" || pub.type === "fiction");
+  const papersAndPeriodicals = publications.filter(pub => pub.type === "journal");
   
   const filteredPublications = publications.filter(pub => 
     activeFilter === "all" || pub.type === activeFilter
