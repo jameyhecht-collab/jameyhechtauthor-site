@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import PublicationCard from "./PublicationCard";
 import { BookOpen, FileText, PenTool, Star } from "lucide-react";
-import publicationsImage from "@assets/Books and Lit Mags_1759024456186.jpg";
+import publicationsImage from "@assets/BOOKS and LIT-MAGS 2_1759025129015.jpg";
 
 type PublicationType = "all" | "journal" | "book" | "poetry" | "review" | "book_chapter";
 
@@ -374,7 +374,7 @@ export default function PublishedWorksSection() {
           <img
             src={publicationsImage}
             alt="Academic publications and books"
-            className="w-full h-64 object-cover rounded-lg shadow-lg"
+            className="w-full h-64 object-contain bg-black rounded-lg shadow-lg"
             data-testid="img-publications-hero"
           />
         </div>
