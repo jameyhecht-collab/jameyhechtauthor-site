@@ -15,9 +15,9 @@ const publications = [
     title: "Dodo Feathers: Poems 1989 - 2019",
     publication: "International Psychoanalytic Books",
     year: 2019,
-    type: "poetry" as const,
+    type: "book" as const,
     abstract: "A collection of poems spanning three decades, exploring themes of loss, thwarted ambition, and transformation.",
-    downloadUrl: "#",
+    downloadUrl: "/shop",
     category: "Contemporary Poetry"
   },
   {
@@ -25,20 +25,10 @@ const publications = [
     title: "Limousine, Midnight Blue: Fifty Frames from the Zapruder Film",
     publication: "Red Hen Press",
     year: 2009,
-    type: "poetry" as const,
+    type: "book" as const,
     abstract: "Fifty 14-line elegies for President John F. Kennedy, exploring themes of political idealism, tragedy, and the American dream through lyrical meditation.",
-    downloadUrl: "#",
+    downloadUrl: "/shop",
     category: "Political Poetry"
-  },
-  {
-    id: 17,
-    title: "Tim the Immortal Giraffe: True Story",
-    publication: "American Short Fiction, Vol. 13, Issue 47",
-    year: 2010,
-    type: "fiction" as const,
-    abstract: "A work of literary fiction exploring themes of mortality, identity, and the extraordinary within the ordinary.",
-    downloadUrl: "#",
-    category: "Fiction"
   },
   // BOOKS (Scholarly)
   {
@@ -48,7 +38,7 @@ const publications = [
     year: 2010,
     type: "book" as const,
     abstract: "A guide for students and scholars writing about Homer's Iliad and Odyssey, covering critical approaches, themes, and analytical frameworks, with essay prompts and writing guides.",
-    downloadUrl: "#",
+    downloadUrl: "/shop",
     category: "Literary Criticism"
   },
   {
@@ -59,7 +49,7 @@ const publications = [
     type: "book" as const,
     abstract: "A clear exposition of Plato's great dialogue on love and sexuality, with each passage translated by the author and explained in the context of ancient Athenian culture and the Socratic movement.",
 
-    downloadUrl: "#",
+    downloadUrl: "/shop",
     category: "Philosophy"
   },
   {
@@ -69,7 +59,7 @@ const publications = [
     year: 2004,
     type: "book" as const,
     abstract: "A blank verse translation with notes and commentary, and an introduction analyzing Antigone, Oedipus the Tyrant, and Oedipus at Colonus.",
-    downloadUrl: "#",
+    downloadUrl: "/shop",
     category: "Classical Literature"
   },
   // SCHOLARLY PAPERS
@@ -161,10 +151,20 @@ const publications = [
     title: "The Sirens",
     publication: "Arion: A Journal of Humanities and the Classics",
     year: 2018,
-    type: "poetry" as const,
+    type: "journal" as const,
     abstract: "A poem in the Homeric tradition of Tennyson's 'Ulysses,' focused on Odysseus' lived experience of the Sirens episode, with its themes of survival, betrayal, and the perilous desire for the sublime.",
     downloadUrl: "#",
     category: "Poetry"
+  },
+  {
+    id: 17,
+    title: "Tim the Immortal Giraffe: True Story",
+    publication: "American Short Fiction, Vol. 13, Issue 47",
+    year: 2010,
+    type: "fiction" as const,
+    abstract: "A work of literary fiction exploring themes of mortality, identity, and the extraordinary within the ordinary.",
+    downloadUrl: "#",
+    category: "Fiction"
   },
   {
     id: 12,
@@ -332,8 +332,8 @@ export default function PublishedWorksSection() {
   const [activeFilter, setActiveFilter] = useState<PublicationType>("all");
 
   // Separate books from papers/periodicals
-  const books = publications.filter(pub => pub.type === "book" || pub.type === "poetry" || pub.type === "book_chapter" || pub.type === "fiction");
-  const papersAndPeriodicals = publications.filter(pub => pub.type === "journal");
+  const books = publications.filter(pub => pub.type === "book" || pub.type === "book_chapter");
+  const papersAndPeriodicals = publications.filter(pub => pub.type === "journal" || pub.type === "fiction" || pub.type === "poetry");
   
   const filteredPublications = publications.filter(pub => 
     activeFilter === "all" || pub.type === activeFilter
