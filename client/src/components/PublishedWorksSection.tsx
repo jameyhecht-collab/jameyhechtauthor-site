@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import PublicationCard from "./PublicationCard";
 import { BookOpen, FileText, PenTool, Star } from "lucide-react";
-import publicationsImage from "@assets/BOOKS and LIT-MAGS 2_1759025129015.jpg";
+import publicationsImage from "@assets/BOOKS and LIT MAGS 3_1759026096692.jpg";
 
-type PublicationType = "all" | "journal" | "book" | "poetry" | "review" | "book_chapter";
+type PublicationType = "all" | "journal" | "book" | "poetry" | "fiction" | "review" | "book_chapter";
 
 // Dr. Hecht's actual publications organized by type
 const publications = [
@@ -80,14 +80,14 @@ const publications = [
   },
   {
     id: 5,
-    title: "Drawing a Blank: Bion Speaking on Chinese Writing",
-    publication: "American Imago",
-    year: 2023,
+    title: "Review of Christoph Koch's 2024 book on consciousness, Then I Am Myself the World",
+    publication: "Journal of the American Psychoanalytic Association (JAPA), Vol. 73, Issue 4",
+    year: 2024,
     type: "journal" as const,
-    abstract: "Wilfred Bion described Chinese writing on some dozen occasions, attributing to it various counter-intuitive features as part of his effort to evoke communication challenges.",
-    views: 31,
+    abstract: "A comprehensive review of Christoph Koch's latest work on consciousness, examining his neuroscientific approach to understanding self-awareness and subjective experience.",
+    views: 45,
     downloadUrl: "#",
-    category: "Cultural Studies"
+    category: "Consciousness Studies"
   },
   {
     id: 6,
@@ -169,7 +169,7 @@ const publications = [
   },
   {
     id: 12,
-    title: "Zapruder Film Frame Series",
+    title: "Zapruder Film Frame Elegies",
     publication: "Black Warrior Review, Rattle, Anthony Hecht Poetry Prize Anthology (Finalist), The St. Ann's Review",
     year: 2009,
     type: "poetry" as const,
@@ -177,6 +177,17 @@ const publications = [
     views: 134,
     downloadUrl: "#",
     category: "Poetry"
+  },
+  {
+    id: 17,
+    title: "Tim the Immortal Giraffe: True Story",
+    publication: "American Short Fiction, Vol. 13, Issue 47",
+    year: 2010,
+    type: "fiction" as const,
+    abstract: "A work of literary fiction exploring themes of mortality, identity, and the extraordinary within the ordinary.",
+    views: 87,
+    downloadUrl: "#",
+    category: "Fiction"
   }
 ];
 
@@ -341,10 +352,10 @@ export default function PublishedWorksSection() {
   );
 
   const filterButtons = [
-    { key: "all" as const, label: "Selected Works", icon: BookOpen },
     { key: "journal" as const, label: "Journal Articles", icon: FileText },
     { key: "book" as const, label: "Books", icon: BookOpen },
-    { key: "poetry" as const, label: "Poetry", icon: PenTool }
+    { key: "poetry" as const, label: "Poetry", icon: PenTool },
+    { key: "fiction" as const, label: "Fiction", icon: BookOpen }
   ];
 
   const handleFilterChange = (filter: PublicationType) => {
@@ -362,7 +373,7 @@ export default function PublishedWorksSection() {
             Published Works
           </Badge>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground">
-            Literary & Scholarly Publications
+            Selected Literary & Scholarly Publications
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Books, scholarly articles, and literary works on literature, psychoanalysis, and consciousness studies.

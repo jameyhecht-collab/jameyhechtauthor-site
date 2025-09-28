@@ -13,6 +13,7 @@ const navigationItems: NavigationItem[] = [
   { label: "Published Works", href: "#published-works" },
   { label: "Into Theism", href: "#manuscript" },
   { label: "About", href: "#about" },
+  { label: "Curriculum Vitae", href: "#cv" },
   { label: "Contact", href: "#contact" },
 ];
 
