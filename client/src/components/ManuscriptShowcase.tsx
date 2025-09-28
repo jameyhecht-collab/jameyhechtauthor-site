@@ -98,12 +98,15 @@ export default function ManuscriptShowcase() {
                 
                 <Button 
                   variant="outline"
-                  onClick={() => console.log("Viewing introduction with chapter descriptions")}
+                  onClick={() => {
+                    console.log("Viewing synopsis with chapter descriptions");
+                    window.open("/attached_assets/SYNOPSIS 9-28-25 Into Theism.docx_1759082734912.pdf", "_blank");
+                  }}
                   className="hover-elevate active-elevate-2"
-                  data-testid="button-introduction"
+                  data-testid="button-synopsis"
                 >
                   <FileText className="mr-2 h-4 w-4" />
-                  Introduction with Chapter Descriptions
+                  Synopsis with Chapter Descriptions
                 </Button>
                 
                 <Button 
