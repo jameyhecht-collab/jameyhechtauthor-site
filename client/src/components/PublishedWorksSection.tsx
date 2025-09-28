@@ -443,7 +443,6 @@ export default function PublishedWorksSection() {
                     year={publication.year}
                     type={publication.type}
                     abstract={publication.abstract}
-                    views={publication.views}
                     downloadUrl={publication.downloadUrl}
                     category={publication.category}
                   />
@@ -571,7 +570,6 @@ export default function PublishedWorksSection() {
                   year={publication.year}
                   type={publication.type}
                   abstract={publication.abstract}
-                  views={publication.views}
                   downloadUrl={publication.downloadUrl}
                   category={publication.category}
                 />

@@ -36,6 +36,36 @@ const achievements = [
     organization: "Society for the Psychology of Religion and Spirituality",
     organizationLink: "https://www.apadivisions.org/division-36/about/",
     description: "American Psychological Association Division 36"
+  },
+  {
+    title: "Member",
+    organization: "American Psychological Association",
+    organizationLink: "https://www.apa.org/",
+    description: "Professional membership in the leading psychological organization"
+  },
+  {
+    title: "Member",
+    organization: "American Psychoanalytic Association",
+    organizationLink: "https://apsa.org/",
+    description: "Professional membership in psychoanalytic training and practice"
+  },
+  {
+    title: "Member",
+    organization: "Neuropsychoanalysis Association",
+    organizationLink: "https://npsa-association.org/",
+    description: "Interdisciplinary organization bridging neuroscience and psychoanalysis"
+  },
+  {
+    title: "Member",
+    organization: "Climate Psychology Alliance",
+    organizationLink: "https://www.climatepsychologyalliance.org/",
+    description: "Supporting mental health professionals addressing climate psychology"
+  },
+  {
+    title: "Member",
+    organization: "Association of Jewish Psychologists",
+    organizationLink: "https://associationofjewishpsychologists.com/",
+    description: "Professional network for Jewish mental health professionals"
   }
 ];
 
@@ -78,7 +108,7 @@ export default function AboutSection() {
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
-                  His scholarly work spans English and American literature, Classics, psychoanalytic theory, 
+                  His scholarly work includes English and American literature, Classics, psychoanalytic theory, 
                   and consciousness studies. As a poet and creative writer, he has published two 
                   collections of poetry and numerous short stories and book reviews.
                 </p>
@@ -145,7 +175,7 @@ export default function AboutSection() {
               <CardHeader>
                 <h3 className="font-serif text-xl font-semibold text-foreground flex items-center">
                   <Award className="mr-2 h-5 w-5 text-primary" />
-                  Recognition & Awards
+                  Memberships
                 </h3>
               </CardHeader>
               <CardContent>
