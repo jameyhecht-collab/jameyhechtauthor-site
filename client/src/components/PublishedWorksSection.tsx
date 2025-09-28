@@ -333,7 +333,7 @@ export default function PublishedWorksSection() {
 
   // Separate books from papers/periodicals
   const books = publications.filter(pub => pub.type === "book" || pub.type === "poetry" || pub.type === "book_chapter");
-  const papersAndPeriodicals = publications.filter(pub => pub.type === "journal");
+  const papersAndPeriodicals = publications.filter(pub => pub.type === "journal" || pub.type === "fiction");
   
   const filteredPublications = publications.filter(pub => 
     activeFilter === "all" || pub.type === activeFilter
