@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, FileText, Mail } from "lucide-react";
+import { Link } from "wouter";
 
 export default function ManuscriptShowcase() {
 
@@ -111,12 +112,14 @@ export default function ManuscriptShowcase() {
                 
                 <Button 
                   variant="outline"
-                  onClick={() => console.log("Request for full book proposal")}
+                  asChild
                   className="hover-elevate active-elevate-2"
                   data-testid="button-book-proposal"
                 >
-                  <FileText className="mr-2 h-4 w-4" />
-                  Request Full Book Proposal
+                  <Link href="/request-proposal">
+                    <FileText className="mr-2 h-4 w-4" />
+                    Request Full Book Proposal
+                  </Link>
                 </Button>
                 
                 <Button 
