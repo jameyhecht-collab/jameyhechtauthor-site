@@ -73,8 +73,8 @@ export default function PublicationCard({
           <Badge variant="outline" className={typeColors[type]}>
             {type === "book_chapter" ? "Book Chapter" : 
              type === "journal" && title === "The Sirens" ? "Poetry" :
+             type === "poetry" ? "Poetry" :
              type === "journal" ? "Publication" :
-             type === "poetry" ? "Publication" :
              type.charAt(0).toUpperCase() + type.slice(1)}
           </Badge>
         </div>
