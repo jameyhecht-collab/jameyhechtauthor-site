@@ -78,7 +78,7 @@ export default function ManuscriptShowcase() {
               <div className="flex flex-wrap justify-center gap-3">
                 <Button 
                   variant="outline"
-                  onClick={() => console.log("Opening table of contents")}
+                  onClick={() => console.log("Viewing table of contents")}
                   className="hover-elevate active-elevate-2"
                   data-testid="button-table-of-contents"
                 >
@@ -88,7 +88,7 @@ export default function ManuscriptShowcase() {
                 
                 <Button 
                   variant="outline"
-                  onClick={() => console.log("Opening preface")}
+                  onClick={() => console.log("Viewing preface")}
                   className="hover-elevate active-elevate-2"
                   data-testid="button-preface"
                 >
@@ -98,7 +98,7 @@ export default function ManuscriptShowcase() {
                 
                 <Button 
                   variant="outline"
-                  onClick={() => console.log("Opening introduction with chapter descriptions")}
+                  onClick={() => console.log("Viewing introduction with chapter descriptions")}
                   className="hover-elevate active-elevate-2"
                   data-testid="button-introduction"
                 >
@@ -108,7 +108,7 @@ export default function ManuscriptShowcase() {
                 
                 <Button 
                   variant="outline"
-                  onClick={() => console.log("Opening book proposal")}
+                  onClick={() => console.log("Viewing book proposal")}
                   className="hover-elevate active-elevate-2"
                   data-testid="button-book-proposal"
                 >
@@ -118,7 +118,7 @@ export default function ManuscriptShowcase() {
                 
                 <Button 
                   variant="outline"
-                  onClick={() => console.log("Opening sample chapter: Theodicy")}
+                  onClick={() => console.log("Viewing sample chapter: Theodicy")}
                   className="hover-elevate active-elevate-2"
                   data-testid="button-sample-chapter"
                 >

@@ -33,8 +33,8 @@ export default function PublicationCard({
 }: PublicationCardProps) {
   
 
-  const handleDownload = () => {
-    console.log(`Downloading: ${title}`);
+  const handleView = () => {
+    console.log(`Viewing: ${title}`);
     if (downloadUrl) {
       window.open(downloadUrl, '_blank');
     }
@@ -118,12 +118,12 @@ export default function PublicationCard({
         {downloadUrl && (
           <Button
             size="sm"
-            onClick={handleDownload}
+            onClick={handleView}
             className="w-full hover-elevate active-elevate-2"
-            data-testid={`button-download-${title.toLowerCase().replace(/\s+/g, "-")}`}
+            data-testid={`button-view-${title.toLowerCase().replace(/\s+/g, "-")}`}
           >
             <ExternalLink className="h-3 w-3 mr-1" />
-            {type === "book" ? "Available for Purchase" : "Read"}
+            {type === "book" ? "Available for Purchase" : "View"}
           </Button>
         )}
       </CardFooter>
