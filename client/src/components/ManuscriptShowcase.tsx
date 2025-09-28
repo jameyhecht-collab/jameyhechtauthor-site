@@ -100,7 +100,7 @@ export default function ManuscriptShowcase() {
                   variant="outline"
                   onClick={() => {
                     console.log("Viewing synopsis with chapter descriptions");
-                    window.open("/attached_assets/SYNOPSIS 9-28-25 Into Theism.docx_1759082734912.pdf", "_blank");
+                    window.open("/synopsis-into-theism.pdf", "_blank");
                   }}
                   className="hover-elevate active-elevate-2"
                   data-testid="button-synopsis"
