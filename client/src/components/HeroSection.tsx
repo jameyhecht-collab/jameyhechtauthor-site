@@ -40,27 +40,6 @@ export default function HeroSection() {
                 <em className="font-serif font-semibold text-foreground"> Into Theism: Overcoming Obstacles to Belief in God</em>.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  onClick={handleScrollToWorks}
-                  className="font-sans hover-elevate active-elevate-2"
-                  data-testid="button-view-works"
-                >
-                  <BookOpen className="mr-2 h-4 w-4" />
-                  View Published Works
-                </Button>
-                
-                <Button 
-                  variant="outline"
-                  onClick={handleScrollToManuscript}
-                  className="font-sans hover-elevate active-elevate-2"
-                  data-testid="button-into-theism"
-                >
-                  <Users className="mr-2 h-4 w-4" />
-                  Into Theism Manuscript
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
             </div>
 
             {/* Academic Credentials */}

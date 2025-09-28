@@ -75,11 +75,11 @@ const publications = [
   },
   {
     id: 5,
-    title: "Review of Christof Koch's 2024 book on consciousness, Then I Am Myself the World",
+    title: "Review of Christof Koch's 2024 book on consciousness, <em>Then I Am Myself the World</em>",
     publication: "Journal of the American Psychoanalytic Association (JAPA), Vol. 73, Issue 4",
     year: 2024,
     type: "journal" as const,
-    abstract: "A comprehensive review of Christof Koch's latest work on consciousness, Then I Am Myself the World (Basic Books, 2024), examining his neuroscientific approach to understanding self-awareness and subjective experience.",
+    abstract: "A comprehensive review of Christof Koch's latest work on consciousness, <em>Then I Am Myself the World</em> (Basic Books, 2024), examining his neuroscientific approach to understanding self-awareness and subjective experience.",
     downloadUrl: "#",
     category: "Consciousness Studies"
   },
