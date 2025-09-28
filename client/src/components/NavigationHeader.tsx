@@ -17,6 +17,16 @@ const navigationItems: NavigationItem[] = [
   { label: "Contact", href: "#contact" },
 ];
 
+const handleNavigation = (item: NavigationItem) => {
+  if (item.label === "Curriculum Vitae") {
+    console.log("Opening Curriculum Vitae PDF");
+    window.open("/curriculum-vitae.pdf", "_blank");
+    return;
+  }
+  
+  scrollToSection(item.href);
+};
+
 const scrollToSection = (sectionId: string) => {
   if (sectionId === "/") {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -79,7 +89,7 @@ export default function NavigationHeader() {
               ) : (
                 <button
                   key={item.href}
-                  onClick={() => scrollToSection(item.href)}
+                  onClick={() => handleNavigation(item)}
                   className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
                   data-testid={`nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
                 >
@@ -136,7 +146,7 @@ export default function NavigationHeader() {
                   <button
                     key={item.href}
                     onClick={() => {
-                      scrollToSection(item.href);
+                      handleNavigation(item);
                       setIsMenuOpen(false);
                     }}
                     className="block w-full text-left px-3 py-2 text-base font-medium transition-colors hover-elevate rounded-md text-muted-foreground"
