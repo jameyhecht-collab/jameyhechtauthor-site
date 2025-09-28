@@ -71,7 +71,11 @@ export default function PublicationCard({
       <CardHeader className="space-y-3">
         <div className="flex items-start justify-between gap-3">
           <Badge variant="outline" className={typeColors[type]}>
-            {type === "book_chapter" ? "Book Chapter" : type.charAt(0).toUpperCase() + type.slice(1)}
+            {type === "book_chapter" ? "Book Chapter" : 
+             type === "journal" ? "Publication" :
+             type === "poetry" && title === "The Sirens" ? "Poetry" :
+             type === "poetry" ? "Publication" :
+             type.charAt(0).toUpperCase() + type.slice(1)}
           </Badge>
         </div>
         

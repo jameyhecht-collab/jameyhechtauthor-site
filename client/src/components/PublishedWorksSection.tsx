@@ -30,6 +30,16 @@ const publications = [
     downloadUrl: "/shop",
     category: "Political Poetry"
   },
+  {
+    id: 18,
+    title: "The Piano Player Explains Himself: Allen Grossman's Gnosis",
+    publication: "Poetry's Poet: Essays on the Poetry, Pedagogy and Poetics of Allen Grossman, ed. Daniel Morris",
+    year: 2004,
+    type: "book_chapter" as const,
+    abstract: "An essay examining Allen Grossman's poetic philosophy and pedagogical approach, exploring his concept of gnosis and the role of the poet as piano player - interpreter of the world's music.",
+    downloadUrl: "/shop",
+    category: "Literary Criticism"
+  },
   // BOOKS (Scholarly)
   {
     id: 3,
@@ -176,6 +186,16 @@ const publications = [
 
     downloadUrl: "#",
     category: "Poetry"
+  },
+  {
+    id: 19,
+    title: "Hardware",
+    publication: "The Sycamore Review, Vol. 10, No. 2",
+    year: 1998,
+    type: "fiction" as const,
+    abstract: "A work of literary fiction exploring themes of technology, human connection, and the metaphorical hardware of our emotional lives.",
+    downloadUrl: "#",
+    category: "Fiction"
   }
 ];
 

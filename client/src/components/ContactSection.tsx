@@ -194,6 +194,32 @@ export default function ContactSection() {
                     </>
                   )}
                 </Button>
+                
+                <div className="pt-4 border-t space-y-3">
+                  <div className="bg-muted/30 rounded-lg p-3">
+                    <p className="text-sm text-muted-foreground text-center">
+                      <strong className="text-foreground">Note:</strong> This contact form is for 
+                      literary and academic inquiries only. For psychotherapy appointments, 
+                      please visit{" "}
+                      <a 
+                        href="https://www.drjameyhecht.com/contact" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline"
+                        data-testid="link-therapy-contact"
+                      >
+                        drjameyhecht.com/contact
+                      </a>. Thanks
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-center justify-center space-x-3">
+                    <Mail className="h-4 w-4 text-primary" />
+                    <p className="text-sm font-medium text-foreground">
+                      Response Time: Typically within 24-48 hours
+                    </p>
+                  </div>
+                </div>
               </form>
             </CardContent>
           </Card>
@@ -202,86 +228,9 @@ export default function ContactSection() {
           <div className="space-y-6">
             
             {/* For Literary Agents */}
-            <Card className="bg-primary/5 border-primary/20" data-agent-card>
-              <CardHeader>
-                <h3 className="font-serif text-lg font-semibold text-foreground">
-                  For Literary Agents & Publishers
-                </h3>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-sm text-muted-foreground">
-                  <strong className="text-foreground">Into Theism</strong> is a completed 100,000-word 
-                  manuscript exploring philosophical and psychological barriers to religious belief.
-                </p>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Complete manuscript available</li>
-                  <li>• Detailed chapter outline ready</li>
-                  <li>• Author platform established</li>
-                  <li>• Marketing plan prepared</li>
-                </ul>
-              </CardContent>
-            </Card>
 
             {/* Academic Inquiries */}
-            <Card>
-              <CardHeader>
-                <h3 className="font-serif text-lg font-semibold text-foreground">
-                  Academic Collaborations
-                </h3>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-sm text-muted-foreground">
-                  Open to collaborations in psychoanalytic studies, literary criticism, 
-                  and interdisciplinary research projects.
-                </p>
-                <div className="space-y-1">
-                  <p className="text-xs text-muted-foreground">
-                    <strong>Expertise areas:</strong>
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    Contemporary poetry, psychoanalytic theory, religious philosophy, 
-                    literary criticism
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
 
-            {/* Professional Practice Note */}
-            <Card className="bg-muted/30">
-              <CardContent className="pt-6">
-                <p className="text-sm text-muted-foreground text-center">
-                  <strong className="text-foreground">Note:</strong> This contact form is for 
-                  literary and academic inquiries only. For psychotherapy appointments, 
-                  please visit{" "}
-                  <a 
-                    href="https://www.drjameyhecht.com/contact" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-primary hover:underline"
-                    data-testid="link-therapy-contact"
-                  >
-                    drjameyhecht.com/contact
-                  </a>. Thanks
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Response Time */}
-            <Card>
-              <CardContent className="pt-6">
-                <div className="flex items-center space-x-3">
-                  <Mail className="h-5 w-5 text-primary" />
-                  <div>
-                    <p className="text-sm font-medium text-foreground">
-                      Response Time
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      Typically within 24-48 hours
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
 
           </div>
         </div>
