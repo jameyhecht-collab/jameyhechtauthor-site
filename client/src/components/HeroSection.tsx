@@ -36,7 +36,7 @@ export default function HeroSection() {
               <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
                 PhD in English & American Literature, PsyD in Psychoanalysis. 
                 Author of five published books and over a dozen scholarly papers spanning literary criticism, poetry, 
-                and psychoanalytic theory. Currently seeking publication for 
+                and psychoanalytic theory. Currently seeking representation for 
                 <em className="font-serif font-semibold text-foreground"> Into Theism: Overcoming Obstacles to Belief in God</em>.
               </p>
 

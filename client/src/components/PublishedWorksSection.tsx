@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import PublicationCard from "./PublicationCard";
 import { BookOpen, FileText, PenTool, Star } from "lucide-react";
-import publicationsImage from "@assets/generated_images/Academic_publications_stack_48fd22ad.png";
+import publicationsImage from "@assets/Books and Lit Mags_1759024456186.jpg";
 
 type PublicationType = "all" | "journal" | "book" | "poetry" | "review" | "book_chapter";
 

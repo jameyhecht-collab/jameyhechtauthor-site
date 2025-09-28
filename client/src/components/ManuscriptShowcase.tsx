@@ -26,7 +26,7 @@ export default function ManuscriptShowcase() {
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
           <Badge variant="outline" className="mb-4">
-            Seeking Publication
+            Seeking Representation
           </Badge>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground">
             Into Theism: Overcoming Obstacles to Belief in God
