@@ -1,9 +1,21 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
+import path from "path";
 import { storage } from "./storage";
 import { BOOK_CATALOG, checkoutRequestSchema } from "@shared/schema";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Serve static PDFs from public directory
+  app.get(["*.pdf"], (req, res) => {
+    const publicPath = path.resolve(import.meta.dirname, "..", "public");
+    const filePath = path.join(publicPath, req.path);
+    res.sendFile(filePath, (err) => {
+      if (err) {
+        res.status(404).json({ error: "File not found" });
+      }
+    });
+  });
+
   // Stripe integration for book sales - referenced from blueprint:javascript_stripe
   let stripe: any = null;
   if (process.env.STRIPE_SECRET_KEY) {

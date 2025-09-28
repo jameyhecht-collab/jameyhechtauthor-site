@@ -79,7 +79,10 @@ export default function ManuscriptShowcase() {
               <div className="flex flex-wrap justify-center gap-3">
                 <Button 
                   variant="outline"
-                  onClick={() => console.log("Viewing table of contents")}
+                  onClick={() => {
+                    console.log("Viewing table of contents");
+                    window.open("/table-of-contents-into-theism.pdf", "_blank");
+                  }}
                   className="hover-elevate active-elevate-2"
                   data-testid="button-table-of-contents"
                 >
