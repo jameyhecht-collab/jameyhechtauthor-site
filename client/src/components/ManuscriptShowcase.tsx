@@ -92,7 +92,10 @@ export default function ManuscriptShowcase() {
                 
                 <Button 
                   variant="outline"
-                  onClick={() => console.log("Viewing preface")}
+                  onClick={() => {
+                    console.log("Viewing preface");
+                    window.open("/preface-into-theism.pdf", "_blank");
+                  }}
                   className="hover-elevate active-elevate-2"
                   data-testid="button-preface"
                 >
