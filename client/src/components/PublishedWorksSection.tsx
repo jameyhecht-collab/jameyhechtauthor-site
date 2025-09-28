@@ -17,7 +17,6 @@ const publications = [
     year: 2019,
     type: "poetry" as const,
     abstract: "A collection of poems spanning three decades, exploring themes of loss, thwarted ambition, and transformation.",
-    views: 245,
     downloadUrl: "#",
     category: "Contemporary Poetry"
   },
@@ -28,7 +27,6 @@ const publications = [
     year: 2009,
     type: "poetry" as const,
     abstract: "Fifty 14-line elegies for President John F. Kennedy, exploring themes of political idealism, tragedy, and the American dream through lyrical meditation.",
-    views: 312,
     downloadUrl: "#",
     category: "Political Poetry"
   },
@@ -40,7 +38,6 @@ const publications = [
     year: 2010,
     type: "book" as const,
     abstract: "A guide for students and scholars writing about Homer's Iliad and Odyssey, covering critical approaches, themes, and analytical frameworks, with essay prompts and writing guides.",
-    views: 187,
     downloadUrl: "#",
     category: "Literary Criticism"
   },
@@ -51,7 +48,7 @@ const publications = [
     year: 1999,
     type: "book" as const,
     abstract: "A clear exposition of Plato's great dialogue on love and sexuality, with each passage translated by the author and explained in the context of ancient Athenian culture and the Socratic movement.",
-    views: 156,
+
     downloadUrl: "#",
     category: "Philosophy"
   },
@@ -62,7 +59,6 @@ const publications = [
     year: 2004,
     type: "book" as const,
     abstract: "A blank verse translation with notes and commentary, and an introduction analyzing Antigone, Oedipus the Tyrant, and Oedipus at Colonus.",
-    views: 142,
     downloadUrl: "#",
     category: "Classical Literature"
   },
@@ -74,18 +70,16 @@ const publications = [
     year: 2022,
     type: "journal" as const,
     abstract: "Winner, New Author's Prize. In 'On Arrogance' (1958), Wilfred Bion combined a misreading of Sophocles' Oedipus with projections of his own post-traumatic anxieties.",
-    views: 96,
     downloadUrl: "#",
     category: "Psychoanalytic Theory"
   },
   {
     id: 5,
-    title: "Review of Christoph Koch's 2024 book on consciousness, Then I Am Myself the World",
+    title: "Review of Christof Koch's 2024 book on consciousness, Then I Am Myself the World",
     publication: "Journal of the American Psychoanalytic Association (JAPA), Vol. 73, Issue 4",
     year: 2024,
     type: "journal" as const,
-    abstract: "A comprehensive review of Christoph Koch's latest work on consciousness, examining his neuroscientific approach to understanding self-awareness and subjective experience.",
-    views: 45,
+    abstract: "A comprehensive review of Christof Koch's latest work on consciousness, Then I Am Myself the World (Basic Books, 2024), examining his neuroscientific approach to understanding self-awareness and subjective experience.",
     downloadUrl: "#",
     category: "Consciousness Studies"
   },
@@ -96,7 +90,6 @@ const publications = [
     year: 2009,
     type: "book_chapter" as const,
     abstract: "An analysis of Robert Frost's poetry within its cultural and technological context, examining themes of labor, spirituality, and modernity.",
-    views: 143,
     downloadUrl: "#",
     category: "American Literature"
   },
@@ -107,7 +100,6 @@ const publications = [
     year: 2002,
     type: "journal" as const,
     abstract: "Luther's Reformation expanded the burdens of interpretation in European experience. This essay examines how Hamlet's predicament combines the newfound freedoms and burdens of interpretive responsibility.",
-    views: 188,
     downloadUrl: "#",
     category: "Renaissance Studies"
   },
@@ -118,7 +110,6 @@ const publications = [
     year: 1994,
     type: "journal" as const,
     abstract: "An examination of themes of scarcity and poetic vocation in Keats's 'On First Looking into Chapman's Homer' and 'When I Have Fears That I May Cease to Be.'",
-    views: 167,
     downloadUrl: "#",
     category: "Romantic Literature"
   },
@@ -129,7 +120,7 @@ const publications = [
     year: 1999,
     type: "journal" as const,
     abstract: "An analysis of metaphysical, epistemological, and economic themes in Melville's masterwork, examining concepts of scarcity, desire, and compensation.",
-    views: 156,
+
     downloadUrl: "#",
     category: "American Literature"
   },
@@ -140,7 +131,7 @@ const publications = [
     year: 2017,
     type: "book_chapter" as const,
     abstract: "Several literary villains are compared in their ambition-driven violence, the ontological status they give the supernatural, and its implications for the nature of evil. As extrinsic sequels to human conduct, postmortem reward—and—punishment supplant compassion as virtue's central motive.",
-    views: 134,
+
     downloadUrl: "#",
     category: "Renaissance Studies"
   },
@@ -151,7 +142,6 @@ const publications = [
     year: 2016,
     type: "journal" as const,
     abstract: "Ingmar Bergman's 1957 film 'Wild Strawberries' is a resolved study in unresolved psychic pain. What Bergman sublimates into art is tragically repressed by his protagonist. Love and its lack determine our pain; work and its success or failure determine the fate of that pain in generativity or in stagnation.",
-    views: 148,
     downloadUrl: "#",
     category: "Film Studies"
   },
@@ -163,7 +153,6 @@ const publications = [
     year: 2018,
     type: "poetry" as const,
     abstract: "A poem in the Homeric tradition of Tennyson's 'Ulysses,' focused on Odysseus' lived experience of the Sirens episode, with its themes of survival, betrayal, and the perilous desire for the sublime.",
-    views: 92,
     downloadUrl: "#",
     category: "Poetry"
   },
@@ -174,7 +163,7 @@ const publications = [
     year: 2009,
     type: "poetry" as const,
     abstract: "These various elegies for President John F. Kennedy later appeared in the book Limousine, Midnight Blue, available here.",
-    views: 134,
+
     downloadUrl: "#",
     category: "Poetry"
   },
@@ -185,7 +174,6 @@ const publications = [
     year: 2010,
     type: "fiction" as const,
     abstract: "A work of literary fiction exploring themes of mortality, identity, and the extraordinary within the ordinary.",
-    views: 87,
     downloadUrl: "#",
     category: "Fiction"
   }
@@ -428,7 +416,6 @@ export default function PublishedWorksSection() {
                       year={publication.year}
                       type={publication.type}
                       abstract={publication.abstract}
-                      views={publication.views}
                       downloadUrl={publication.downloadUrl}
                       category={publication.category}
                     />

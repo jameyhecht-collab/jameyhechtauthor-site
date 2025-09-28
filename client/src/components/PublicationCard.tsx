@@ -9,7 +9,6 @@ interface PublicationCardProps {
   year: number;
   type: "journal" | "book" | "poetry" | "fiction" | "review" | "book_chapter";
   abstract?: string;
-  views?: number;
   downloadUrl?: string;
   category?: string;
 }
@@ -29,7 +28,6 @@ export default function PublicationCard({
   year,
   type,
   abstract,
-  views,
   downloadUrl,
   category
 }: PublicationCardProps) {
@@ -46,7 +44,8 @@ export default function PublicationCard({
   const renderTextWithItalics = (text: string) => {
     const bookTitles = [
       'Antigone', 'Oedipus the Tyrant', 'Oedipus at Colonus', 'Oedipus', 
-      'Hamlet', 'Moby-Dick', 'Macbeth', 'Doctor Faustus'
+      'Hamlet', 'Moby-Dick', 'Macbeth', 'Doctor Faustus',
+      'Limousine, Midnight Blue', 'Iliad', 'Odyssey', 'Then I Am Myself the World'
     ];
     
     let processedText = text;
@@ -74,12 +73,6 @@ export default function PublicationCard({
           <Badge variant="outline" className={typeColors[type]}>
             {type === "book_chapter" ? "Book Chapter" : type.charAt(0).toUpperCase() + type.slice(1)}
           </Badge>
-          {views && (
-            <div className="flex items-center text-base text-muted-foreground">
-              <Eye className="h-3 w-3 mr-1" />
-              {views}
-            </div>
-          )}
         </div>
         
         <h3 className="font-serif text-lg font-semibold leading-tight text-foreground">
@@ -126,7 +119,7 @@ export default function PublicationCard({
             data-testid={`button-download-${title.toLowerCase().replace(/\s+/g, "-")}`}
           >
             <ExternalLink className="h-3 w-3 mr-1" />
-            Read
+            {type === "book" ? "Available for Purchase" : "Read"}
           </Button>
         )}
       </CardFooter>
