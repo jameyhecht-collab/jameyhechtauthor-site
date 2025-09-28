@@ -205,7 +205,7 @@ export default function ContactSection() {
           <div className="space-y-6">
             
             {/* For Literary Agents */}
-            <Card className="bg-primary/5 border-primary/20">
+            <Card className="bg-primary/5 border-primary/20" data-agent-card>
               <CardHeader>
                 <h3 className="font-serif text-lg font-semibold text-foreground">
                   For Literary Agents & Publishers

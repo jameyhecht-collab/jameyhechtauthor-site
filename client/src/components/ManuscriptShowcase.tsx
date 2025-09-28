@@ -5,8 +5,27 @@ import { BookOpen, FileText, Mail, Users } from "lucide-react";
 
 export default function ManuscriptShowcase() {
   const handleAgentInquiry = () => {
-    console.log("Opening agent inquiry form");
-    // In a real app, this would open a contact modal or navigate to contact page
+    console.log("Scrolling to contact section for literary agents");
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+      // Add visual indicator that this is for agents
+      setTimeout(() => {
+        const agentCard = document.querySelector('[data-agent-card]') as HTMLElement;
+        if (agentCard) {
+          agentCard.scrollIntoView({ behavior: "smooth", block: "center" });
+          // Add highlight effect
+          agentCard.style.boxShadow = "0 0 0 3px rgb(139 69 19 / 0.3), 0 0 20px rgb(139 69 19 / 0.2)";
+          agentCard.style.transition = "box-shadow 0.3s ease";
+          
+          // Remove highlight after 3 seconds
+          setTimeout(() => {
+            agentCard.style.boxShadow = "";
+            agentCard.style.transition = "";
+          }, 3000);
+        }
+      }, 500);
+    }
   };
 
   const handleReadExcerpt = () => {
