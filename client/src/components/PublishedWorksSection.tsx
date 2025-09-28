@@ -177,6 +177,16 @@ const publications = [
     category: "Fiction"
   },
   {
+    id: 19,
+    title: "Hardware",
+    publication: "The Sycamore Review, Vol. 10, No. 2",
+    year: 1998,
+    type: "fiction" as const,
+    abstract: "A work of literary fiction exploring themes of technology, human connection, and the metaphorical hardware of our emotional lives.",
+    downloadUrl: "#",
+    category: "Fiction"
+  },
+  {
     id: 12,
     title: "Zapruder Film Frame Elegies",
     publication: "Black Warrior Review, Rattle, Anthony Hecht Poetry Prize Anthology (Finalist), The St. Ann's Review",
@@ -186,16 +196,6 @@ const publications = [
 
     downloadUrl: "#",
     category: "Poetry"
-  },
-  {
-    id: 19,
-    title: "Hardware",
-    publication: "The Sycamore Review, Vol. 10, No. 2",
-    year: 1998,
-    type: "fiction" as const,
-    abstract: "A work of literary fiction exploring themes of technology, human connection, and the metaphorical hardware of our emotional lives.",
-    downloadUrl: "#",
-    category: "Fiction"
   }
 ];
 
@@ -535,7 +535,7 @@ export default function PublishedWorksSection() {
                     Poems in Literary Journals & Periodicals
                   </h3>
                   <p className="text-base text-muted-foreground">
-                    Individual poems published in literary journals, magazines, and periodicals (2004-2025)
+                    Selected poems published in literary journals and periodicals (2004-2025)
                   </p>
                 </div>
                 <div className="bg-card rounded-lg p-8 shadow-sm border max-w-6xl mx-auto">
