@@ -30,16 +30,6 @@ const publications = [
     downloadUrl: "/shop",
     category: "Political Poetry"
   },
-  {
-    id: 18,
-    title: "The Piano Player Explains Himself: Allen Grossman's Gnosis",
-    publication: "Poetry's Poet: Essays on the Poetry, Pedagogy and Poetics of Allen Grossman, ed. Daniel Morris",
-    year: 2004,
-    type: "book_chapter" as const,
-    abstract: "An essay examining Allen Grossman's poetic philosophy and pedagogical approach, exploring his concept of gnosis and the role of the poet as piano player - interpreter of the world's music.",
-    downloadUrl: "/shop",
-    category: "Literary Criticism"
-  },
   // BOOKS (Scholarly)
   {
     id: 3,
@@ -71,6 +61,16 @@ const publications = [
     abstract: "A blank verse translation with notes and commentary, and an introduction analyzing Antigone, Oedipus the Tyrant, and Oedipus at Colonus.",
     downloadUrl: "/shop",
     category: "Classical Literature"
+  },
+  {
+    id: 18,
+    title: "The Piano Player Explains Himself: Allen Grossman's Gnosis",
+    publication: "Poetry's Poet: Essays on the Poetry, Pedagogy and Poetics of Allen Grossman, ed. Daniel Morris",
+    year: 2004,
+    type: "book_chapter" as const,
+    abstract: "An essay examining Allen Grossman's poetic philosophy and pedagogical approach, exploring his concept of gnosis and the role of the poet as piano player - interpreter of the world's music.",
+    downloadUrl: "/shop",
+    category: "Literary Criticism"
   },
   // SCHOLARLY PAPERS
   {
