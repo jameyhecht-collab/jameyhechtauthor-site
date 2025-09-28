@@ -1,42 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, FileText, Mail, Users } from "lucide-react";
+import { BookOpen, FileText, Mail } from "lucide-react";
 
 export default function ManuscriptShowcase() {
-  const handleAgentInquiry = () => {
-    console.log("Scrolling to contact section for literary agents");
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-      // Add visual indicator that this is for agents
-      setTimeout(() => {
-        const agentCard = document.querySelector('[data-agent-card]') as HTMLElement;
-        if (agentCard) {
-          agentCard.scrollIntoView({ behavior: "smooth", block: "center" });
-          // Add highlight effect
-          agentCard.style.boxShadow = "0 0 0 3px rgb(139 69 19 / 0.3), 0 0 20px rgb(139 69 19 / 0.2)";
-          agentCard.style.transition = "box-shadow 0.3s ease";
-          
-          // Remove highlight after 3 seconds
-          setTimeout(() => {
-            agentCard.style.boxShadow = "";
-            agentCard.style.transition = "";
-          }, 3000);
-        }
-      }, 500);
-    }
-  };
-
-  const handleReadExcerpt = () => {
-    console.log("Opening manuscript excerpt");
-    // In a real app, this would show a modal with sample chapters
-  };
-
-  const handleDownloadProposal = () => {
-    console.log("Downloading book proposal");
-    // In a real app, this would download the proposal document
-  };
 
   return (
     <section className="py-20 bg-muted/20" id="manuscript">
@@ -108,21 +75,42 @@ export default function ManuscriptShowcase() {
 
             {/* Action Buttons */}
             <div className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div className="flex flex-wrap justify-center gap-3">
                 <Button 
-                  onClick={handleAgentInquiry}
+                  variant="outline"
+                  onClick={() => console.log("Opening table of contents")}
                   className="hover-elevate active-elevate-2"
-                  data-testid="button-agent-inquiry"
+                  data-testid="button-table-of-contents"
                 >
-                  <Users className="mr-2 h-4 w-4" />
-                  Agent Inquiry
+                  <FileText className="mr-2 h-4 w-4" />
+                  Table of Contents
                 </Button>
                 
                 <Button 
                   variant="outline"
-                  onClick={handleDownloadProposal}
+                  onClick={() => console.log("Opening preface")}
                   className="hover-elevate active-elevate-2"
-                  data-testid="button-download-proposal"
+                  data-testid="button-preface"
+                >
+                  <BookOpen className="mr-2 h-4 w-4" />
+                  Preface
+                </Button>
+                
+                <Button 
+                  variant="outline"
+                  onClick={() => console.log("Opening introduction with chapter descriptions")}
+                  className="hover-elevate active-elevate-2"
+                  data-testid="button-introduction"
+                >
+                  <FileText className="mr-2 h-4 w-4" />
+                  Introduction with Chapter Descriptions
+                </Button>
+                
+                <Button 
+                  variant="outline"
+                  onClick={() => console.log("Opening book proposal")}
+                  className="hover-elevate active-elevate-2"
+                  data-testid="button-book-proposal"
                 >
                   <FileText className="mr-2 h-4 w-4" />
                   Book Proposal
@@ -130,12 +118,12 @@ export default function ManuscriptShowcase() {
                 
                 <Button 
                   variant="outline"
-                  onClick={() => console.log("Opening chapter outline")}
+                  onClick={() => console.log("Opening sample chapter: Theodicy")}
                   className="hover-elevate active-elevate-2"
-                  data-testid="button-chapter-outline"
+                  data-testid="button-sample-chapter"
                 >
                   <BookOpen className="mr-2 h-4 w-4" />
-                  Chapter Outline
+                  Sample Chapter: Theodicy, the "Problem of Evil"
                 </Button>
               </div>
             </div>
