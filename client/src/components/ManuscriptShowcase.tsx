@@ -108,12 +108,12 @@ export default function ManuscriptShowcase() {
                 
                 <Button 
                   variant="outline"
-                  onClick={() => console.log("Viewing book proposal")}
+                  onClick={() => console.log("Request for full book proposal")}
                   className="hover-elevate active-elevate-2"
                   data-testid="button-book-proposal"
                 >
                   <FileText className="mr-2 h-4 w-4" />
-                  Book Proposal
+                  Request Full Book Proposal
                 </Button>
                 
                 <Button 
