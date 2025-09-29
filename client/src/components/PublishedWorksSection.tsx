@@ -94,6 +94,16 @@ const publications = [
     category: "Consciousness Studies"
   },
   {
+    id: 20,
+    title: "Drawing a Blank: Bion Speaking on Chinese Writing",
+    publication: "American Imago, Volume 80, Number 1",
+    year: 2023,
+    type: "journal" as const,
+    abstract: "An exploration of Wilfred Bion's thoughts on Chinese writing and its implications for psychoanalytic understanding of language, meaning, and the unconscious.",
+    downloadUrl: "https://www.academia.edu/113695801/Drawing_a_Blank_Bion_Speaking_on_Chinese_Writing",
+    category: "Psychoanalytic Theory"
+  },
+  {
     id: 6,
     title: "Technology, Labor, and the Sacred: The Cultural Context of Robert Frost",
     publication: "Critical Insights: Robert Frost (EBSCO)",
@@ -130,8 +140,7 @@ const publications = [
     year: 1999,
     type: "journal" as const,
     abstract: "An analysis of metaphysical, epistemological, and economic themes in Melville's masterwork, examining concepts of scarcity, desire, and compensation.",
-
-    downloadUrl: "#",
+    downloadUrl: "https://www.academia.edu/33335443/Scarcity_and_Compensation_in_Herman_Melville_s_Moby_Dick",
     category: "American Literature"
   },
   {
@@ -152,7 +161,7 @@ const publications = [
     year: 2016,
     type: "journal" as const,
     abstract: "Ingmar Bergman's 1957 film 'Wild Strawberries' is a resolved study in unresolved psychic pain. What Bergman sublimates into art is tragically repressed by his protagonist. Love and its lack determine our pain; work and its success or failure determine the fate of that pain in generativity or in stagnation.",
-    downloadUrl: "#",
+    downloadUrl: "https://www.academia.edu/37709656/The_Failure_of_Sublimation_and_the_Fate_of_Pain_a_Reading_of_Bergmans_Wild_Strawberries",
     category: "Film Studies"
   },
   // LITERARY PERIODICAL PUBLICATIONS
