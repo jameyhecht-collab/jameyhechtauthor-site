@@ -130,7 +130,10 @@ export default function ManuscriptShowcase() {
                 
                 <Button 
                   variant="outline"
-                  onClick={() => console.log("Viewing sample chapter: Theodicy")}
+                  onClick={() => {
+                    console.log("Viewing sample chapter: Theodicy");
+                    window.open("/sample-chapter-into-theism.pdf", "_blank");
+                  }}
                   className="hover-elevate active-elevate-2"
                   data-testid="button-sample-chapter"
                 >
