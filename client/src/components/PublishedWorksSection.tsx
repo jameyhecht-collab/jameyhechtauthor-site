@@ -69,7 +69,7 @@ const publications = [
     year: 2004,
     type: "book_chapter" as const,
     abstract: "An essay examining Allen Grossman's poetic philosophy and pedagogical approach, exploring his concept of gnosis and the role of the poet as piano player - interpreter of the world's music.",
-    downloadUrl: "/shop",
+    downloadUrl: "https://archive.org/details/isbn_9780943373669/page/n5/mode/2up",
     category: "Literary Criticism"
   },
   // SCHOLARLY PAPERS
