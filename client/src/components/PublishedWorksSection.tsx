@@ -80,7 +80,7 @@ const publications = [
     year: 2022,
     type: "journal" as const,
     abstract: "Winner, New Author's Prize. In 'On Arrogance' (1958), Wilfred Bion combined a misreading of Sophocles' Oedipus with projections of his own post-traumatic anxieties.",
-    downloadUrl: "#",
+    downloadUrl: "https://www.academia.edu/101072098/Bion_at_the_Crossroads_A_Contrarian_Reading_of_on_Arrogance_",
     category: "Psychoanalytic Theory"
   },
   {
@@ -90,7 +90,7 @@ const publications = [
     year: 2024,
     type: "journal" as const,
     abstract: "A comprehensive review of Christof Koch's latest work on consciousness, Then I Am Myself the World (Basic Books, 2024), examining his neuroscientific approach to understanding self-awareness and subjective experience.",
-    downloadUrl: "#",
+    downloadUrl: "https://journals.sagepub.com/doi/abs/10.1177/00030651251329296",
     category: "Consciousness Studies"
   },
   {
@@ -110,7 +110,7 @@ const publications = [
     year: 2002,
     type: "journal" as const,
     abstract: "Luther's Reformation expanded the burdens of interpretation in European experience. This essay examines how Hamlet's predicament combines the newfound freedoms and burdens of interpretive responsibility.",
-    downloadUrl: "#",
+    downloadUrl: "https://www.academia.edu/33335371/Tragedy_Hamlet_and_Luther",
     category: "Renaissance Studies"
   },
   {
@@ -120,7 +120,7 @@ const publications = [
     year: 1994,
     type: "journal" as const,
     abstract: "An examination of themes of scarcity and poetic vocation in Keats's 'On First Looking into Chapman's Homer' and 'When I Have Fears That I May Cease to Be.'",
-    downloadUrl: "#",
+    downloadUrl: "https://www.academia.edu/32548108/Scarcity_and_Poetic_Vocation_in_Two_Sonnets_of_John_Keats",
     category: "Romantic Literature"
   },
   {
