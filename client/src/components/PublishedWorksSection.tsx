@@ -596,7 +596,7 @@ export default function PublishedWorksSection() {
                 </div>
               </div>
             )}
-            <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${activeFilter === 'fiction' ? 'max-w-5xl mx-auto' : 'lg:grid-cols-3'}`}>
+            <div className={`grid gap-6 ${activeFilter === 'fiction' ? 'grid-cols-2 max-w-5xl mx-auto' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
               {filteredPublications.map((publication) => (
                 <PublicationCard
                   key={publication.id}
