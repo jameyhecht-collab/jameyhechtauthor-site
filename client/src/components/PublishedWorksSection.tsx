@@ -195,17 +195,6 @@ const publications = [
     downloadUrl: "#",
     category: "Poetry"
   },
-  {
-    id: 12,
-    title: "Zapruder Film Frame Elegies",
-    publication: "Black Warrior Review, Rattle, Anthony Hecht Poetry Prize Anthology (Finalist), The St. Ann's Review",
-    year: 2009,
-    type: "poetry" as const,
-    abstract: "These various elegies for President John F. Kennedy later appeared in the book Limousine, Midnight Blue, available here.",
-
-    downloadUrl: "#",
-    category: "Poetry"
-  }
 ];
 
 // Type for poem entries - can be either a string title or an object with title and URL
@@ -367,7 +356,7 @@ export default function PublishedWorksSection() {
 
   // Separate books from papers/periodicals
   const books = publications.filter(pub => pub.type === "book" || pub.type === "book_chapter");
-  const papersAndPeriodicals = publications.filter(pub => pub.type === "journal" || pub.type === "fiction" || pub.type === "poetry");
+  const papersAndPeriodicals = publications.filter(pub => pub.type === "journal" || pub.type === "fiction");
   
   const filteredPublications = publications.filter(pub => 
     activeFilter === "all" || pub.type === activeFilter

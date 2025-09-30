@@ -7,6 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useQuery } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import type { Book } from "@shared/schema";
+import limousineCover from "@assets/LIMO-whole-front-cover_1759199924818.jpg";
 
 export default function BookStoreSection() {
   const [purchasingBook, setPurchasingBook] = useState<string | null>(null);
@@ -99,6 +100,16 @@ export default function BookStoreSection() {
           {books.map((book) => (
             <Card key={book.id} className="group hover-elevate" data-testid={`card-book-${book.id}`}>
               <CardHeader>
+                {book.id === 'limousine-midnight-blue' && (
+                  <div className="mb-4">
+                    <img 
+                      src={limousineCover} 
+                      alt={`Cover of ${book.title}`}
+                      className="w-full h-64 object-cover rounded-md"
+                      data-testid={`img-cover-${book.id}`}
+                    />
+                  </div>
+                )}
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <CardTitle className="font-serif text-xl leading-tight mb-2">

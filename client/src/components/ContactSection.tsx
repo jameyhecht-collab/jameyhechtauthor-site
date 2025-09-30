@@ -142,8 +142,10 @@ export default function ContactSection() {
                       <Button
                         key={key}
                         type="button"
-                        variant={formData.inquiryType === key ? "default" : "outline"}
-                        className="justify-start hover-elevate active-elevate-2"
+                        variant={formData.inquiryType === key ? "default" : "default"}
+                        className={`justify-start bg-[hsl(0,70%,35%)] hover:bg-[hsl(0,70%,30%)] border-[hsl(0,70%,35%)] ${
+                          formData.inquiryType === key ? 'ring-2 ring-white ring-offset-2' : ''
+                        }`}
                         onClick={() => handleInquiryTypeChange(key)}
                         data-testid={`inquiry-type-${key}`}
                       >
