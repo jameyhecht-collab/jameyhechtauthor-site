@@ -54,48 +54,52 @@ export const BOOK_CATALOG: Book[] = [
     title: "Bloom's How to Write About Homer",
     author: "Dr. Jamey Hecht",
     price: 18.00,
-    description: "A comprehensive guide for students and scholars writing about Homer's epics, covering critical approaches, themes, and analytical frameworks.",
+    description: "A guide for students and scholars writing about Homer's Iliad and Odyssey, covering critical approaches, themes, and analytical frameworks, with essay prompts and writing guides.",
     isbn: "978-1604137163",
     year: 2010,
     pages: 256,
     condition: "New",
-    availability: "In Stock"
+    availability: "In Stock",
+    coverImage: "/attached_assets/415TFLsNKyL._AC_CR0,0,0,0_SX960_SY720__1759200114492.jpg"
   },
   {
     id: "sophocles-theban-plays",
     title: "Sophocles' Three Theban Plays",
     author: "Dr. Jamey Hecht (translator)",
     price: 12.00,
-    description: "Translation, notes, and commentary on Sophocles' masterful trilogy. A fresh interpretation of these classical works for contemporary readers.",
+    description: "A blank verse translation with notes and commentary, and an introduction analyzing Antigone, Oedipus the Tyrant, and Oedipus at Colonus.",
     isbn: "978-1840221442",
     year: 2004,
     pages: 180,
     condition: "New",
-    availability: "In Stock"
+    availability: "In Stock",
+    coverImage: "/attached_assets/81c8o6shAyL._AC_CR0,0,0,0_SX960_SY720__1759200114491.jpg"
   },
   {
     id: "platos-symposium",
     title: "Plato's Symposium: Eros and The Human Predicament",
     author: "Dr. Jamey Hecht",
     price: 28.00,
-    description: "An in-depth analysis of Plato's philosophical masterpiece, exploring themes of love, beauty, and human nature through scholarly examination.",
+    description: "A clear exposition of Plato's great dialogue on love and sexuality, with each passage translated by the author and explained in the context of ancient Athenian culture and the Socratic movement.",
     isbn: "978-0805716399",
     year: 1999,
     pages: 304,
     condition: "New",
-    availability: "In Stock"
+    availability: "In Stock",
+    coverImage: "/attached_assets/31M4XpaocbL._AC_CR0,0,0,0_SX480_SY360__1759200114490.jpg"
   },
   {
     id: "dodo-feathers",
     title: "Dodo Feathers: Poems 1989–2019",
     author: "Dr. Jamey Hecht",
     price: 20.00,
-    description: "A collection spanning three decades of poetic work, exploring themes of memory, loss, and transformation through elegant verse.",
+    description: "A collection of poems spanning three decades, exploring themes of loss, thwarted ambition, and transformation.",
     isbn: "978-1949093070",
     year: 2019,
     pages: 164,
     condition: "New",
-    availability: "In Stock"
+    availability: "In Stock",
+    coverImage: "/attached_assets/71MUTZuFBYL._AC_CR0,0,0,0_SX960_SY720__1759200114491.jpg"
   }
 ];
 

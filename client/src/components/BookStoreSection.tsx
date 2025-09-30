@@ -8,6 +8,10 @@ import { useQuery } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import type { Book } from "@shared/schema";
 import limousineCover from "@assets/LIMO-whole-front-cover_1759199924818.jpg";
+import bloomsHomerCover from "@assets/415TFLsNKyL._AC_CR0,0,0,0_SX960_SY720__1759200114492.jpg";
+import sophoclesCover from "@assets/81c8o6shAyL._AC_CR0,0,0,0_SX960_SY720__1759200114491.jpg";
+import platosCover from "@assets/31M4XpaocbL._AC_CR0,0,0,0_SX480_SY360__1759200114490.jpg";
+import dodoFeathersCover from "@assets/71MUTZuFBYL._AC_CR0,0,0,0_SX960_SY720__1759200114491.jpg";
 
 export default function BookStoreSection() {
   const [purchasingBook, setPurchasingBook] = useState<string | null>(null);
@@ -100,16 +104,26 @@ export default function BookStoreSection() {
           {books.map((book) => (
             <Card key={book.id} className="group hover-elevate" data-testid={`card-book-${book.id}`}>
               <CardHeader>
-                {book.id === 'limousine-midnight-blue' && (
-                  <div className="mb-4">
-                    <img 
-                      src={limousineCover} 
-                      alt={`Cover of ${book.title}`}
-                      className="w-full h-64 object-cover rounded-md"
-                      data-testid={`img-cover-${book.id}`}
-                    />
-                  </div>
-                )}
+                {(() => {
+                  const coverMap: Record<string, string> = {
+                    'limousine-midnight-blue': limousineCover,
+                    'blooms-homer': bloomsHomerCover,
+                    'sophocles-theban-plays': sophoclesCover,
+                    'platos-symposium': platosCover,
+                    'dodo-feathers': dodoFeathersCover
+                  };
+                  const coverImage = coverMap[book.id];
+                  return coverImage ? (
+                    <div className="mb-4">
+                      <img 
+                        src={coverImage} 
+                        alt={`Cover of ${book.title}`}
+                        className="w-full h-64 object-cover rounded-md"
+                        data-testid={`img-cover-${book.id}`}
+                      />
+                    </div>
+                  ) : null;
+                })()}
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <CardTitle className="font-serif text-xl leading-tight mb-2">
