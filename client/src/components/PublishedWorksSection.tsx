@@ -356,7 +356,8 @@ export default function PublishedWorksSection() {
 
   // Separate books from papers/periodicals
   const books = publications.filter(pub => pub.type === "book" || pub.type === "book_chapter");
-  const papersAndPeriodicals = publications.filter(pub => pub.type === "journal" || pub.type === "fiction");
+  const fictionWorks = publications.filter(pub => pub.type === "fiction");
+  const papersAndPeriodicals = publications.filter(pub => pub.type === "journal");
   
   const filteredPublications = publications.filter(pub => 
     activeFilter === "all" || pub.type === activeFilter
@@ -447,6 +448,34 @@ export default function PublishedWorksSection() {
                 ))}
               </div>
             </div>
+            
+            {/* Fiction Section - 2 columns */}
+            {fictionWorks.length > 0 && (
+              <div>
+                <div className="text-center mb-8">
+                  <h3 className="font-serif text-xl font-semibold text-foreground mb-2">
+                    Fiction
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Literary fiction published in periodicals
+                  </p>
+                </div>
+                <div className="grid grid-cols-2 gap-6 max-w-5xl mx-auto">
+                  {fictionWorks.map((publication) => (
+                    <PublicationCard
+                      key={publication.id}
+                      title={publication.title}
+                      publication={publication.publication}
+                      year={publication.year}
+                      type={publication.type}
+                      abstract={publication.abstract}
+                      downloadUrl={publication.downloadUrl}
+                      category={publication.category}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
             
             {/* Articles & Papers Section */}
             <div>
