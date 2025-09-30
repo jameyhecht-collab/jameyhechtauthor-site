@@ -114,17 +114,17 @@ export default function BookStoreSection() {
                   };
                   const coverImage = coverMap[book.id];
                   return coverImage ? (
-                    <div className="mb-4">
+                    <div className="mb-4 bg-black rounded-md">
                       <img 
                         src={coverImage} 
                         alt={`Cover of ${book.title}`}
-                        className="w-full h-64 object-cover rounded-md"
+                        className="w-full h-64 object-contain rounded-md"
                         data-testid={`img-cover-${book.id}`}
                       />
                     </div>
                   ) : null;
                 })()}
-                <div className="flex items-start justify-between">
+                <div className="flex items-start justify-between gap-2">
                   <div className="flex-1">
                     <CardTitle className="font-serif text-xl leading-tight mb-2">
                       {book.title}
@@ -133,9 +133,14 @@ export default function BookStoreSection() {
                       by {book.author}
                     </p>
                   </div>
-                  <Badge variant="outline" className="ml-2" data-testid={`status-${book.id}`}>
-                    {book.availability}
-                  </Badge>
+                  <div className="flex flex-col gap-1">
+                    <Badge variant="outline" data-testid={`badge-signed-${book.id}`}>
+                      Signed
+                    </Badge>
+                    <Badge variant="outline" data-testid={`status-${book.id}`}>
+                      {book.availability}
+                    </Badge>
+                  </div>
                 </div>
               </CardHeader>
               

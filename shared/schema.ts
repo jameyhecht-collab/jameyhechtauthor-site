@@ -84,7 +84,7 @@ export const BOOK_CATALOG: Book[] = [
     isbn: "978-0805716399",
     year: 1999,
     pages: 304,
-    condition: "New",
+    condition: "Good",
     availability: "In Stock",
     coverImage: "/attached_assets/31M4XpaocbL._AC_CR0,0,0,0_SX480_SY360__1759200114490.jpg"
   },
@@ -92,7 +92,7 @@ export const BOOK_CATALOG: Book[] = [
     id: "dodo-feathers",
     title: "Dodo Feathers: Poems 1989–2019",
     author: "Dr. Jamey Hecht",
-    price: 20.00,
+    price: 25.00,
     description: "A collection of poems spanning three decades, exploring themes of loss, thwarted ambition, and transformation.",
     isbn: "978-1949093070",
     year: 2019,
