@@ -71,7 +71,7 @@ export const BOOK_CATALOG: Book[] = [
     isbn: "978-1840221442",
     year: 2004,
     pages: 180,
-    condition: "New",
+    condition: "Very Good",
     availability: "In Stock",
     coverImage: "/attached_assets/81c8o6shAyL._AC_CR0,0,0,0_SX960_SY720__1759200114491.jpg"
   },
