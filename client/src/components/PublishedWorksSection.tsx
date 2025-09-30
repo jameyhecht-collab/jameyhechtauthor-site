@@ -614,59 +614,20 @@ export default function PublishedWorksSection() {
                 </div>
               </div>
             )}
-            {activeFilter === 'all' ? (
-              <>
-                {/* Fiction items - always 2 columns */}
-                {filteredPublications.filter(p => p.type === 'fiction').length > 0 && (
-                  <div className="grid gap-6 grid-cols-2 max-w-5xl mx-auto mb-6">
-                    {filteredPublications.filter(p => p.type === 'fiction').map((publication) => (
-                      <PublicationCard
-                        key={publication.id}
-                        title={publication.title}
-                        publication={publication.publication}
-                        year={publication.year}
-                        type={publication.type}
-                        abstract={publication.abstract}
-                        downloadUrl={publication.downloadUrl}
-                        category={publication.category}
-                      />
-                    ))}
-                  </div>
-                )}
-                {/* Non-fiction items - responsive grid */}
-                {filteredPublications.filter(p => p.type !== 'fiction').length > 0 && (
-                  <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                    {filteredPublications.filter(p => p.type !== 'fiction').map((publication) => (
-                      <PublicationCard
-                        key={publication.id}
-                        title={publication.title}
-                        publication={publication.publication}
-                        year={publication.year}
-                        type={publication.type}
-                        abstract={publication.abstract}
-                        downloadUrl={publication.downloadUrl}
-                        category={publication.category}
-                      />
-                    ))}
-                  </div>
-                )}
-              </>
-            ) : (
-              <div className={`grid gap-6 ${activeFilter === 'fiction' ? 'grid-cols-2 max-w-5xl mx-auto' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
-                {filteredPublications.map((publication) => (
-                  <PublicationCard
-                    key={publication.id}
-                    title={publication.title}
-                    publication={publication.publication}
-                    year={publication.year}
-                    type={publication.type}
-                    abstract={publication.abstract}
-                    downloadUrl={publication.downloadUrl}
-                    category={publication.category}
-                  />
-                ))}
-              </div>
-            )}
+            <div className={`grid gap-6 ${activeFilter === 'fiction' ? 'grid-cols-2 max-w-5xl mx-auto' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
+              {filteredPublications.map((publication) => (
+                <PublicationCard
+                  key={publication.id}
+                  title={publication.title}
+                  publication={publication.publication}
+                  year={publication.year}
+                  type={publication.type}
+                  abstract={publication.abstract}
+                  downloadUrl={publication.downloadUrl}
+                  category={publication.category}
+                />
+              ))}
+            </div>
           </div>
         )}
 
