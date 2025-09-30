@@ -4,6 +4,22 @@
 
 This is a sophisticated author website for Dr. Jamey Hecht, featuring his dual identity as both a scholar and literary author. The site showcases his published works in literature, psychoanalysis, and poetry, while prominently featuring his unpublished manuscript "Into Theism: Overcoming Obstacles to Belief in God" that is seeking publication. The platform includes an integrated book store for selling physical copies from his personal collection and serves as a professional portfolio for literary agents, publishers, and academic collaborators.
 
+## Recent Changes (September 30, 2025)
+
+### Route-Based Navigation Architecture
+The site has been refactored from anchor-based navigation to dedicated route-based navigation to enable proper domain redirection strategies. Key pages now have individual routes:
+
+- `/` - Homepage/landing page (HeroSection only)
+- `/into-theism` - Manuscript showcase page (enables www.intotheism.com → www.jameyhechtauthor.com/into-theism redirect)
+- `/published-works` - Published works page
+- `/about` - About page with Substack feed integration
+- `/contact` - Contact page
+- `/shop` - Bookshop (Stripe-integrated e-commerce)
+- `/success` - Post-purchase confirmation page
+- `/request-proposal` - Literary agent proposal request page
+
+This architecture enables clean server-side redirects from dedicated domains (like www.intotheism.com) to specific sections of the main portfolio site.
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
