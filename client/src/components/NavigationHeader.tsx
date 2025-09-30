@@ -6,45 +6,18 @@ import { Menu, X, Sun, Moon } from "lucide-react";
 interface NavigationItem {
   label: string;
   href: string;
+  isExternal?: boolean;
 }
 
 const navigationItems: NavigationItem[] = [
   { label: "Home", href: "/" },
-  { label: "Published Works", href: "#published-works" },
-  { label: "Into Theism", href: "#manuscript" },
-  { label: "About", href: "#about" },
-  { label: "Curriculum Vitae", href: "#cv" },
+  { label: "Published Works", href: "/published-works" },
+  { label: "Into Theism", href: "/into-theism" },
+  { label: "About", href: "/about" },
+  { label: "Curriculum Vitae", href: "/curriculum-vitae.pdf", isExternal: true },
   { label: "Bookshop", href: "/shop" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
 ];
-
-const handleNavigation = (item: NavigationItem) => {
-  if (item.label === "Curriculum Vitae") {
-    console.log("Opening Curriculum Vitae PDF");
-    window.open("/curriculum-vitae.pdf", "_blank");
-    return;
-  }
-  
-  scrollToSection(item.href);
-};
-
-const scrollToSection = (sectionId: string) => {
-  if (sectionId === "/") {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    return;
-  }
-  
-  const targetId = sectionId.replace("#", "");
-  const element = document.getElementById(targetId);
-  
-  if (element) {
-    element.scrollIntoView({ 
-      behavior: "smooth", 
-      block: "start",
-      inline: "nearest"
-    });
-  }
-};
 
 export default function NavigationHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -74,7 +47,18 @@ export default function NavigationHeader() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navigationItems.map((item) => (
-              item.href === "/" || item.href === "/shop" ? (
+              item.isExternal ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
+                  data-testid={`nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
+                >
+                  {item.label}
+                </a>
+              ) : (
                 <Link
                   key={item.href}
                   href={item.href}
@@ -87,15 +71,6 @@ export default function NavigationHeader() {
                 >
                   {item.label}
                 </Link>
-              ) : (
-                <button
-                  key={item.href}
-                  onClick={() => handleNavigation(item)}
-                  className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
-                  data-testid={`nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
-                >
-                  {item.label}
-                </button>
               )
             ))}
           </nav>
@@ -129,7 +104,19 @@ export default function NavigationHeader() {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-card border-t border-border">
               {navigationItems.map((item) => (
-                item.href === "/" || item.href === "/shop" ? (
+                item.isExternal ? (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-3 py-2 text-base font-medium transition-colors hover-elevate rounded-md text-muted-foreground"
+                    onClick={() => setIsMenuOpen(false)}
+                    data-testid={`mobile-nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
                   <Link
                     key={item.href}
                     href={item.href}
@@ -143,18 +130,6 @@ export default function NavigationHeader() {
                   >
                     {item.label}
                   </Link>
-                ) : (
-                  <button
-                    key={item.href}
-                    onClick={() => {
-                      handleNavigation(item);
-                      setIsMenuOpen(false);
-                    }}
-                    className="block w-full text-left px-3 py-2 text-base font-medium transition-colors hover-elevate rounded-md text-muted-foreground"
-                    data-testid={`mobile-nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
-                  >
-                    {item.label}
-                  </button>
                 )
               ))}
             </div>
