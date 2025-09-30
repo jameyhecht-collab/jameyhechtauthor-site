@@ -14,6 +14,7 @@ const navigationItems: NavigationItem[] = [
   { label: "Into Theism", href: "#manuscript" },
   { label: "About", href: "#about" },
   { label: "Curriculum Vitae", href: "#cv" },
+  { label: "Bookshop", href: "/shop" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -73,7 +74,7 @@ export default function NavigationHeader() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navigationItems.map((item) => (
-              item.href === "/" ? (
+              item.href === "/" || item.href === "/shop" ? (
                 <Link
                   key={item.href}
                   href={item.href}
@@ -128,7 +129,7 @@ export default function NavigationHeader() {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-card border-t border-border">
               {navigationItems.map((item) => (
-                item.href === "/" ? (
+                item.href === "/" || item.href === "/shop" ? (
                   <Link
                     key={item.href}
                     href={item.href}
