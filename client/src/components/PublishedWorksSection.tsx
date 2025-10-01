@@ -164,6 +164,16 @@ const publications = [
     downloadUrl: "https://www.academia.edu/37709656/The_Failure_of_Sublimation_and_the_Fate_of_Pain_a_Reading_of_Bergmans_Wild_Strawberries",
     category: "Film Studies"
   },
+  {
+    id: 21,
+    title: "Prescription for a New Model University for the Humanities",
+    publication: "Word and Text: A Journal of Literary Studies and Linguistics, Volume X",
+    year: 2020,
+    type: "journal" as const,
+    abstract: "A proposal for reimagining humanities education through a new university model that addresses contemporary challenges while preserving the essential values of humanistic inquiry and critical thinking.",
+    downloadUrl: "https://www.academia.edu/44918492/Prescription_for_a_New_Model_University_for_the_Humanities",
+    category: "Higher Education"
+  },
   // LITERARY PERIODICAL PUBLICATIONS
   {
     id: 17,
