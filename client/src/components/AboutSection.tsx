@@ -22,6 +22,12 @@ const credentials = [
     field: "Licensed Marriage & Family Therapist",
     institution: "NY/CA/NJ/TX",
     year: "Active"
+  },
+  {
+    degree: "Certificate",
+    field: "Ancient Greek Language and Literature",
+    institution: "Latin-Greek Institute, NYC",
+    year: "1992, 1996"
   }
 ];
 

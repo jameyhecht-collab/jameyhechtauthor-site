@@ -8,10 +8,8 @@ export default function About() {
     <div className="min-h-screen bg-background font-serif">
       <NavigationHeader />
       <main>
-        <div className="relative">
-          <AboutSection />
-          <SubstackFeed />
-        </div>
+        <AboutSection />
+        <SubstackFeed />
       </main>
       <Footer />
     </div>

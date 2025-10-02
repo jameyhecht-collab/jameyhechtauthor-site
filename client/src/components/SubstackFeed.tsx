@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, PenTool, Calendar } from "lucide-react";
@@ -11,6 +11,7 @@ interface SubstackPost {
   description: string;
   content: string;
   author: string;
+  thumbnail?: string;
 }
 
 function stripHtml(html: string): string {
@@ -53,7 +54,8 @@ export default function SubstackFeed() {
         pubDate: item.pubDate,
         description: stripHtml(item.description),
         content: stripHtml(item.content),
-        author: item.author
+        author: item.author,
+        thumbnail: item.thumbnail || item.enclosure?.link || undefined
       }));
     },
     staleTime: 5 * 60 * 1000, // 5 minutes
@@ -87,18 +89,21 @@ export default function SubstackFeed() {
   }
 
   return (
-    <div className="absolute bottom-8 left-8 w-80 max-w-sm hidden lg:block" id="recent-writing">
-      <Card className="bg-background/95 backdrop-blur-sm border-border/50 shadow-lg">
-        <CardHeader className="pb-3">
-          <div className="flex items-center space-x-2 mb-2">
+    <section className="py-16 bg-muted/30" id="recent-writing">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-8">
+          <div className="flex items-center justify-center space-x-2 mb-2">
             <PenTool className="w-4 h-4 text-muted-foreground" />
             <Badge variant="secondary" className="text-xs">
               Recent Writing
             </Badge>
           </div>
-          <CardTitle className="font-serif text-lg text-foreground">
+          <h2 className="font-serif text-2xl font-semibold text-foreground">
             Latest from Substack
-          </CardTitle>
+          </h2>
+        </div>
+      <Card className="max-w-2xl mx-auto bg-background border-border shadow-lg">
+        <CardHeader className="pb-3">
         </CardHeader>
         
         <CardContent className="space-y-4">
@@ -111,25 +116,37 @@ export default function SubstackFeed() {
           ) : posts.length > 0 ? (
             <div className="space-y-4">
               <div className="space-y-3">
-                <div>
-                  <h4 className="font-serif text-sm font-medium text-foreground leading-tight mb-1">
-                    <a 
-                      href={posts[0].link} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="hover:text-primary transition-colors"
-                      data-testid="link-latest-post"
-                    >
-                      {posts[0].title}
-                    </a>
-                  </h4>
-                  <div className="flex items-center text-xs text-muted-foreground mb-2">
-                    <Calendar className="w-3 h-3 mr-1" />
-                    {formatDate(posts[0].pubDate)}
+                <div className="flex gap-3">
+                  {posts[0].thumbnail && (
+                    <div className="flex-shrink-0">
+                      <img 
+                        src={posts[0].thumbnail} 
+                        alt={posts[0].title}
+                        className="w-16 h-16 object-cover rounded-md"
+                        data-testid="img-post-thumbnail"
+                      />
+                    </div>
+                  )}
+                  <div className="flex-1">
+                    <h4 className="font-serif text-base font-medium text-foreground leading-tight mb-1">
+                      <a 
+                        href={posts[0].link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="hover:text-primary transition-colors"
+                        data-testid="link-latest-post"
+                      >
+                        {posts[0].title}
+                      </a>
+                    </h4>
+                    <div className="flex items-center text-xs text-muted-foreground mb-2">
+                      <Calendar className="w-3 h-3 mr-1" />
+                      {formatDate(posts[0].pubDate)}
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {truncateText(posts[0].description, 150)}
+                    </p>
                   </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    {truncateText(posts[0].description, 120)}
-                  </p>
                 </div>
               </div>
               
@@ -204,6 +221,7 @@ export default function SubstackFeed() {
           </div>
         </CardContent>
       </Card>
-    </div>
+      </div>
+    </section>
   );
 }
