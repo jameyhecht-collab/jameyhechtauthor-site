@@ -6,6 +6,18 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Domain-based redirect middleware
+app.use((req, res, next) => {
+  const host = req.get('host') || '';
+  
+  // Redirect intotheism.com to /into-theism page
+  if (host.includes('intotheism.com') && req.path === '/') {
+    return res.redirect(301, '/into-theism');
+  }
+  
+  next();
+});
+
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
