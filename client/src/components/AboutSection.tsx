@@ -118,6 +118,26 @@ export default function AboutSection() {
                   contributing regularly to scholarly journals while working on his forthcoming 
                   manuscript exploring obstacles to religious belief.
                 </p>
+
+                <p className="text-muted-foreground leading-relaxed">
+                  From 2008 to 2015, Jamey Hecht was an active member of the Porters of Hellgate Shakespeare company in Los Angeles, performing roles in <em>Hamlet</em> (Polonius), <em>King Lear</em> (Kent), <em>Measure for Measure</em> (Pompey), <em>Love's Labor's Lost</em> (Holofernes), <em>Much Ado About Nothing</em> (Antonio), <em>Richard II</em> (John of Gaunt, Bishop Carlyle), <em>Henry V</em> (Archbishop of Canterbury, King of France), <em>The Comedy of Errors</em> (Egean), and his own translation of Sophocles' <em>Oedipus the Tyrant</em> (Teiresias, Shepherd). <a 
+                    href="https://www.portersofhellsgate.com/dr-jamey-hecht" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                    data-testid="link-porters"
+                  >
+                    https://www.portersofhellsgate.com/dr-jamey-hecht
+                  </a> Directed by Porters Founder <a 
+                    href="https://www.charlespasternak.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                    data-testid="link-pasternak"
+                  >
+                    Charles Pasternak
+                  </a>, Jamey produced and performed a successful one man show, <em>Limousine, Midnight Blue</em>, comprising 35 of that book's 50 elegies for President Kennedy. With the Kingsmen Shakespeare Company, he played George, Duke of Clarence in <em>Richard III</em>.
+                </p>
               </CardContent>
             </Card>
 
