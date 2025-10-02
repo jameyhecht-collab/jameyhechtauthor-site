@@ -14,6 +14,7 @@ const navigationItems: NavigationItem[] = [
   { label: "Published Works", href: "/published-works" },
   { label: "Into Theism", href: "/into-theism" },
   { label: "About", href: "/about" },
+  { label: "Media", href: "/media" },
   { label: "Curriculum Vitae", href: "/curriculum-vitae.pdf", isExternal: true },
   { label: "Bookshop", href: "/shop" },
   { label: "Contact", href: "/contact" },
