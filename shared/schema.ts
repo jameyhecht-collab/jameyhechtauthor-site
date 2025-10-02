@@ -58,7 +58,7 @@ export const BOOK_CATALOG: Book[] = [
     isbn: "978-1604137163",
     year: 2010,
     pages: 256,
-    condition: "New",
+    condition: "Very Good",
     availability: "In Stock",
     coverImage: "/attached_assets/415TFLsNKyL._AC_CR0,0,0,0_SX960_SY720__1759200114492.jpg"
   },
