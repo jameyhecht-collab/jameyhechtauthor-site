@@ -270,7 +270,7 @@ export default function AboutSection() {
               <CardContent className="pt-6">
                 <p className="text-sm text-muted-foreground text-center">
                   <strong className="text-foreground">Note:</strong> For psychotherapy services, 
-                  please visit the separate professional practice website at{" "}
+                  please visit the separate psychotherapy practice website at{" "}
                   <a 
                     href="https://www.drjameyhecht.com" 
                     target="_blank" 
