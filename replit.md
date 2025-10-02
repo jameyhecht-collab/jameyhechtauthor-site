@@ -4,15 +4,25 @@
 
 This is a sophisticated author website for Dr. Jamey Hecht, featuring his dual identity as both a scholar and literary author. The site showcases his published works in literature, psychoanalysis, and poetry, while prominently featuring his unpublished manuscript "Into Theism: Overcoming Obstacles to Belief in God" that is seeking publication. The platform includes an integrated book store for selling physical copies from his personal collection and serves as a professional portfolio for literary agents, publishers, and academic collaborators.
 
-## Recent Changes (September 30, 2025)
+## Recent Changes
 
-### Route-Based Navigation Architecture
-The site has been refactored from anchor-based navigation to dedicated route-based navigation to enable proper domain redirection strategies. Key pages now have individual routes:
+### October 2, 2025
+- **Media Page Added**: New `/media` route with 13 embedded YouTube videos featuring lectures, interviews, poetry recitals, and theatrical performances (2004-2025)
+- **About Page Enhancement**: Added comprehensive paragraph about Shakespeare performance history with Porters of Hellgate Shakespeare company (2008-2015), including roles, productions, and one-man show *Limousine, Midnight Blue*
+- **Bookshop Updates**: 
+  - Homer book condition changed from "New" to "Very Good"
+  - Sophocles book condition changed to "Very Good"
+- **Published Works**: Confirmed display of "Prescription for a New Model University for the Humanities" (Word and Text journal, 2020) in Journal Articles section
+- **Deployment Configuration**: Identified port configuration issue in `.replit` file - Autoscale deployments require single external port (port 80 on 5000)
+
+### September 30, 2025 - Route-Based Navigation Architecture
+The site was refactored from anchor-based navigation to dedicated route-based navigation to enable proper domain redirection strategies. Key pages now have individual routes:
 
 - `/` - Homepage/landing page (HeroSection only)
 - `/into-theism` - Manuscript showcase page (enables www.intotheism.com → www.jameyhechtauthor.com/into-theism redirect)
 - `/published-works` - Published works page
-- `/about` - About page with Substack feed integration
+- `/about` - About page with Substack feed integration (displays latest 2 posts from jameyhecht.substack.com)
+- `/media` - Media page with video embeds (lectures, interviews, performances)
 - `/contact` - Contact page
 - `/shop` - Bookshop (Stripe-integrated e-commerce)
 - `/success` - Post-purchase confirmation page
