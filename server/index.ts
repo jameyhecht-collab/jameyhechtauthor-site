@@ -8,15 +8,10 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Serve attached_assets folder for PDFs and other static assets
-// In production (dist/index.js), this resolves to project root's attached_assets
-// In development (server/index.ts), this also resolves to project root's attached_assets
-const isDev = app.get("env") === "development";
-const assetsPath = isDev 
-  ? path.resolve(import.meta.dirname, '..', 'attached_assets')
-  : path.resolve(process.cwd(), 'attached_assets');
-
-app.use('/attached_assets', express.static(assetsPath));
+// Serve static files from client/public folder (for PDFs and other assets)
+// This is needed because Vite middleware doesn't automatically serve public folder in dev mode
+const publicPath = path.resolve(import.meta.dirname, '..', 'client', 'public');
+app.use(express.static(publicPath));
 
 // Domain-based redirect middleware
 app.use((req, res, next) => {
