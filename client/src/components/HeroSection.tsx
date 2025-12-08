@@ -43,14 +43,20 @@ export default function HeroSection() {
             </div>
 
             {/* Academic Credentials */}
-            <div className="space-y-2">
+            <a 
+              href="https://www.academia.edu/101072098/Bion_at_the_Crossroads_A_Contrarian_Reading_of_on_Arrogance_"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block space-y-2 hover-elevate active-elevate-2 rounded-lg p-3 -m-3 transition-colors"
+              data-testid="link-hero-new-authors-prize"
+            >
               <p className="text-sm text-muted-foreground font-medium">
                 2022 New Authors Prize Winner
               </p>
               <p className="text-sm text-muted-foreground">
                 Journal of the American Psychoanalytic Association
               </p>
-            </div>
+            </a>
           </div>
 
           {/* Image Column */}

@@ -2,13 +2,21 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import path from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Serve attached_assets folder for PDFs and other static assets
-app.use('/attached_assets', express.static(path.resolve(import.meta.dirname, '..', 'attached_assets')));
+// In production (dist/index.js), this resolves to project root's attached_assets
+// In development (server/index.ts), this also resolves to project root's attached_assets
+const isDev = app.get("env") === "development";
+const assetsPath = isDev 
+  ? path.resolve(import.meta.dirname, '..', 'attached_assets')
+  : path.resolve(process.cwd(), 'attached_assets');
+
+app.use('/attached_assets', express.static(assetsPath));
 
 // Domain-based redirect middleware
 app.use((req, res, next) => {

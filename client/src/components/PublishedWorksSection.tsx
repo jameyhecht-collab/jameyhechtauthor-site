@@ -643,7 +643,13 @@ export default function PublishedWorksSection() {
 
         {/* Academic Recognition */}
         <div className="text-center space-y-8 mt-16">
-          <div className="inline-flex items-center space-x-2 bg-primary/10 px-6 py-3 rounded-full">
+          <a 
+            href="https://www.academia.edu/101072098/Bion_at_the_Crossroads_A_Contrarian_Reading_of_on_Arrogance_"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center space-x-2 bg-primary/10 px-6 py-3 rounded-full hover-elevate active-elevate-2 transition-colors"
+            data-testid="link-new-authors-prize"
+          >
             <Star className="h-5 w-5 text-primary" />
             <span className="text-sm font-semibold text-primary">
               2022 New Authors Prize Winner
@@ -651,7 +657,7 @@ export default function PublishedWorksSection() {
             <span className="text-sm text-muted-foreground">
               • Journal of the American Psychoanalytic Association
             </span>
-          </div>
+          </a>
 
           {/* Critical Praise for Limousine, Midnight Blue */}
           <div className="space-y-6 max-w-4xl mx-auto">
