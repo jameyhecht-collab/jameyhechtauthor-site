@@ -151,7 +151,7 @@ const publications = [
     type: "book_chapter" as const,
     abstract: "Several literary villains are compared in their ambition-driven violence, the ontological status they give the supernatural, and its implications for the nature of evil. As extrinsic sequels to human conduct, postmortem reward—and—punishment supplant compassion as virtue's central motive.",
 
-    downloadUrl: "#",
+    downloadUrl: "https://www.academia.edu/32522846/Guilt_Evil_and_Hell_in_Doctor_Faustus_and_Macbeth",
     category: "Renaissance Studies"
   },
   {
