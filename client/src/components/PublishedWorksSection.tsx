@@ -110,7 +110,7 @@ const publications = [
     year: 2009,
     type: "book_chapter" as const,
     abstract: "An analysis of Robert Frost's poetry within its cultural and technological context, examining themes of labor, spirituality, and modernity.",
-    downloadUrl: "#",
+    downloadUrl: "https://www.academia.edu/33335312/Technology_Labor_and_the_Sacred_the_Cultural_Context_of_Robert_Frost",
     category: "American Literature"
   },
   {
