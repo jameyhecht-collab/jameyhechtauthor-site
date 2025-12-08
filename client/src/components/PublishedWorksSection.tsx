@@ -202,7 +202,7 @@ const publications = [
     year: 2018,
     type: "journal" as const,
     abstract: "A poem in the Homeric tradition of Tennyson's 'Ulysses,' focused on Odysseus' lived experience of the Sirens episode, with its themes of survival, betrayal, and the perilous desire for the sublime.",
-    downloadUrl: "#",
+    downloadUrl: "https://www.academia.edu/37682486/The_Sirens",
     category: "Poetry"
   },
 ];
