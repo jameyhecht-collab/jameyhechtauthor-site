@@ -192,7 +192,7 @@ const publications = [
     year: 1998,
     type: "fiction" as const,
     abstract: "A work of literary fiction exploring themes of technology, human connection, and the metaphorical hardware of our emotional lives.",
-    downloadUrl: "#",
+    downloadUrl: "/attached_assets/Hardware_Complete.pdf",
     category: "Fiction"
   },
   {
