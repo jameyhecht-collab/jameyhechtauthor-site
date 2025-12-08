@@ -40,7 +40,7 @@ const achievements = [
   {
     title: "Member",
     organization: "Society for the Psychology of Religion and Spirituality",
-    organizationLink: "https://www.apadivisions.org/division-36/about/",
+    organizationLink: "https://div36.org/",
     description: "American Psychological Association Division 36"
   },
   {
