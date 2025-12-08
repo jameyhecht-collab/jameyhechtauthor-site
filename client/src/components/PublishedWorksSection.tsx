@@ -182,7 +182,7 @@ const publications = [
     year: 2010,
     type: "fiction" as const,
     abstract: "A work of literary fiction exploring themes of mortality, identity, and the extraordinary within the ordinary.",
-    downloadUrl: "#",
+    downloadUrl: "https://reader.exacteditions.com/issues/114942/page/49?rc=c63e19f7-da07-46fb-a26b-16ca683f6659-",
     category: "Fiction"
   },
   {
