@@ -7,10 +7,22 @@ import { BOOK_CATALOG, checkoutRequestSchema } from "@shared/schema";
 export async function registerRoutes(app: Express): Promise<Server> {
   // Serve static PDFs from public directory
   app.get(["*.pdf"], (req, res) => {
-    const publicPath = path.resolve(import.meta.dirname, "..", "public");
-    const filePath = path.join(publicPath, req.path);
+    // In dev: server/ -> ../client/public
+    // In prod: dist/ -> ./public (same level as dist/index.js)
+    const isDev = process.env.NODE_ENV === "development";
+    const publicPath = isDev
+      ? path.resolve(import.meta.dirname, "..", "client", "public")
+      : path.resolve(import.meta.dirname, "public");
+    
+    // Strip leading slash to prevent path.join from discarding publicPath
+    const fileName = req.path.replace(/^\//, '');
+    const filePath = path.join(publicPath, fileName);
+    
+    console.log(`PDF request: ${req.path}, resolved to: ${filePath}`);
+    
     res.sendFile(filePath, (err) => {
       if (err) {
+        console.error(`PDF not found: ${filePath}`, err.message);
         res.status(404).json({ error: "File not found" });
       }
     });
