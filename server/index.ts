@@ -8,9 +8,13 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Serve static files from client/public folder (for PDFs and other assets)
-// This is needed because Vite middleware doesn't automatically serve public folder in dev mode
-const publicPath = path.resolve(import.meta.dirname, '..', 'client', 'public');
+// Serve static files from public folder (for PDFs and other assets)
+// In development: client/public folder
+// In production: dist/public folder (Vite copies public folder contents here during build)
+const isDev = process.env.NODE_ENV === "development";
+const publicPath = isDev 
+  ? path.resolve(import.meta.dirname, '..', 'client', 'public')
+  : path.resolve(import.meta.dirname, '..', 'public');
 app.use(express.static(publicPath));
 
 // Domain-based redirect middleware
