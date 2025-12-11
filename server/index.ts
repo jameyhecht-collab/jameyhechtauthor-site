@@ -9,12 +9,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Serve static files from public folder (for PDFs and other assets)
+// Use process.cwd() for reliable path resolution in all environments
 // In development: client/public folder
 // In production: dist/public folder (Vite copies public folder contents here during build)
 const isDev = process.env.NODE_ENV === "development";
 const publicPath = isDev 
-  ? path.resolve(import.meta.dirname, '..', 'client', 'public')
-  : path.resolve(import.meta.dirname, '..', 'public');
+  ? path.resolve(process.cwd(), 'client', 'public')
+  : path.resolve(process.cwd(), 'dist', 'public');
+console.log(`Static files path: ${publicPath}, isDev: ${isDev}`);
 app.use(express.static(publicPath));
 
 // Domain-based redirect middleware

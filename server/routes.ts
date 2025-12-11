@@ -7,18 +7,19 @@ import { BOOK_CATALOG, checkoutRequestSchema } from "@shared/schema";
 export async function registerRoutes(app: Express): Promise<Server> {
   // Serve static PDFs from public directory
   app.get(["*.pdf"], (req, res) => {
-    // In dev: server/ -> ../client/public
-    // In prod: dist/ -> ./public (same level as dist/index.js)
+    // Use process.cwd() for reliable path resolution in all environments
+    // In dev: cwd is project root, PDF in client/public
+    // In prod: cwd is project root, PDF in dist/public
     const isDev = process.env.NODE_ENV === "development";
     const publicPath = isDev
-      ? path.resolve(import.meta.dirname, "..", "client", "public")
-      : path.resolve(import.meta.dirname, "public");
+      ? path.resolve(process.cwd(), "client", "public")
+      : path.resolve(process.cwd(), "dist", "public");
     
     // Strip leading slash to prevent path.join from discarding publicPath
     const fileName = req.path.replace(/^\//, '');
     const filePath = path.join(publicPath, fileName);
     
-    console.log(`PDF request: ${req.path}, resolved to: ${filePath}`);
+    console.log(`PDF request: ${req.path}, isDev: ${isDev}, cwd: ${process.cwd()}, resolved to: ${filePath}`);
     
     res.sendFile(filePath, (err) => {
       if (err) {
