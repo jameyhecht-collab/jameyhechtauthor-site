@@ -56,8 +56,8 @@ export default function ManuscriptShowcase() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  This work addresses the intellectual and emotional challenges that prevent 
-                  contemporary individuals from embracing religious faith. Drawing from 
+                  This work addresses the intellectual and emotional impediments that obstruct 
+                  people's inner access to religious faith—even after they have come to desire it. Drawing from 
                   philosophy, psychology, literature, and personal reflection, it offers 
                   a thoughtful examination of doubt, meaning, and transcendence. It frames existing religious traditions as cultural windows on a Divine ultimate reality to which they refer and aspire—rather than revealed truths of God's nature or God's demands.
                 </p>
