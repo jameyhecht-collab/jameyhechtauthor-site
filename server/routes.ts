@@ -1,32 +1,60 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import path from "path";
+import fs from "fs";
 import { storage } from "./storage";
 import { BOOK_CATALOG, checkoutRequestSchema } from "@shared/schema";
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Serve static PDFs from public directory
+  // Serve static PDFs - try multiple locations to find the file
   app.get(["*.pdf"], (req, res) => {
-    // Use process.cwd() for reliable path resolution in all environments
-    // In dev: cwd is project root, PDF in client/public
-    // In prod: cwd is project root, PDF in dist/public
-    const isDev = process.env.NODE_ENV === "development";
-    const publicPath = isDev
-      ? path.resolve(process.cwd(), "client", "public")
-      : path.resolve(process.cwd(), "dist", "public");
-    
-    // Strip leading slash to prevent path.join from discarding publicPath
     const fileName = req.path.replace(/^\//, '');
-    const filePath = path.join(publicPath, fileName);
+    const cwd = process.cwd();
+    const isDev = process.env.NODE_ENV === "development";
     
-    console.log(`PDF request: ${req.path}, isDev: ${isDev}, cwd: ${process.cwd()}, resolved to: ${filePath}`);
+    // Try multiple possible locations
+    const possiblePaths = [
+      path.join(cwd, "dist", "public", fileName),
+      path.join(cwd, "client", "public", fileName),
+      path.join(cwd, "public", fileName),
+      path.join(cwd, fileName),
+    ];
     
-    res.sendFile(filePath, (err) => {
-      if (err) {
-        console.error(`PDF not found: ${filePath}`, err.message);
-        res.status(404).json({ error: "File not found" });
+    console.log(`PDF request: ${req.path}, isDev: ${isDev}, cwd: ${cwd}`);
+    console.log(`Trying paths: ${JSON.stringify(possiblePaths)}`);
+    
+    // Find the first path that exists
+    let foundPath: string | null = null;
+    for (const tryPath of possiblePaths) {
+      console.log(`Checking: ${tryPath} - exists: ${fs.existsSync(tryPath)}`);
+      if (fs.existsSync(tryPath)) {
+        foundPath = tryPath;
+        break;
       }
-    });
+    }
+    
+    if (foundPath) {
+      console.log(`Serving PDF from: ${foundPath}`);
+      res.sendFile(foundPath, (err) => {
+        if (err) {
+          console.error(`Error sending file: ${foundPath}`, err.message);
+          res.status(500).json({ error: "Error sending file" });
+        }
+      });
+    } else {
+      // List what's actually in the directories to debug
+      const dirs = [cwd, path.join(cwd, "dist"), path.join(cwd, "public")];
+      for (const dir of dirs) {
+        try {
+          const contents = fs.readdirSync(dir);
+          console.log(`Contents of ${dir}: ${JSON.stringify(contents)}`);
+        } catch (e) {
+          console.log(`Cannot read ${dir}`);
+        }
+      }
+      console.error(`PDF not found in any location: ${fileName}`);
+      res.status(404).json({ error: "File not found", tried: possiblePaths });
+    }
   });
 
   // Stripe integration for book sales - referenced from blueprint:javascript_stripe
