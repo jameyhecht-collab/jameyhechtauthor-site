@@ -95,7 +95,7 @@ const publications = [
   },
   {
     id: 22,
-    title: "A Rational, Non-Religious Case for Dualism",
+    title: "A Rational, Non-religious Case for Dualism",
     publication: "Essentia Foundation",
     year: 2025,
     type: "journal" as const,
