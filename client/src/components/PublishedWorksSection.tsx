@@ -94,6 +94,16 @@ const publications = [
     category: "Consciousness Studies"
   },
   {
+    id: 22,
+    title: "A Rational, Non-Religious Case for Dualism",
+    publication: "Essentia Foundation",
+    year: 2025,
+    type: "journal" as const,
+    abstract: "A philosophical essay engaging with John Searle and Thomas Nagel, arguing that naturalism is intrinsically inadequate to account for the totality of human experience, and that Dualism must remain on the table as a reasonable hypothesis.",
+    downloadUrl: "https://www.essentiafoundation.org/a-rational-non-religious-case-for-dualism/reading/",
+    category: "Philosophy of Mind"
+  },
+  {
     id: 20,
     title: "Drawing a Blank: Bion Speaking on Chinese Writing",
     publication: "American Imago, Volume 80, Number 1",
