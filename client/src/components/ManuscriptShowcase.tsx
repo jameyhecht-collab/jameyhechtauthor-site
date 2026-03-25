@@ -30,7 +30,7 @@ export default function ManuscriptShowcase() {
           <div className="text-center mb-12">
             <div className="grid grid-cols-3 gap-8 max-w-md mx-auto">
               <div className="text-center">
-                <p className="text-2xl font-bold text-foreground">100,000</p>
+                <p className="text-2xl font-bold text-foreground">127,000</p>
                 <p className="text-sm text-muted-foreground">Words</p>
               </div>
               <div className="text-center">
@@ -38,7 +38,7 @@ export default function ManuscriptShowcase() {
                 <p className="text-sm text-muted-foreground">Chapters</p>
               </div>
               <div className="text-center">
-                <p className="text-2xl font-bold text-foreground">2025</p>
+                <p className="text-2xl font-bold text-foreground">February 2026</p>
                 <p className="text-sm text-muted-foreground">Completed</p>
               </div>
             </div>
