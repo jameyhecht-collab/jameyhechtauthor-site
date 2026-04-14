@@ -68,10 +68,6 @@ export default function HeroSection() {
   className="w-full max-w-md mx-auto rounded-lg shadow-lg"
   data-testid="img-author-headshot"
 />
-                alt="Dr. Jamey Hecht"
-                className="w-full max-w-md mx-auto rounded-lg shadow-lg"
-                data-testid="img-author-headshot"
-              />
               <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-lg"></div>
             </div>
           </div>
