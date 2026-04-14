@@ -62,8 +62,7 @@ export default function HeroSection() {
           {/* Image Column */}
           <div className="relative">
             <div className="relative">
-              <img
-                src={authorImage}
+<img src="/author-photo.jpg" alt="Jamey Hecht" />
                 alt="Dr. Jamey Hecht"
                 className="w-full max-w-md mx-auto rounded-lg shadow-lg"
                 data-testid="img-author-headshot"
