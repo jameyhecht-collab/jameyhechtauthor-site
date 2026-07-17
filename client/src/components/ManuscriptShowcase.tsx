@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, FileText, Mail } from "lucide-react";
-import { Link } from "wouter";
+import { BookOpen, FileText } from "lucide-react";
 
 export default function ManuscriptShowcase() {
 
@@ -12,8 +11,8 @@ export default function ManuscriptShowcase() {
         
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
-          <Badge variant="outline" className="mb-4">
-            Seeking Representation
+          <Badge variant="outline" className="mb-4 text-base">
+            To Be Published in Spring 2027 by Essentia Books
           </Badge>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground">
             Into Theism: Overcoming Obstacles to Belief in God
@@ -118,18 +117,6 @@ export default function ManuscriptShowcase() {
                 
                 <Button 
                   variant="outline"
-                  asChild
-                  className="hover-elevate active-elevate-2"
-                  data-testid="button-book-proposal"
-                >
-                  <Link href="/request-proposal">
-                    <FileText className="mr-2 h-4 w-4" />
-                    Request Full Book Proposal
-                  </Link>
-                </Button>
-                
-                <Button 
-                  variant="outline"
                   onClick={() => {
                     console.log("Viewing sample chapter: Theodicy");
                     window.open("/sample-chapter-into-theism.pdf", "_blank");
@@ -142,24 +129,6 @@ export default function ManuscriptShowcase() {
                 </Button>
               </div>
             </div>
-
-            {/* Agent Contact Note */}
-            <Card className="bg-primary/5 border-primary/20">
-              <CardContent className="pt-6">
-                <div className="flex items-start space-x-3">
-                  <Mail className="h-5 w-5 text-primary mt-0.5" />
-                  <div className="space-y-1">
-                    <p className="text-sm font-medium text-foreground">
-                      For Literary Agents & Publishers
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Complete manuscript available upon request. 
-                      Includes detailed chapter outline, author platform, and marketing plan.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
 
           </div>
         </div>
