@@ -5,6 +5,18 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const videos = [
   {
+    id: "vSrNaA-xCOw",
+    title: "Theism, Atheism, and the Limits of Reason with Jamey Hecht",
+    description: "New Atenism",
+    date: "June 19, 2026"
+  },
+  {
+    id: "dziaqdE87KQ",
+    title: "Spirit-led safety",
+    description: "Where did you see God?",
+    date: "June 23, 2026"
+  },
+  {
     id: "edurEuqwFr8",
     title: "Couple's Therapy: Why Fights Escalate",
     description: "Psychotherapy Vlog",
