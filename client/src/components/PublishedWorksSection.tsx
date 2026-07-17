@@ -186,6 +186,16 @@ const publications = [
   },
   // LITERARY PERIODICAL PUBLICATIONS
   {
+    id: 23,
+    title: "The Quagnojitrops",
+    publication: "Black Horse Review",
+    year: 2026,
+    type: "fiction" as const,
+    abstract: "A work of literary fiction.",
+    downloadUrl: "https://www.blackhorsereview.com/short-fiction/the-quagnojitrops-jamey-hecht",
+    category: "Fiction"
+  },
+  {
     id: 17,
     title: "Tim the Immortal Giraffe: True Story",
     publication: "American Short Fiction, Vol. 13, Issue 47",
