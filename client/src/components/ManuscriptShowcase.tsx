@@ -1,136 +1,68 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { BookOpen, FileText } from "lucide-react";
 
 export default function ManuscriptShowcase() {
-
   return (
-    <section className="py-20 bg-muted/20" id="manuscript">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
-        <div className="text-center space-y-4 mb-16">
-          <Badge variant="outline" className="mb-4 text-base">
-            To Be Published in Spring 2027 by Essentia Books
-          </Badge>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground">
-            Into Theism: Overcoming Obstacles to Belief in God
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            A multidisciplinary engagement with the major philosophical, psychological, and cultural barriers 
-            impeding faith today.
-          </p>
-        </div>
+    <section className="py-12 bg-muted/20" id="manuscript">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <img
+          src="/into-theism-one-sheet.png"
+          alt="Into Theism one-sheet with book overview, endorsements, author information, and publication details"
+          className="w-full h-auto"
+        />
 
-        <div className="max-w-4xl mx-auto">
-          
-          {/* Manuscript Stats */}
-          <div className="text-center mb-12">
-            <div className="grid grid-cols-3 gap-8 max-w-md mx-auto">
-              <div className="text-center">
-                <p className="text-2xl font-bold text-foreground">138,000</p>
-                <p className="text-sm text-muted-foreground">Words</p>
-              </div>
-              <div className="text-center">
-                <p className="text-2xl font-bold text-foreground">12</p>
-                <p className="text-sm text-muted-foreground">Chapters</p>
-              </div>
-              <div className="text-center">
-                <p className="text-2xl font-bold text-foreground">February 2026</p>
-                <p className="text-sm text-muted-foreground">Completed</p>
-              </div>
-            </div>
-          </div>
+        <div className="flex flex-wrap justify-center gap-3 mt-8">
+          <Button
+            variant="outline"
+            onClick={() => {
+              console.log("Viewing table of contents");
+              window.open("/table-of-contents-into-theism.pdf", "_blank");
+            }}
+            className="hover-elevate active-elevate-2"
+            data-testid="button-table-of-contents"
+          >
+            <FileText className="mr-2 h-4 w-4" />
+            Table of Contents
+          </Button>
 
-          {/* Content & CTA */}
-          <div className="space-y-8">
-            
-            {/* Book Description */}
-            <Card className="border-border/50">
-              <CardHeader>
-                <h3 className="font-serif text-xl font-semibold text-foreground">
-                  About the Manuscript
-                </h3>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-                  This work addresses the intellectual and emotional impediments that obstruct 
-                  people's inner access to religious faith—even after they have come to desire it. Drawing from 
-                  philosophy, psychology, literature, and personal reflection, it offers 
-                  a thoughtful examination of doubt, meaning, and transcendence. It frames existing religious traditions as cultural windows on a Divine ultimate reality to which they refer and aspire—rather than revealed truths of God's nature or God's demands.
-                </p>
-                
-                <div className="space-y-2">
-                  <h4 className="font-semibold text-foreground">Key Themes:</h4>
-                  <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
-                    <li>The psychology of belief and doubt</li>
-                    <li>Scientific materialism and spiritual experience</li>
-                    <li>Cultural barriers to religious commitment</li>
-                    <li>Pathways to theistic faith amid postmodernity</li>
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
+          <Button
+            variant="outline"
+            onClick={() => {
+              console.log("Viewing preface");
+              window.open("/preface-into-theism.pdf", "_blank");
+            }}
+            className="hover-elevate active-elevate-2"
+            data-testid="button-preface"
+          >
+            <BookOpen className="mr-2 h-4 w-4" />
+            Preface
+          </Button>
 
-            {/* Action Buttons */}
-            <div className="space-y-4">
-              <div className="flex flex-wrap justify-center gap-3">
-                <Button 
-                  variant="outline"
-                  onClick={() => {
-                    console.log("Viewing table of contents");
-                    window.open("/table-of-contents-into-theism.pdf", "_blank");
-                  }}
-                  className="hover-elevate active-elevate-2"
-                  data-testid="button-table-of-contents"
-                >
-                  <FileText className="mr-2 h-4 w-4" />
-                  Table of Contents
-                </Button>
-                
-                <Button 
-                  variant="outline"
-                  onClick={() => {
-                    console.log("Viewing preface");
-                    window.open("/preface-into-theism.pdf", "_blank");
-                  }}
-                  className="hover-elevate active-elevate-2"
-                  data-testid="button-preface"
-                >
-                  <BookOpen className="mr-2 h-4 w-4" />
-                  Preface
-                </Button>
-                
-                <Button 
-                  variant="outline"
-                  onClick={() => {
-                    console.log("Viewing synopsis with chapter descriptions");
-                    window.open("/synopsis-into-theism.pdf", "_blank");
-                  }}
-                  className="hover-elevate active-elevate-2"
-                  data-testid="button-synopsis"
-                >
-                  <FileText className="mr-2 h-4 w-4" />
-                  Synopsis with Chapter Descriptions
-                </Button>
-                
-                <Button 
-                  variant="outline"
-                  onClick={() => {
-                    console.log("Viewing sample chapter: Theodicy");
-                    window.open("/sample-chapter-into-theism.pdf", "_blank");
-                  }}
-                  className="hover-elevate active-elevate-2"
-                  data-testid="button-sample-chapter"
-                >
-                  <BookOpen className="mr-2 h-4 w-4" />
-                  Sample Chapter: Theodicy, the "Problem of Evil"
-                </Button>
-              </div>
-            </div>
+          <Button
+            variant="outline"
+            onClick={() => {
+              console.log("Viewing synopsis with chapter descriptions");
+              window.open("/synopsis-into-theism.pdf", "_blank");
+            }}
+            className="hover-elevate active-elevate-2"
+            data-testid="button-synopsis"
+          >
+            <FileText className="mr-2 h-4 w-4" />
+            Synopsis with Chapter Descriptions
+          </Button>
 
-          </div>
+          <Button
+            variant="outline"
+            onClick={() => {
+              console.log("Viewing sample chapter: Theodicy");
+              window.open("/sample-chapter-into-theism.pdf", "_blank");
+            }}
+            className="hover-elevate active-elevate-2"
+            data-testid="button-sample-chapter"
+          >
+            <BookOpen className="mr-2 h-4 w-4" />
+            Sample Chapter: Theodicy, the "Problem of Evil"
+          </Button>
         </div>
       </div>
     </section>
