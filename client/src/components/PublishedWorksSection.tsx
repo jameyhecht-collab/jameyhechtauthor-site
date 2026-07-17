@@ -191,7 +191,7 @@ const publications = [
     publication: "Black Horse Review",
     year: 2026,
     type: "fiction" as const,
-    abstract: "A work of literary fiction.",
+    abstract: "A work of fabulist literary fiction in the manner of Franz Kafka, in which a unique animal falls from the sky—a wounded Quagnojitrops, a small dragon, hardly bigger than a pair of horses.",
     downloadUrl: "https://www.blackhorsereview.com/short-fiction/the-quagnojitrops-jamey-hecht",
     category: "Fiction"
   },
