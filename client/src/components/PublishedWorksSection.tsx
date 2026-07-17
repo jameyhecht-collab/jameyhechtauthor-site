@@ -201,7 +201,7 @@ const publications = [
     publication: "American Short Fiction, Vol. 13, Issue 47",
     year: 2010,
     type: "fiction" as const,
-    abstract: "A work of literary fiction exploring themes of mortality, identity, and the extraordinary within the ordinary.",
+    abstract: "A work of fabulist literary fiction, in which an immortal giraffe named Tim recounts a frightening experience during the 13th Century: prevented from meeting the poet Dante by the incessant babbling of a telepathic donkey, Tim is terrified by the roar of a lion while incarcerated in the walled garden of Dante's patron, Cangrande della Scala.",
     downloadUrl: "https://reader.exacteditions.com/issues/114942/page/49?rc=c63e19f7-da07-46fb-a26b-16ca683f6659-",
     category: "Fiction"
   },
