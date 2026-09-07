@@ -5,6 +5,24 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const videos = [
   {
+    id: "zEBzgWsd5oU",
+    title: "All the Forbidden Things: Out of Faith and Into God",
+    description: "All the Forbidden Things podcast · Not Your Enemy",
+    date: "August 24, 2026"
+  },
+  {
+    id: "1Yz-KFh_3pQ",
+    title: "Reality Gone Mental: Into Theism and the Limits of Physicalism",
+    description: "Reality Gone Mental podcast · RealityGoneMental and Alex K",
+    date: "July 21, 2026"
+  },
+  {
+    id: "xYqbN3eL_As",
+    title: "Moped Outlaws: A Truce Between Faith and Intellect",
+    description: "Moped Outlaws podcast",
+    date: "August 10, 2026"
+  },
+  {
     id: "vSrNaA-xCOw",
     title: "Theism, Atheism, and the Limits of Reason with Jamey Hecht",
     description: "New Atenism",
@@ -15,12 +33,6 @@ const videos = [
     title: "Spirit-led safety",
     description: "Where did you see God?",
     date: "June 23, 2026"
-  },
-  {
-    id: "edurEuqwFr8",
-    title: "Couple's Therapy: Why Fights Escalate",
-    description: "Psychotherapy Vlog",
-    date: "May 21, 2025"
   },
   {
     id: "XXR12Zf8HrE",
@@ -35,13 +47,6 @@ const videos = [
     description: "International Psychoanalytic Books recital",
     date: "February 20, 2022",
     startTime: 143
-  },
-  {
-    id: "LU6WAce9jP4",
-    title: "Interview with author and climate scientist Guy McPherson",
-    description: "Nature Bats Last Radio Show",
-    date: "May 4, 2021",
-    startTime: 1845
   },
   {
     id: "g_xzn-Du4Bs",
@@ -63,36 +68,11 @@ const videos = [
     startTime: 67
   },
   {
-    id: "8OIpkJhRorE",
-    title: "Interview with Monica Lee Copeland at Indelible Ink",
-    description: "",
-    date: "November 30, 2010"
-  },
-  {
-    id: "yeWDGYEuKqA",
-    title: "Oedipus and Teiresias Quarrel",
-    description: "Hecht as Teiresias to Charles Pasternak's Oedipus - Porters of Hellgate production at the Sherry Theater, Los Angeles",
-    date: "October 2011"
-  },
-  {
     id: "0B17vJ8RltA",
     title: "Oedipus Blinded",
     description: "Recital from Hecht's translation of Oedipus the Tyrant - Pondwater Society, Los Angeles",
     date: "July 10, 2010",
     startTime: 77
-  },
-  {
-    id: "6Ri1lMgo3fk",
-    title: "The Murder of Laius",
-    description: "Recital from Hecht's translation of Oedipus the Tyrant - Pondwater Society, Los Angeles",
-    date: "July 10, 2010",
-    startTime: 29
-  },
-  {
-    id: "Xta7p9FWpRM",
-    title: "The Jewish Play",
-    description: "A comic poem on David Mamet's \"Glengarry, Glenn Ross\" - Recital at the Annenberg Beach House in Los Angeles",
-    date: "July 21, 2009"
   },
   {
     id: "vDxuNtVhQEI",
