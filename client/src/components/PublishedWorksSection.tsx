@@ -73,6 +73,16 @@ const publications = [
     category: "Literary Criticism"
   },
   // SCHOLARLY PAPERS
+    {
+    id: 24,
+    title: "A psychodynamic etiology of retroactive jealousy",
+    publication: "Psychoanalysis, Self and Context",
+    year: 2026,
+    type: "journal" as const,
+    abstract: "A psychodynamic account of male retroactive jealousy, exploring its origins in childhood family relationships and unconscious oedipal wishes.",
+    downloadUrl: "https://www.academia.edu/175737753/A_psychodynamic_etiology_of_retroactive_jealousy",
+    category: "Psychoanalytic Theory"
+  },
   {
     id: 4,
     title: "Bion at the Crossroads: A Contrarian Reading of 'On Arrogance'",
