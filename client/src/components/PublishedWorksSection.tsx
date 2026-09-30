@@ -81,7 +81,7 @@ const publications = [
     type: "journal" as const,
     abstract: "A psychodynamic account of male retroactive jealousy, exploring its origins in childhood family relationships and unconscious oedipal wishes.",
     downloadUrl: "https://www.academia.edu/175737753/A_psychodynamic_etiology_of_retroactive_jealousy",
-    category: "Psychoanalytic Theory"
+    category: "Clinical Psychoanalysis"
   },
   {
     id: 4,
