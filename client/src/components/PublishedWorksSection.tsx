@@ -86,7 +86,7 @@ const publications = [
   {
     id: 4,
     title: "Bion at the Crossroads: A Contrarian Reading of 'On Arrogance'",
-    publication: "Journal of the American Psychoanalytic Association (JAPA)",
+    publication: "Journal of the American Psychoanalytic Association (JAPA), Vol. 70, Issue 4",
     year: 2022,
     type: "journal" as const,
     abstract: "Winner, New Author's Prize. In 'On Arrogance' (1958), Wilfred Bion combined a misreading of Sophocles' Oedipus with projections of his own post-traumatic anxieties.",
