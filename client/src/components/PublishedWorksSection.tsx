@@ -73,10 +73,10 @@ const publications = [
     category: "Literary Criticism"
   },
   // SCHOLARLY PAPERS
-    {
+   {
     id: 24,
-    title: "A psychodynamic etiology of retroactive jealousy",
-    publication: "Psychoanalysis, Self and Context",
+    title: "A Psychodynamic Etiology of Retroactive Jealousy",
+    publication: "Psychoanalysis, Self and Context, Vol. 22, Issue 1",
     year: 2026,
     type: "journal" as const,
     abstract: "A psychodynamic account of male retroactive jealousy, exploring its origins in childhood family relationships and unconscious oedipal wishes.",
