@@ -83,6 +83,36 @@ const publications = [
     downloadUrl: "https://www.academia.edu/175737753/A_psychodynamic_etiology_of_retroactive_jealousy",
     category: "Clinical Psychoanalysis"
   },
+   {
+    id: 22,
+    title: "A Rational, Non-religious Case for Dualism",
+    publication: "Essentia Foundation",
+    year: 2025,
+    type: "journal" as const,
+    abstract: "A philosophical essay engaging with John Searle and Thomas Nagel, arguing that naturalism is intrinsically inadequate to account for the totality of human experience, and that Dualism must remain on the table as a reasonable hypothesis.",
+    downloadUrl: "https://www.essentiafoundation.org/a-rational-non-religious-case-for-dualism/reading/",
+    category: "Philosophy of Mind"
+  }, 
+  {
+    id: 5,
+    title: "Review of Christof Koch's 2024 book on consciousness, Then I Am Myself the World",
+    publication: "Journal of the American Psychoanalytic Association (JAPA), Vol. 73, Issue 4",
+    year: 2024,
+    type: "journal" as const,
+    abstract: "A comprehensive review of Christof Koch's latest work on consciousness, Then I Am Myself the World (Basic Books, 2024), examining his neuroscientific approach to understanding self-awareness and subjective experience.",
+    downloadUrl: "https://journals.sagepub.com/doi/abs/10.1177/00030651251329296",
+    category: "Consciousness Studies"
+  }, 
+  {
+    id: 20,
+    title: "Drawing a Blank: Bion Speaking on Chinese Writing",
+    publication: "American Imago, Volume 80, Number 1",
+    year: 2023,
+    type: "journal" as const,
+    abstract: "An exploration of Wilfred Bion's thoughts on Chinese writing and its implications for psychoanalytic understanding of language, meaning, and the unconscious.",
+    downloadUrl: "https://www.academia.edu/113695801/Drawing_a_Blank_Bion_Speaking_on_Chinese_Writing",
+    category: "Psychoanalytic Theory"
+  }, 
   {
     id: 4,
     title: "Bion at the Crossroads: A Contrarian Reading of 'On Arrogance'",
@@ -94,35 +124,36 @@ const publications = [
     category: "Psychoanalytic Theory"
   },
   {
-    id: 5,
-    title: "Review of Christof Koch's 2024 book on consciousness, Then I Am Myself the World",
-    publication: "Journal of the American Psychoanalytic Association (JAPA), Vol. 73, Issue 4",
-    year: 2024,
+    id: 21,
+    title: "Prescription for a New Model University for the Humanities",
+    publication: "Word and Text: A Journal of Literary Studies and Linguistics, Volume X",
+    year: 2020,
     type: "journal" as const,
-    abstract: "A comprehensive review of Christof Koch's latest work on consciousness, Then I Am Myself the World (Basic Books, 2024), examining his neuroscientific approach to understanding self-awareness and subjective experience.",
-    downloadUrl: "https://journals.sagepub.com/doi/abs/10.1177/00030651251329296",
-    category: "Consciousness Studies"
+    abstract: "A proposal for reimagining humanities education through a new university model that addresses contemporary challenges while preserving the essential values of humanistic inquiry and critical thinking.",
+    downloadUrl: "https://www.academia.edu/44918492/Prescription_for_a_New_Model_University_for_the_Humanities",
+    category: "Higher Education"
+  }, 
+   {
+    id: 15,
+    title: "Guilt, Evil, and Hell in Macbeth, Hamlet, and Doctor Faustus",
+    publication: "The Function of Evil Across Disciplinary Contexts (Lexington Books)",
+    year: 2017,
+    type: "book_chapter" as const,
+    abstract: "Several literary villains are compared in their ambition-driven violence, the ontological status they give the supernatural, and its implications for the nature of evil. As extrinsic sequels to human conduct, postmortem reward—and—punishment supplant compassion as virtue's central motive.",
+
+    downloadUrl: "https://www.academia.edu/32522846/Guilt_Evil_and_Hell_in_Doctor_Faustus_and_Macbeth",
+    category: "Renaissance Studies"
   },
   {
-    id: 22,
-    title: "A Rational, Non-religious Case for Dualism",
-    publication: "Essentia Foundation",
-    year: 2025,
+    id: 16,
+    title: "Ingmar Bergman's 'Wild Strawberries': The Failure of Sublimation and the Fate of Pain",
+    publication: "American Imago, Volume 73, Number 2",
+    year: 2016,
     type: "journal" as const,
-    abstract: "A philosophical essay engaging with John Searle and Thomas Nagel, arguing that naturalism is intrinsically inadequate to account for the totality of human experience, and that Dualism must remain on the table as a reasonable hypothesis.",
-    downloadUrl: "https://www.essentiafoundation.org/a-rational-non-religious-case-for-dualism/reading/",
-    category: "Philosophy of Mind"
-  },
-  {
-    id: 20,
-    title: "Drawing a Blank: Bion Speaking on Chinese Writing",
-    publication: "American Imago, Volume 80, Number 1",
-    year: 2023,
-    type: "journal" as const,
-    abstract: "An exploration of Wilfred Bion's thoughts on Chinese writing and its implications for psychoanalytic understanding of language, meaning, and the unconscious.",
-    downloadUrl: "https://www.academia.edu/113695801/Drawing_a_Blank_Bion_Speaking_on_Chinese_Writing",
-    category: "Psychoanalytic Theory"
-  },
+    abstract: "Ingmar Bergman's 1957 film 'Wild Strawberries' is a resolved study in unresolved psychic pain. What Bergman sublimates into art is tragically repressed by his protagonist. Love and its lack determine our pain; work and its success or failure determine the fate of that pain in generativity or in stagnation.",
+    downloadUrl: "https://www.academia.edu/37709656/The_Failure_of_Sublimation_and_the_Fate_of_Pain_a_Reading_of_Bergmans_Wild_Strawberries",
+    category: "Film Studies"
+  }, 
   {
     id: 6,
     title: "Technology, Labor, and the Sacred: The Cultural Context of Robert Frost",
@@ -144,16 +175,6 @@ const publications = [
     category: "Renaissance Studies"
   },
   {
-    id: 8,
-    title: "Scarcity and Poetic Election in Two Sonnets of John Keats",
-    publication: "English Literary History (ELH), Johns Hopkins",
-    year: 1994,
-    type: "journal" as const,
-    abstract: "An examination of themes of scarcity and poetic vocation in Keats's 'On First Looking into Chapman's Homer' and 'When I Have Fears That I May Cease to Be.'",
-    downloadUrl: "https://www.academia.edu/32548108/Scarcity_and_Poetic_Vocation_in_Two_Sonnets_of_John_Keats",
-    category: "Romantic Literature"
-  },
-  {
     id: 9,
     title: "Scarcity and Compensation in Herman Melville's Moby-Dick",
     publication: "The Massachusetts Review",
@@ -164,36 +185,17 @@ const publications = [
     category: "American Literature"
   },
   {
-    id: 15,
-    title: "Guilt, Evil, and Hell in Macbeth, Hamlet, and Doctor Faustus",
-    publication: "The Function of Evil Across Disciplinary Contexts (Lexington Books)",
-    year: 2017,
-    type: "book_chapter" as const,
-    abstract: "Several literary villains are compared in their ambition-driven violence, the ontological status they give the supernatural, and its implications for the nature of evil. As extrinsic sequels to human conduct, postmortem reward—and—punishment supplant compassion as virtue's central motive.",
+    id: 8,
+    title: "Scarcity and Poetic Election in Two Sonnets of John Keats",
+    publication: "English Literary History (ELH), Johns Hopkins",
+    year: 1994,
+    type: "journal" as const,
+    abstract: "An examination of themes of scarcity and poetic vocation in Keats's 'On First Looking into Chapman's Homer' and 'When I Have Fears That I May Cease to Be.'",
+    downloadUrl: "https://www.academia.edu/32548108/Scarcity_and_Poetic_Vocation_in_Two_Sonnets_of_John_Keats",
+    category: "Romantic Literature"
+  },  
 
-    downloadUrl: "https://www.academia.edu/32522846/Guilt_Evil_and_Hell_in_Doctor_Faustus_and_Macbeth",
-    category: "Renaissance Studies"
-  },
-  {
-    id: 16,
-    title: "Ingmar Bergman's 'Wild Strawberries': The Failure of Sublimation and the Fate of Pain",
-    publication: "American Imago, Volume 73, Number 2",
-    year: 2016,
-    type: "journal" as const,
-    abstract: "Ingmar Bergman's 1957 film 'Wild Strawberries' is a resolved study in unresolved psychic pain. What Bergman sublimates into art is tragically repressed by his protagonist. Love and its lack determine our pain; work and its success or failure determine the fate of that pain in generativity or in stagnation.",
-    downloadUrl: "https://www.academia.edu/37709656/The_Failure_of_Sublimation_and_the_Fate_of_Pain_a_Reading_of_Bergmans_Wild_Strawberries",
-    category: "Film Studies"
-  },
-  {
-    id: 21,
-    title: "Prescription for a New Model University for the Humanities",
-    publication: "Word and Text: A Journal of Literary Studies and Linguistics, Volume X",
-    year: 2020,
-    type: "journal" as const,
-    abstract: "A proposal for reimagining humanities education through a new university model that addresses contemporary challenges while preserving the essential values of humanistic inquiry and critical thinking.",
-    downloadUrl: "https://www.academia.edu/44918492/Prescription_for_a_New_Model_University_for_the_Humanities",
-    category: "Higher Education"
-  },
+
   // LITERARY PERIODICAL PUBLICATIONS
   {
     id: 23,
