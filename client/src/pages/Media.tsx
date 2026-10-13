@@ -117,8 +117,6 @@ export default function Media() {
 <div className="pt-4 pb-12 text-center">
   <a
     href="/podcast"
-    target="_blank"
-    rel="noopener noreferrer"
     className="inline-block px-6 py-3 border border-foreground rounded-md font-semibold hover:bg-foreground hover:text-background transition-colors"
   >
     Podcast Guest 1-Sheet
