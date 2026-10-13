@@ -5,6 +5,18 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const videos = [
   {
+  id: "Q9ildvOHEQ8",
+  title: "#297 - Into Theism - Jamey Hecht",
+  description: "Podcast interview",
+  date: "October 2026"
+},
+{
+  id: "7Y9wza5Cu9A",
+  title: "Belief and Disbelief: Jamey Hecht and Bernardo Kastrup",
+  description: "With Reality in Mind",
+  date: "September 2026"
+},
+  {
     id: "zEBzgWsd5oU",
     title: "All the Forbidden Things: Out of Faith and Into God",
     description: "All the Forbidden Things podcast · Not Your Enemy",
