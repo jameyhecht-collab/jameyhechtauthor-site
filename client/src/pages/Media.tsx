@@ -102,7 +102,7 @@ export default function Media() {
                 A collection of video recordings featuring lectures, interviews, poetry recitals, and theatrical performances.
               </p>
             </div>
-<div className="pt-4 text-center">
+<div className="pt-4 pb-12 text-center">
   <a
     href="/podcast"
     target="_blank"
