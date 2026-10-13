@@ -102,7 +102,16 @@ export default function Media() {
                 A collection of video recordings featuring lectures, interviews, poetry recitals, and theatrical performances.
               </p>
             </div>
-
+<div className="pt-4 text-center">
+  <a
+    href="/podcast"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block px-6 py-3 border border-foreground rounded-md font-semibold hover:bg-foreground hover:text-background transition-colors"
+  >
+    Podcast Guest 1-Sheet
+  </a>
+</div>
             {/* Video Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {videos.map((video, index) => (
