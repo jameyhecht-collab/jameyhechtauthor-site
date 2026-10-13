@@ -1,3 +1,5 @@
+import NavigationHeader from "@/components/NavigationHeader";
+import Footer from "@/components/Footer";
 export default function Podcast() {
   return (
     <div className="min-h-screen bg-background font-serif">
