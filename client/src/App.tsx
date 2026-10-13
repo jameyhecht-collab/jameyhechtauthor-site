@@ -8,6 +8,7 @@ import IntoTheism from "@/pages/IntoTheism";
 import PublishedWorks from "@/pages/PublishedWorks";
 import About from "@/pages/About";
 import Media from "@/pages/Media";
+import Podcast from "@/pages/Podcast";
 import Contact from "@/pages/Contact";
 import Shop from "@/pages/Shop";
 import Success from "@/pages/Success";
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/published-works" component={PublishedWorks} />
       <Route path="/about" component={About} />
       <Route path="/media" component={Media} />
+      <Route path="/podcast" component={Podcast} />
       <Route path="/contact" component={Contact} />
       <Route path="/shop" component={Shop} />
       <Route path="/success" component={Success} />
