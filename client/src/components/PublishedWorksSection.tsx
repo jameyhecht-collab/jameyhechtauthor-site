@@ -223,7 +223,7 @@ const publications = [
     publication: "The Sycamore Review, Vol. 10, No. 2",
     year: 1998,
     type: "fiction" as const,
-    abstract: "A work of literary fiction exploring themes of technology, human connection, and the metaphorical hardware of our emotional lives.",
+    abstract: "An early short story about a deadening job in commission-only sales, and its effect on emotional relationships.",
     downloadUrl: "/Hardware_Complete.pdf",
     category: "Fiction"
   },
