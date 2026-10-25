@@ -114,7 +114,7 @@ export default function AboutSection() {
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
-                  His scholarly work includes English and American literature, Classics, psychoanalytic theory, 
+                  His scholarly work explores English and American literature, Classics, psychoanalytic theory,
                   and consciousness studies. As a poet and creative writer, he has published two 
                   collections of poetry and numerous short stories and book reviews.
                 </p>
