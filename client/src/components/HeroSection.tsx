@@ -64,7 +64,7 @@ export default function HeroSection() {
           <div className="relative">
             <div className="relative">
 <img
-  src="/author-photo.jpg"
+  src="/author-photo-2024.png"
   alt="Jamey Hecht"
   className="w-full max-w-md mx-auto rounded-lg shadow-lg"
   data-testid="img-author-headshot"
