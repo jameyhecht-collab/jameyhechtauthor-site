@@ -20,7 +20,7 @@ const credentials = [
   {
     degree: "LMFT",
     field: "Licensed Marriage & Family Therapist",
-    institution: "NY/CA/NJ/TX",
+    institution: "NY/CA/NJ/TX/NC",
     year: "Active"
   },
   {
