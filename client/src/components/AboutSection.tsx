@@ -120,9 +120,9 @@ export default function AboutSection() {
                 </p>
 
                 <p className="text-muted-foreground leading-relaxed">
-                  Dr. Hecht maintains an active presence in both academic and literary communities, 
-                  contributing regularly to scholarly journals while working on his forthcoming 
-                  manuscript exploring obstacles to religious belief.
+                  Dr. Hecht maintains an active presence in both academic and artistic circles,
+                  contributing regularly to literary magazines, scholarly journals, and edited collections
+                  while developing a sequel to <em>Into Theism</em>.
                 </p>
 
                 <p className="text-muted-foreground leading-relaxed">
