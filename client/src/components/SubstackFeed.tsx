@@ -38,25 +38,26 @@ export default function SubstackFeed() {
   const { data: posts = [], isLoading, error } = useQuery({
     queryKey: ['substack-feed'],
     queryFn: async (): Promise<SubstackPost[]> => {
-      const rssUrl = 'https://jameyhecht.substack.com/feed';
-      const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-      
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-      
-      if (data.status !== 'ok') {
-        throw new Error(data.message || 'Failed to fetch Substack posts');
+      const response = await fetch('/.netlify/functions/substack-feed');
+      if (!response.ok) throw new Error('Failed to fetch Substack posts');
+      const feed = new DOMParser().parseFromString(await response.text(), 'application/xml');
+      if (feed.querySelector('parsererror') || !feed.querySelector('rss')) {
+        throw new Error('Invalid Substack feed');
       }
-      
-      return data.items.slice(0, 2).map((item: any) => ({
-        title: item.title,
-        link: item.link,
-        pubDate: item.pubDate,
-        description: stripHtml(item.description),
-        content: stripHtml(item.content),
-        author: item.author,
-        thumbnail: item.thumbnail || item.enclosure?.link || undefined
-      }));
+      return Array.from(feed.querySelectorAll('item')).slice(0, 2).map((item) => {
+        const text = (name: string) => item.getElementsByTagName(name)[0]?.textContent || '';
+        const enclosure = item.querySelector('enclosure');
+        return {
+          title: text('title'),
+          link: text('link'),
+          pubDate: text('pubDate'),
+          description: stripHtml(text('description')),
+          content: stripHtml(text('content:encoded')),
+          author: text('dc:creator'),
+          thumbnail: enclosure?.getAttribute('type')?.startsWith('image/')
+            ? enclosure.getAttribute('url') || undefined : undefined,
+        };
+      });
     },
     staleTime: 5 * 60 * 1000, // 5 minutes
     refetchInterval: 10 * 60 * 1000, // Refetch every 10 minutes
